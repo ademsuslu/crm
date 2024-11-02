@@ -24,7 +24,7 @@ type Position = {
   endLat: number;
   endLng: number;
   arcAlt: number;
-  color: string;
+  color: string ;
 };
 
 export type GlobeConfig = {
@@ -60,6 +60,10 @@ interface WorldProps {
 
 let numbersOfRings = [0];
 
+
+
+
+
 export function Globe({ globeConfig, data }: WorldProps) {
   const [globeData, setGlobeData] = useState<
     | {
@@ -91,12 +95,25 @@ export function Globe({ globeConfig, data }: WorldProps) {
     ...globeConfig,
   };
 
-  useEffect(() => {
+//   useEffect(() => {
+//     if (globeRef.current) {
+//       _buildData();
+//       _buildMaterial();
+//     }
+//   }, [globeRef.current]);
+
+
+useEffect(() => {
     if (globeRef.current) {
-      _buildData();
-      _buildMaterial();
+      if (typeof globeRef.current.globeMaterial === "function") {
+        _buildData();
+        _buildMaterial();
+      } else {
+        console.warn("globeMaterial is not a function or is unavailable");
+      }
     }
   }, [globeRef.current]);
+  
 
   const _buildMaterial = () => {
     if (!globeRef.current) return;
@@ -106,7 +123,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
       emissive: Color;
       emissiveIntensity: number;
       shininess: number;
-    };
+    } | any;
     globeMaterial.color = new Color(globeConfig.globeColor);
     globeMaterial.emissive = new Color(globeConfig.emissive);
     globeMaterial.emissiveIntensity = globeConfig.emissiveIntensity || 0.1;
@@ -116,7 +133,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
   const _buildData = () => {
     const arcs = data;
     let points = [];
-    for (let i = 0; i < arcs.length; i++) {
+    for (let i = 0; i < Number(arcs?.length); i++) {
       const arc = arcs[i];
       const rgb = hexToRgb(arc.color) as { r: number; g: number; b: number };
       points.push({
