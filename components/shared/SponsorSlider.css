@@ -1,0 +1,16 @@
+/* SponsorSlider.css */
+
+.slider-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.slider {
+  display: flex;
+}
+
+.slide {
+  min-width: 200px; /* Slayt genişliği */
+  margin-right: 20px; /* Slaytlar arasındaki boşluk */
+}

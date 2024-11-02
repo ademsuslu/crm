@@ -46,7 +46,6 @@ const Hero = () => {
 
     return (
         <div className="flex  mt-16 flex-col md:flex-row  items-center justify-between">
-           
             <div className="flex z-30 flex-col items-start justify-start">
                 <h1 className="text-2xl text-white">
                     Shape the Future with Your Data!
