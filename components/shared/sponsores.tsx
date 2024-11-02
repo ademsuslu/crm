@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 
 const Suponsores = ({
   direction = "left",
-  speed = "fast",
+  speed = "slow",
   pauseOnHover = true,
   className,
 }: {
