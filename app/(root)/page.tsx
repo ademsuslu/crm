@@ -10,8 +10,9 @@ export default function Home() {
   return (
     <div className="flex flex-col space-y-6">
       <Hero/>
-      <Suponsores className="mt-16"/> 
+      <Suponsores className="my-16"/> 
       <Whatscrm/>
+      <div className="mt-6"></div>
      </div>
   )
 }
