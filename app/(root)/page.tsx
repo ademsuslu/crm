@@ -1,4 +1,5 @@
 
+import AfterCrm from "@/components/shared/afterCrm"
 import Hero from "@/components/shared/hero"
 import Products from "@/components/shared/products"
 import Solitions from "@/components/shared/solitions"
@@ -18,6 +19,8 @@ export default function Home() {
       <Solitions/>
       <div className="mt-6"></div>
       <Products/>
+      <div className="mt-6"></div>
+      <AfterCrm/>
       <div className="mt-6"></div>
      </div>
   )
