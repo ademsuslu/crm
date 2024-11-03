@@ -7,7 +7,7 @@ const Whatscrm = () => {
     <>
 <div className="mt-6"></div>
     <div className='flex flex-col md:flex-row items-center gap-4 bg-secondary rounded p-4 justify-between'>
-       <div className='w-[740px] h-[240px] rounded-lg'>
+       <div className='w-full h-[240px] rounded-lg'>
 
            <video src="/assets/crm.mp4" className="w-full h-full" controls ></video>
        </div>
