@@ -12,8 +12,8 @@ const Whatscrm = () => {
            <video src="/assets/crm.mp4" className="w-full h-full" controls ></video>
        </div>
         <div className='flex flex-col  h-[240px]'>
-            <h2>What is Crm?</h2>
-            <span>Customer relationship management is an approach to managing a company's interactions with existing and potential customers.</span>
+            <h2 className='text-2xl'>What is Crm?</h2>
+            <span className='my-4'>Customer relationship management is an approach to managing a company's interactions with existing and potential customers.</span>
             <div className='flex items-center justify-start space-x-3'>
                 <Button asChild variant={"outline"} className="rounded mt-3">
                     <Link href="/sign-in">Get a demo</Link>
