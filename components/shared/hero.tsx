@@ -47,19 +47,19 @@ const Hero = () => {
     return (
         <div className="flex  mt-16 flex-col md:flex-row  items-center justify-between">
             <div className="flex z-30 flex-col items-start justify-start">
-                <h1 className="text-2xl text-white">
+                <h1 className="text-2xl text-white font-mono">
                     Shape the Future with Your Data!
                 </h1>
-                <span className="mt-1 text-white ">Analyze your data to optimize your business processes and strengthen your strategic decisions. <br /> Discover growth opportunities with meaningful charts and reports.</span>
-                <Button asChild variant={"outline"} className="rounded mt-3">
+                <span className="mt-1 text-white font-mono ">Analyze your data to optimize your business processes and strengthen your strategic decisions. <br /> Discover growth opportunities with meaningful charts and reports.</span>
+                <Button asChild variant={"outline"} className="rounded font-mono mt-3">
                     <Link href="/sign-in">Get Started</Link>
                 </Button>
             </div>
             <div className="flex  z-30 items-center my-3 md:my-0 justify-between w-full md:w-96">
                 <Card className="w-full">
                     <CardHeader>
-                        <CardTitle>Bar Chart - Multiple</CardTitle>
-                        <CardDescription>January - June 2024</CardDescription>
+                        <CardTitle className="font-mono">Bar Chart - Multiple</CardTitle>
+                        <CardDescription className="font-mono">January - June 2024</CardDescription>
                     </CardHeader>
                     <CardContent>
                         <ChartContainer config={chartConfig}>
@@ -82,10 +82,10 @@ const Hero = () => {
                         </ChartContainer>
                     </CardContent>
                     <CardFooter className="flex-col items-start gap-2 text-sm">
-                        <div className="flex gap-2 font-medium leading-none">
+                        <div className="flex gap-2 font-mono leading-none">
                             Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
                         </div>
-                        <div className="leading-none text-muted-foreground">
+                        <div className="leading-none text-muted-foreground font-mono">
                             Showing total visitors for the last 6 months
                         </div>
                     </CardFooter>
