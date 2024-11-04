@@ -1,6 +1,7 @@
 
 import AfterCrm from "@/components/shared/afterCrm"
 import BetterGrow from "@/components/shared/BetterGrow"
+import Footer from "@/components/shared/footer"
 import Hero from "@/components/shared/hero"
 import Products from "@/components/shared/products"
 import Solitions from "@/components/shared/solitions"
@@ -25,6 +26,8 @@ export default function Home() {
       <div className="mt-6"></div>
       <BetterGrow/>
       <div className="mt-6"></div>
+     <Footer/>
+      <div className="mt-3"></div>
      </div>
   )
 }
