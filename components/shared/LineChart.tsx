@@ -45,8 +45,8 @@ export function LineCharts() {
    <div>
      <Card>
       <CardHeader>
-        <CardTitle>Line Chart - Label</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
+        <CardTitle className="font-mono">Line Chart - Label</CardTitle>
+        <CardDescription className="font-mono">January - June 2024</CardDescription>
       </CardHeader>
       <CardContent>
         <ChartContainer     className="mx-auto aspect-square max-h-[250px]" config={chartConfig}>
@@ -94,10 +94,10 @@ export function LineCharts() {
         </ChartContainer>
       </CardContent>
       <CardFooter className="flex-col items-start gap-2 text-sm">
-        <div className="flex gap-2 font-medium leading-none">
+        <div className="flex gap-2 font-mono leading-none">
           Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
         </div>
-        <div className="leading-none text-muted-foreground">
+        <div className="leading-none font-mono text-muted-foreground">
           Showing total visitors for the last 6 months
         </div>
       </CardFooter>
