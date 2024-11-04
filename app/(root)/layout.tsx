@@ -11,11 +11,3 @@ const RootLayout = ({children}:{children:React.ReactNode}) => {
 
 export default RootLayout
 
-/*
-
- Hilal hasan beyınassıtanı
- Amazon +  trendyol
- Startop => e -fatura vb eksıklerı varmıs => cem bey polnyadaymıs
- Aile gibiler 
-
- */
