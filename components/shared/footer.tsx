@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import Logo from './logo'
 
 const Footer = () => {
     return (
@@ -16,7 +17,9 @@ const Footer = () => {
 
                 </div>
                 <div className="flex flex-col items-center justify-center my-4 space-y-3">
-                    <h2 className='text-2xl'>CRM</h2>
+                    <Link href="/">
+                        <Logo/>
+                    </Link>
                     <p className='font-mono text-muted'>Copyright © 2024 CRM, Inc.</p>
                 </div>
                 <div className="hsg-footer__copyright">

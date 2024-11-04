@@ -7,6 +7,7 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs";
+import Logo from "./logo";
 
 
 const Navbar = () => {
@@ -16,7 +17,7 @@ const Navbar = () => {
       {/* LEFT */}
       <div className="md:hidden lg:block w-[20%]">
         <Link href="/" className="from-accent-foreground text-xl text-white">
-         CRM
+            <Logo/>
         </Link>
       </div>
       {/* CENTER */}
