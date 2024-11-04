@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const BetterGrow = () => {
   return (
-    <div className='flex flex-col md:flex-row justify-around items-center'>
+    <div className='flex flex-col md:flex-row justify-around items-center space-y-4'>
             <div className='flex flex-col'>
              <h1 className='font-mono text-2xl my-2'>Grow better with Crm today</h1>
              <div className='flex items-center justify-center space-x-3'>
