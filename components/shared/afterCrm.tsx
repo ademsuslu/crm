@@ -25,15 +25,15 @@ const AfterCrm = () => {
                   loading="lazy"
                 />
               </div>
-              <div className="my-2">
+              <div className="my-2 flex flex-col justify-start items-center ">
                 <h3 className="text-xl font-mono ">114%</h3>
-                <div className="font-mono">
+                <span className="font-mono">
                   More web traffic
-                </div>
+                </span>
               </div>
             </li>
              <li className=" bg-secondary flex flex-col justify-center items-center p-4 rounded min-w-[300px] hover:scale-110 transition-all ">
-              <div className="wf-stats-card-image-wrapper -square">
+              <div className="">
                 <img
                   className="rounded"
                   src="/assets/deals.jpeg"
@@ -43,16 +43,16 @@ const AfterCrm = () => {
                   loading="lazy"
                 />
               </div>
-              <div className="my-2">
+              <div className="my-2 flex flex-col justify-start items-center ">
                 <h3 className="text-xl font-mono ">55%</h3>
-                <div className="font-mono">
+                <span className="font-mono">
                   More deals
-                </div>
+                </span>
               </div>
             </li>
             <li className=" bg-secondary flex flex-col justify-center items-center p-4 rounded min-w-[300px] hover:scale-110 transition-all ">
               
-              <div className="wf-stats-card-image-wrapper -square">
+              <div className="">
                 <img
                   className="rounded"
                   src="/assets/tickets.jpeg"
@@ -62,11 +62,11 @@ const AfterCrm = () => {
                   loading="lazy"
                 />
               </div>
-              <div className="my-2">
-                <h3 className="text-xl font-mono ">43%</h3>
-                <div className="font-mono">
+              <div className="my-2 flex flex-col justify-start items-center ">
+              <h3 className="text-xl font-mono ">43%</h3>
+                <span className="font-mono">
                   More tickets resolved
-                </div>
+                </span>
               </div>
             </li>
           </ul>
