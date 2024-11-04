@@ -14,7 +14,7 @@ const AfterCrm = () => {
         </div>
         <div className="mt-3">
           <ul className="grid grid-cols-1 md:grid-cols-3 gap-6 my-6">
-            <li className=" bg-secondary flex flex-col justify-center items-center p-4 rounded min-w-[300px] ">
+            <li className=" bg-secondary flex flex-col justify-center items-center p-4 rounded min-w-[300px] hover:scale-110 transition-all ">
               <div className="">
                 <img
                   className="rounded"
@@ -32,7 +32,7 @@ const AfterCrm = () => {
                 </div>
               </div>
             </li>
-             <li className=" bg-secondary flex flex-col justify-center items-center p-4 rounded min-w-[300px] ">
+             <li className=" bg-secondary flex flex-col justify-center items-center p-4 rounded min-w-[300px] hover:scale-110 transition-all ">
               <div className="wf-stats-card-image-wrapper -square">
                 <img
                   className="rounded"
@@ -50,7 +50,7 @@ const AfterCrm = () => {
                 </div>
               </div>
             </li>
-            <li className=" bg-secondary flex flex-col justify-center items-center p-4 rounded min-w-[300px] ">
+            <li className=" bg-secondary flex flex-col justify-center items-center p-4 rounded min-w-[300px] hover:scale-110 transition-all ">
               
               <div className="wf-stats-card-image-wrapper -square">
                 <img
