@@ -9,7 +9,7 @@ const AfterCrm = () => {
             id="homepage_stats_heading"
             className="text-2xl font-mono"
           >
-            HubSpot customer’s results after 1 year:
+            Crm customer’s results after 1 year:
           </h2>
         </div>
         <div className="mt-3">
@@ -17,11 +17,11 @@ const AfterCrm = () => {
             <li className=" bg-secondary flex flex-col justify-center items-center p-4 rounded min-w-[300px] ">
               <div className="">
                 <img
-                  className="wf-stats-card-image"
-                  src="https://www.hubspot.com/hubfs/2023_MarketingHub_SEO1-2.svg"
+                  className="rounded"
+                  src="/assets/artış.webp"
                   alt=""
-                  height="128"
-                  width="128"
+                  height="200"
+                  width="200"
                   loading="lazy"
                 />
               </div>
@@ -35,11 +35,11 @@ const AfterCrm = () => {
              <li className=" bg-secondary flex flex-col justify-center items-center p-4 rounded min-w-[300px] ">
               <div className="wf-stats-card-image-wrapper -square">
                 <img
-                  className="wf-stats-card-image"
-                  src="https://www.hubspot.com/hubfs/2023_CRM_Deal_Tracking2-3.svg"
+                  className="rounded"
+                  src="/assets/deals.jpeg"
                   alt=""
-                  height="128"
-                  width="128"
+                  height="200"
+                  width="200"
                   loading="lazy"
                 />
               </div>
@@ -54,11 +54,11 @@ const AfterCrm = () => {
               
               <div className="wf-stats-card-image-wrapper -square">
                 <img
-                  className="wf-stats-card-image"
-                  src="https://www.hubspot.com/hubfs/2023_ServiceHub_Help_Desk_Ticket1-3.svg"
+                  className="rounded"
+                  src="/assets/tickets.jpeg"
                   alt=""
-                  height="128"
-                  width="128"
+                   height="200"
+                  width="200"
                   loading="lazy"
                 />
               </div>
