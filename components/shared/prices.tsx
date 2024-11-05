@@ -32,7 +32,7 @@ const Prices = () => {
                         <li className='inline-flex items-center font-mono'> <TiTick className='mr-2 text-xl'/> Customer support</li>
                     </ul>
                     <Button asChild className='rounded font-mono mt-3'>
-                        <Link href='/sign-in'>Start free</Link>
+                        <Link href='/sign-in'>Start</Link>
                     </Button>
                 </div>
             </div>
@@ -53,7 +53,7 @@ const Prices = () => {
                         <li className='inline-flex items-center font-mono'> <TiTick className='mr-2 text-xl'/> Customer support</li>
                     </ul>
                     <Button asChild className='rounded font-mono mt-3'>
-                        <Link href='/sign-in'>Start free</Link>
+                        <Link href='/sign-in'>Start</Link>
                     </Button>
                 </div>
             </div>
@@ -74,7 +74,7 @@ const Prices = () => {
                         <li className='inline-flex items-center font-mono'> <TiTick className='mr-2 text-xl'/> Customer support</li>
                     </ul>
                     <Button asChild className='rounded font-mono mt-3'>
-                        <Link href='/sign-in'>Start free</Link>
+                        <Link href='/sign-in'>Start</Link>
                     </Button>
                 </div>
             </div>
@@ -95,7 +95,7 @@ const Prices = () => {
                         <li className='inline-flex items-center font-mono'> <TiTick className='mr-2 text-xl'/> Customer support</li>
                     </ul>
                     <Button asChild className='rounded font-mono mt-3'>
-                        <Link href='/sign-in'>Start free</Link>
+                        <Link href='/sign-in'>Start</Link>
                     </Button>
                 </div>
             </div>
