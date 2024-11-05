@@ -35,11 +35,11 @@ const items = [
     url: "/employee",
     icon: Users,
   },
-  {
-    title: "Search",
-    url: "/dashboard",
-    icon: Search,
-  },
+  // {
+  //   title: "Search",
+  //   url: "/dashboard",
+  //   icon: Search,
+  // },
   {
     title: "Settings",
     url: "/dashboard",
