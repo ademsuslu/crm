@@ -1,4 +1,7 @@
+import Link from 'next/link';
 import React from 'react'
+import { TiTick } from "react-icons/ti";
+import { Button } from '../ui/button';
 
 const Prices = () => {
   return (
@@ -22,15 +25,15 @@ const Prices = () => {
                     $0/month
                     </span>
                     <ul className='mt-6 space-y-1'>
-                        <li> Unlimited contacts</li>
-                        <li>Email marketing</li>
-                        <li>SMS marketing</li>
-                        <li>Calendar and task management</li>
-                        <li>Customer support</li>
+                        <li className='inline-flex items-center font-mono'> <TiTick className='mr-2 text-xl'/>  Unlimited contacts</li>
+                        <li className='inline-flex items-center font-mono'> <TiTick className='mr-2 text-xl'/> Email marketing</li>
+                        <li className='inline-flex items-center font-mono'> <TiTick className='mr-2 text-xl'/> SMS marketing</li>
+                        <li className='inline-flex items-center font-mono'> <TiTick className='mr-2 text-xl'/> Calendar and task management</li>
+                        <li className='inline-flex items-center font-mono'> <TiTick className='mr-2 text-xl'/> Customer support</li>
                     </ul>
-                    <button className='rounded font-mono mt-3'>
-                        <a href='/sign-in'>Start free</a>
-                    </button>
+                    <Button asChild className='rounded font-mono mt-3'>
+                        <Link href='/sign-in'>Start free</Link>
+                    </Button>
                 </div>
                 </div>
         
