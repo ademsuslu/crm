@@ -118,7 +118,14 @@ const Prices = () => {
             </div>
             <div className='mt-3 font-mono text-xl text-center flex flex-col'>
                 <h1>It’s already easy to use. But we’re still here for you.</h1>
-            
+                <div className='flex items-center justify-center space-x-3'>
+                    <Button asChild variant={"secondary"} className="rounded font-mono mt-3">
+                        <Link href="/sign-in">Get a demo</Link>
+                    </Button>
+                    <Button asChild variant={"secondary"} className="rounded font-mono mt-3">
+                        <Link href="/sign-in">Get Started free</Link>
+                    </Button>
+            </div>
             </div>
         </div>
     )
