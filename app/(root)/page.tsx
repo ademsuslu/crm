@@ -4,6 +4,7 @@ import BetterGrow from "@/components/shared/BetterGrow"
 import Charts from "@/components/shared/Charts"
 import Footer from "@/components/shared/footer"
 import Hero from "@/components/shared/hero"
+import Prices from "@/components/shared/prices"
 import Products from "@/components/shared/products"
 import Solitions from "@/components/shared/solitions"
 import Suponsores from "@/components/shared/sponsores"
@@ -19,9 +20,11 @@ export default function Home() {
       <div className="mt-6"></div>
       <Whatscrm/>
       <div className="mt-6"></div>
+      <Solitions/>
+      <div className="mt-6"></div>
       <Charts/>
       <div className="mt-6"></div>
-      <Solitions/>
+      <Prices />
       <div className="mt-6"></div>
       <Products/>
       <div className="mt-6"></div>
