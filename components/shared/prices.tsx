@@ -94,20 +94,20 @@ const Prices = () => {
                 <div className='flex  border flex-col w-full rounded-lg md:w-1/4'>
                     <div className='flex flex-col items-start justify-start p-4'>
                         <h2 className='text-3xl font-mono'>
-                            Professional
+                        Enterprise
                         </h2>
                         <p className='font-mono text-foreground my-2 text-gray-300'>Starts at</p>
                         <span className='text-center font-mono'>
-                        $890/month
+                        $3,600/month
                         </span>
                         <div className='flex flex-col mt-6'>
                             <h1 className='font-mono text-xl my-2'>Popular features</h1>
                             <ul className=' space-y-1'>
-                                <li className='flex items-center font-mono'> <TiTick className='mr-2 text-xl' /> <span> Everything in Starter</span></li>
-                                <li className='flex items-center font-mono'> <TiTick className='mr-2 text-xl' /> <span>Campaign management</span></li>
-                                <li className='flex items-center font-mono'> <TiTick className='mr-2 text-xl' /> <span>SEO</span></li>
-                                <li className='flex items-center font-mono'> <TiTick className='mr-2 text-xl' /> <span>Predictive lead scoring</span></li>
-                                <li className='flex items-center font-mono'> <TiTick className='mr-2 text-xl' /><span>Custom reporting</span></li>
+                                <li className='flex items-center font-mono'> <TiTick className='mr-2 text-xl' /> <span>Everything in Professional</span></li>
+                                <li className='flex items-center font-mono'> <TiTick className='mr-2 text-xl' /> <span>Adaptive testing</span></li>
+                                <li className='flex items-center font-mono'> <TiTick className='mr-2 text-xl' /> <span>Multuple revenue attribution</span></li>
+                                <li className='flex items-center font-mono'> <TiTick className='mr-2 text-xl' /> <span>Customer journey analytics</span></li>
+                                <li className='flex items-center font-mono'> <TiTick className='mr-2 text-xl' /><span>Social media                                </span></li>
                             </ul>
                         </div>
                         <Button asChild className='rounded font-mono mt-3'>
