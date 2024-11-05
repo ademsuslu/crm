@@ -1,10 +1,64 @@
-<!-- todo  5.11.24 -->
+Müşteri Yönetimi
 
-I will another  page creatig 
-I will auth for admin 
-I will Searching and learning and about projects preferences 
+    Müşteri bilgilerini kaydetme, düzenleme ve görüntüleme
+    İletişim bilgileri, satın alma geçmişi, notlar gibi detaylı müşteri profili oluşturma
+    Müşteri etiketleme ve segmentasyon
 
-<!-- todo  5.11.24 -->
+İletişim ve Etkileşim Takibi
 
+    Müşteri ile yapılan tüm etkileşimleri (e-postalar, telefon görüşmeleri, toplantılar) kaydetme
+    Otomatik bildirimler ve hatırlatıcılar ayarlama
+    E-posta ve SMS entegrasyonu ile müşterilere doğrudan ulaşma
 
-ı will select an dashboard
+Satış Yönetimi
+
+    Satış fırsatlarını izleme ve yönetme (pipeline yönetimi)
+    Teklif, sözleşme ve satış süreci takibi
+    Satış ekibi performans analizleri
+Görev ve İş Takibi
+
+    Görev oluşturma ve görevlere ekip üyeleri atama
+    Görevler için hatırlatıcılar ve son tarih belirleme
+    Görev tamamlama oranlarını takip etme
+
+Pazarlama Otomasyonu
+
+    E-posta kampanyaları planlama ve yönetme
+    Kampanyaların etkisini ölçme (açılma, tıklanma oranları)
+    Otomatik müşteri segmentasyonu ve hedefleme
+
+Raporlama ve Analiz
+
+    Müşteri davranış analizi ve satış trendleri raporlama
+    Satış tahminleri ve performans değerlendirmeleri
+    Pazarlama ve müşteri memnuniyeti analizleri
+
+Destek ve Müşteri Hizmetleri Yönetimi
+
+    Destek taleplerini kaydetme ve durumunu izleme
+    Çözüm süresi ve müşteri memnuniyeti gibi ölçümler
+    Sıkça Sorulan Sorular (SSS) ve bilgi tabanı yönetimi
+
+Entegrasyonlar
+
+    E-posta, sosyal medya, telefon sistemleri ile entegrasyon
+    E-ticaret, muhasebe ve ERP sistemleriyle bağlantı
+    API desteği ile diğer araçlara kolay entegrasyon
+
+Mobil Erişim
+
+    CRM verilerine mobil cihazlardan erişim sağlama
+    Müşteri bilgilerine her yerden ulaşım
+    Satış ekibi için offline erişim özellikleri
+
+Güvenlik ve Erişim Kontrolü
+
+    Kullanıcı rolleri ve erişim izinleri yönetimi
+    Verilerin yedeklenmesi ve güvenli depolanması
+    GDPR ve KVKK gibi veri gizliliği düzenlemelerine uyum
+
+Özelleştirilebilirlik
+
+    Kullanıcı arayüzü ve alanların kişiselleştirilebilmesi
+    İş akışlarını ve otomasyonları özelleştirme imkanı
+    Farklı departmanların ihtiyaçlarına göre yapılandırılabilir modüller
