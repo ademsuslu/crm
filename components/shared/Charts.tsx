@@ -5,7 +5,7 @@ import { PieCharts } from './PieCharts'
 
 const Charts = () => {
   return (
-    <div className='flex flex-col md:flex-row justify-around w-full '>
+    <div className='flex flex-col md:flex-row justify-around w-full gap-3 '>
         <SpiderChart/>
         <LineCharts/>
         <PieCharts/>
