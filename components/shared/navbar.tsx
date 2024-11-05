@@ -24,20 +24,13 @@ const Navbar = () => {
       <div className="hidden md:flex w-[50%] text-sm items-center justify-between">
         {/* LINKS */}
         <div className="flex gap-6 text-white">
-          <Link href="/customer" className="flex items-center gap-2">
-           
-            <span className="font-mono text-md">Customer</span>
-          </Link>
           <Link href="/mission" className="flex items-center gap-2">
-           
             <span className="font-mono text-md">Mission</span>
           </Link>
           <Link href="/analytics" className="flex items-center gap-2">
-            
             <span className="font-mono text-md">Analytics</span>
           </Link>
         </div>
-       
       </div>
       {/* RIGHT */}
       <div className="w-[30%] flex items-center gap-4 xl:gap-8 justify-end">
