@@ -12,15 +12,16 @@ const Prices = () => {
             </span>
         </div>
         <div className='flex flex-col md:flex-row my-4'>
-            <div className='flex  border flex-col w-full rounded md:w-1/4'>
+            <div className='flex  border flex-col w-full rounded-lg md:w-1/4'>
                 <div className='flex flex-col items-start justify-start p-4'>
-                    <h2 className='text-2xl font-mono'>
-                    Free
+                    <h2 className='text-3xl font-mono'>
+                      Free
                     </h2>
-                    <span className='text-center font-mono mt-3'>
+                    <p className='font-mono text-foreground my-2'>No credit card required</p>
+                    <span className='text-center font-mono'>
                     $0/month
                     </span>
-                    <ul className='mt-3'>
+                    <ul className='mt-6'>
                         <li>Unlimited contacts</li>
                         <li>Email marketing</li>
                         <li>SMS marketing</li>
