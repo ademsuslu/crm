@@ -15,7 +15,7 @@ const Prices = () => {
                 </span>
             </div>
             <div className='flex flex-col md:flex-row my-4 gap-3'>
-                <div className='flex  border flex-col w-full rounded-lg md:w-1/4'>
+                <div className='flex  border flex-col w-full rounded-lg md:w-1/4 hover:scale-105 transition-all'>
                     <div className='flex flex-col items-start justify-start p-4'>
                         <h2 className='text-3xl font-mono'>
                             Free
@@ -41,7 +41,7 @@ const Prices = () => {
                     </div>
                 </div>
 
-                <div className='flex  border flex-col w-full rounded-lg md:w-1/4'>
+                <div className='flex  border flex-col w-full rounded-lg md:w-1/4 hover:scale-105 transition-all'>
                     <div className='flex flex-col items-start justify-start p-4'>
                         <h2 className='text-3xl font-mono'>
                             Starter
@@ -66,7 +66,7 @@ const Prices = () => {
                     </div>
                 </div>
              
-                <div className='flex  border flex-col w-full rounded-lg md:w-1/4'>
+                <div className='flex  border flex-col w-full rounded-lg md:w-1/4 hover:scale-105 transition-all'>
                     <div className='flex flex-col items-start justify-start p-4'>
                         <h2 className='text-3xl font-mono'>
                             Professional
@@ -91,7 +91,7 @@ const Prices = () => {
                     </div>
                 </div>
              
-                <div className='flex  border flex-col w-full rounded-lg md:w-1/4'>
+                <div className='flex  border flex-col w-full rounded-lg md:w-1/4 hover:scale-105 transition-all'>
                     <div className='flex flex-col items-start justify-start p-4'>
                         <h2 className='text-3xl font-mono'>
                         Enterprise

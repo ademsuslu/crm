@@ -20,7 +20,9 @@ const config: Config = {
 					},
 				},
 			},
-
+			boxShadow: {
+				'shadow': '0 35px 60px -15px rgba(255,255,255, 0.9);',
+			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'

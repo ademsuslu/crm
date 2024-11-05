@@ -86,7 +86,7 @@ const Suponsores = ({
               background:
                 "linear-gradient(180deg, var(--slate-800), var(--slate-900)",
             }}
-            key={item.name}
+            key={idx}
           >
            {/* <img src={item.name}   alt={item.name} style={{maxHeight:"100px"}}  /> */}
            <img src={item.name}   alt={item.name} style={{maxHeight:"70px",width:"100%",objectFit:"cover"}}   />
