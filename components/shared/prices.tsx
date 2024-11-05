@@ -17,12 +17,12 @@ const Prices = () => {
                     <h2 className='text-3xl font-mono'>
                       Free
                     </h2>
-                    <p className='font-mono text-foreground my-2'>No credit card required</p>
+                    <p className='font-mono text-foreground my-2 text-gray-300'>No credit card required</p>
                     <span className='text-center font-mono'>
                     $0/month
                     </span>
-                    <ul className='mt-6'>
-                        <li>Unlimited contacts</li>
+                    <ul className='mt-6 space-y-1'>
+                        <li> Unlimited contacts</li>
                         <li>Email marketing</li>
                         <li>SMS marketing</li>
                         <li>Calendar and task management</li>
