@@ -116,6 +116,10 @@ const Prices = () => {
                     </div>
                 </div>
             </div>
+            <div className='mt-3 font-mono text-xl text-center flex flex-col'>
+                <h1>It’s already easy to use. But we’re still here for you.</h1>
+            
+            </div>
         </div>
     )
 }
