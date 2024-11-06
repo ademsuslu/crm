@@ -48,7 +48,9 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 export function AppSidebar() {
-  const pathname = usePathname()
+  const pathname = usePathname();
+  const [activeLink, setActiveLink] = useState(pathname); // Başlangıçta aktif link olarak pathname'i alıyoruz
+
   return (
     <Sidebar>
       <SidebarContent>
@@ -59,17 +61,22 @@ export function AppSidebar() {
           <SidebarGroupContent className="mt-6">
             <SidebarMenu>
               {/* create active link for items */}
-              {items.map((item) => {
-                const [activeLink, setActiveLink] = useState("dashboard")
-                return <SidebarMenuItem key={item.url}  onClick={() => setActiveLink(item.url)} className="my-3">
-                  <SidebarMenuButton asChild >
-                    <Link href={item.url} className={cn(`${pathname.slice(1) === activeLink ? "bg-transparent" : "bg-red-500"}`)}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </Link>
-                  </SidebarMenuButton>
+              {items.map((item) => (
+                <SidebarMenuItem key={item.url} className="my-3">
+                    <SidebarMenuButton asChild onClick={() => setActiveLink(item.url)}>
+                        <Link 
+                            href={item.url} 
+                            className={cn({
+                                "bg-transparent": pathname.slice(1) === item.url.slice(1),
+                                "bg-red-500": pathname.slice(1) !== item.url.slice(1),
+                            })}
+                        >
+                            <item.icon />
+                            <span>{item.title}</span>
+                        </Link>
+                    </SidebarMenuButton>
                 </SidebarMenuItem>
-              })}
+            ))}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
