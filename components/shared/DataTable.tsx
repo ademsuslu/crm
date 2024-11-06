@@ -35,6 +35,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import Link from "next/link"
 
  const data: Customer[] = [
  
@@ -416,7 +417,11 @@ export const columns: ColumnDef<Customer>[] = [
         <DropdownMenuContent align="end">
           <DropdownMenuLabel>Actions</DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuItem onClick={()=>alert(row.original._id)}>Müşteriyi Görüntüle</DropdownMenuItem>
+          <DropdownMenuItem > 
+             <Link href={`/customer/${row.original._id}`}>
+               Müşteriyi Görüntüle
+          </Link>
+          </DropdownMenuItem>
           <DropdownMenuItem>Ödeme Detaylarını Görüntüle</DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
