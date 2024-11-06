@@ -60,15 +60,14 @@ export function AppSidebar() {
           </SidebarGroupLabel>
           <SidebarGroupContent className="mt-6">
             <SidebarMenu>
-              {/* create active link for items */}
               {items.map((item) => (
                 <SidebarMenuItem key={item.url} className="my-3">
                     <SidebarMenuButton asChild onClick={() => setActiveLink(item.url)}>
                         <Link 
                             href={item.url} 
                             className={cn({
-                                "bg-transparent": pathname.slice(1) === item.url.slice(1),
-                                "bg-red-500": pathname.slice(1) !== item.url.slice(1),
+                                "bg-secondary": pathname.slice(1) === item.url.slice(1),
+                                "bg-transparent": pathname.slice(1) !== item.url.slice(1),
                             })}
                         >
                             <item.icon />
