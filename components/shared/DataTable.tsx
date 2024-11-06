@@ -404,8 +404,9 @@ export const columns: ColumnDef<Customer>[] = [
   {
     id: "actions",
     enableHiding: false,
-    cell: ({ row }) => (
-      <DropdownMenu>
+    cell: ({ row }) => {
+      
+    return  <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="h-8 w-8 p-0">
             <span className="sr-only">Open menu</span>
@@ -415,11 +416,11 @@ export const columns: ColumnDef<Customer>[] = [
         <DropdownMenuContent align="end">
           <DropdownMenuLabel>Actions</DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>Müşteriyi Görüntüle</DropdownMenuItem>
+          <DropdownMenuItem onClick={()=>alert(row.original._id)}>Müşteriyi Görüntüle</DropdownMenuItem>
           <DropdownMenuItem>Ödeme Detaylarını Görüntüle</DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-    ),
+      }
   },
 ];
 
