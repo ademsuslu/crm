@@ -62,7 +62,7 @@ export function AppSidebar() {
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.url} className="my-3">
-                    <SidebarMenuButton asChild onClick={() => setActiveLink(item.url)}>
+                    <SidebarMenuButton asChild className="rounded" onClick={() => setActiveLink(item.url)}>
                         <Link 
                             href={item.url} 
                             className={cn({
