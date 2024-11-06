@@ -370,26 +370,24 @@ export const columns: ColumnDef<Customer>[] = [
     header: "Cinsiyet",
     cell: ({ row }) => <div>{row.getValue("cinsiyet")}</div>,
   },
+  // {
+  //   accessorKey: "dogum_tarihi",
+  //   header: "Doğum Tarihi",
+  //   cell: ({ row }) => <div>{new Date(row.getValue("dogum_tarihi")).toLocaleTimeString()}</div>,
+  // },
   {
-    accessorKey: "dogum_tarihi",
-    header: "Doğum Tarihi",
-    cell: ({ row }) => <div>{new Date(row.getValue("dogum_tarihi")).toLocaleDateString()}</div>,
-  },
-  {
-    accessorKey: "segmentasyon.musteri_segmenti",
     header: "Müşteri Segmenti",
-    cell: ({ row }) => <div>{row.getValue("segmentasyon.musteri_segmenti")}</div>,
+    cell: ({ row }) => <div>{row.original.segmentasyon?.musteri_segmenti || "Bilgi yok"}</div>,
   },
   {
-    accessorKey: "iletisim_bilgileri.telefon",
     header: "Telefon",
-    cell: ({ row }) => <div>{row.getValue("iletisim_bilgileri.telefon")}</div>,
+    cell: ({ row }) => <div>{row.original.iletisim_bilgileri?.telefon || "Bilgi yok"}</div>,
   },
   {
-    accessorKey: "iletisim_bilgileri.email",
     header: "E-posta",
-    cell: ({ row }) => <div>{row.getValue("iletisim_bilgileri.email")}</div>,
+    cell: ({ row }) => <div>{row.original.iletisim_bilgileri?.email || "Bilgi yok"}</div>,
   },
+  
   // {
   //   accessorKey: "satin_alma_gecmisi",
   //   header: "Satın Alma Geçmişi",
