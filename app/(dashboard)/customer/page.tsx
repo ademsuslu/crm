@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { DataTableDemo } from "@/components/shared/DataTable"
 
 export default async function CustomerPage(){
@@ -5,6 +6,8 @@ export default async function CustomerPage(){
     const data = await response.json()
     console.log(data)
     return <div className="w-full">
-        <DataTableDemo/>
+         <Suspense fallback={<p>Loading feed...</p>}>
+            <DataTableDemo />
+         </Suspense>
     </div>
 }
