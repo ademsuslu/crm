@@ -71,7 +71,7 @@ export function AppSidebar() {
                             })}
                         >
                             <item.icon />
-                            <span>{item.title}</span>
+                              {item.title}
                         </Link>
                     </SidebarMenuButton>
                 </SidebarMenuItem>
