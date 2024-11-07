@@ -12,8 +12,6 @@ export default async function CustomerDetails({
   const id = (await params).id
   const response = await fetch(`${process.env.NEXT_API_URL}/customers/${id}`)
   const data = await response.json()
-  console.log("Detay Page")
-  console.log(data)
 
   return <div className="flex flex-col justify-between items-center gap-2">
     <div className="flex w-full justify-end gap-2">
@@ -27,8 +25,10 @@ export default async function CustomerDetails({
           <TabsTrigger value="contact_information">Contact information</TabsTrigger>
           <TabsTrigger value="company_information">Company information</TabsTrigger>
           <TabsTrigger value="segmentasyon">Segmentasyon</TabsTrigger>
+          <TabsTrigger value="iliskiler">Relations</TabsTrigger>
+          <TabsTrigger value="pazarlama_izinleri">Marketing Permissions</TabsTrigger>
+          <TabsTrigger value="order_details">Order Details</TabsTrigger>
         </TabsList>
-
         <TabsContent className="flex gap-2 " value="Personal">
           <div className="flex flex-col gap-2">
             <div className="flex gap-2">
@@ -125,6 +125,69 @@ export default async function CustomerDetails({
 
           </div>
         </TabsContent>
+        <TabsContent className="flex gap-2 " value="iliskiler">
+          <div className="flex flex-col gap-2">
+            <div className="flex gap-2">
+              <label>Step: </label>
+              <span>{data.iliskiler.asama}</span>
+            </div>
+            <div className="flex gap-2">
+              <label>Notes: </label>
+              <span>{data.iliskiler.notlar}</span>
+            </div>
+          </div>
+        </TabsContent>
+        <TabsContent className="flex gap-2 " value="pazarlama_izinleri">
+          <div className="flex flex-col gap-2">
+            <div className="flex gap-2">
+              <label>Email permissions: </label>
+              <span>{data.pazarlama_izinleri.email_izni === true ? "True" : "False"}</span>
+            </div>
+            <div className="flex gap-2">
+              <label>Sms permissions: </label>
+              <span>{data.pazarlama_izinleri.sms_izni === true ? "True" : "False"}</span>
+            </div>
+            <div className="flex gap-2">
+              <label>Preferred Channel: </label>
+              <span>{data.pazarlama_izinleri.tercih_edilen_kanal}</span>
+            </div>
+          </div>
+        </TabsContent>
+        <TabsContent className="flex gap-2 " value="order_details">
+        <table className="table-fixed w-full">
+  <thead>
+    <tr>
+      <th>Order Id</th>
+      <th>Product</th>
+      <th>Amount</th>
+      <th>Total Price</th>
+      <th>History</th>
+    </tr>
+  </thead>
+  <tbody >
+    {data.satin_alma_gecmisi?.map((item: {
+                  siparis_id: number,
+                  urun: string,
+                  miktar: number,
+                  toplam_fiyat: number,
+                  tarih: string},
+                 index:number) => (
+      <tr key={index}>
+        <td>{item.siparis_id}</td>
+        <td>{item.urun}</td>
+        <td>{item.miktar}</td>
+        <td>{item.toplam_fiyat}</td>
+        <td>
+          {new Date(item.tarih).toLocaleDateString('tr-TR', { timeZone: 'Europe/Istanbul' })}
+        </td>
+      </tr>
+    ))}
+   
+  </tbody>
+</table>
+        </TabsContent>
+
+
       </Tabs>
 
     </div>
