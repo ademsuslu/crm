@@ -2,6 +2,7 @@ import ButtonsExport from "@/components/shared/detay/buttons-export"
 import { buttonVariants } from "@/components/ui/button"
 import Link from "next/link"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import DataTableOrders from "@/components/shared/detay/DataTableOrders"
 
 
 export default async function CustomerDetails({
@@ -154,37 +155,7 @@ export default async function CustomerDetails({
           </div>
         </TabsContent>
         <TabsContent className="flex gap-2 " value="order_details">
-        <table className="table-fixed w-full">
-  <thead>
-    <tr>
-      <th>Order Id</th>
-      <th>Product</th>
-      <th>Amount</th>
-      <th>Total Price</th>
-      <th>History</th>
-    </tr>
-  </thead>
-  <tbody >
-    {data.satin_alma_gecmisi?.map((item: {
-                  siparis_id: number,
-                  urun: string,
-                  miktar: number,
-                  toplam_fiyat: number,
-                  tarih: string},
-                 index:number) => (
-      <tr key={index}>
-        <td>{item.siparis_id}</td>
-        <td>{item.urun}</td>
-        <td>{item.miktar}</td>
-        <td>{item.toplam_fiyat}</td>
-        <td>
-          {new Date(item.tarih).toLocaleDateString('tr-TR', { timeZone: 'Europe/Istanbul' })}
-        </td>
-      </tr>
-    ))}
-   
-  </tbody>
-</table>
+        <DataTableOrders data={data.satin_alma_gecmisi}/>
         </TabsContent>
 
 
