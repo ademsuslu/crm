@@ -71,14 +71,6 @@ export const columns: ColumnDef<Orders>[] = [
     enableHiding: false,
   },
   {
-    header: "Sipariş ID",
-    cell: ({ row }) => {
-      <div>{row.original.siparis_id}</div>
-    },
-
-  },
-
-  {
     header: "Ürün",
     cell: ({ row }) => (
       <div>{row.original.urun}</div>
@@ -165,9 +157,9 @@ const DataTableOrders: React.FC<DataTableOrdersProps> = ({ data }) => {
       <div className="flex items-center py-4">
         <Input
           placeholder="Filter Products..."
-          value={(table.getColumn("urun")?.getFilterValue() as string) ?? ""}
+          value={(table.getColumn("Ürün")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
-            table.getColumn("urun")?.setFilterValue(event.target.value)
+            table.getColumn("Ürün")?.setFilterValue(event.target.value)
           }
           className="max-w-sm"
         />
