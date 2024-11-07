@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 import DataTableDemo  from "@/components/shared/DataTable"
-import { Customer } from '@/types/model';
+import { Customer } from '@/types/customer/model';
 
 export default async function CustomerPage(){
     const response = await fetch(`${process.env.NEXT_API_URL}/customers`);

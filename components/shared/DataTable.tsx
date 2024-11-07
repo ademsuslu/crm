@@ -36,7 +36,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import Link from "next/link"
-import { Customer } from "@/types/model"
+import { Customer } from "@/types/customer/model"
 
  
 

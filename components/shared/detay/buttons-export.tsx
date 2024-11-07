@@ -1,21 +1,24 @@
-"use client"
-import React from 'react'
-import { ExportToExcel } from '@/utils/ExportToCSV'
-import { Button } from '@/components/ui/button'
-import { Customer } from '@/types/model'
+// components/ButtonsExport.tsx - Export buton bileşeni
+"use client";
+import React from 'react';
+import { ExportToExcel } from '@/utils/ExportToCSV';
+import { Button } from '@/components/ui/button';
+import { Customer } from '@/types/customer/model';
 
-const ButtonsExport = (data:Customer) => {
-     const handleCvs =(data:Customer)=>{
-        ExportToExcel(data)
-       }
-          
+type ButtonsExportProps = {
+  data: Customer[];
+};
+
+const ButtonsExport: React.FC<ButtonsExportProps> = ({ data }) => {
+  const handleCvs = () => {
+    ExportToExcel(data);
+  };
+
   return (
     <div>
-        <Button  onClick={()=>handleCvs(data)}>Export Cvs</Button>
-          {/* <button type="button" onClick={handleCvs}>Export to CSV</button> */}
-      
+      <Button onClick={handleCvs}>Export to Excel</Button>
     </div>
-  )
-}
+  );
+};
 
-export default ButtonsExport
+export default ButtonsExport;
