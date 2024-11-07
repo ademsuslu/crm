@@ -29,8 +29,9 @@ export default async function CustomerDetails({
      
 
     return <div className="flex flex-col md:flex-row justify-between items-center gap-2">
-
+<div className="flex justify-end">
           <ButtonsExport data={data} />
+</div>
 
 
       <div className="border">Customer id is: {data?.ad}</div>
