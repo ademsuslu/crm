@@ -51,7 +51,7 @@ const Hero = () => {
                     Shape the Future with Your Data!
                 </h1>
                 <span className="mt-1 text-white font-mono ">Analyze your data to optimize your business processes and strengthen your strategic decisions. <br /> Discover growth opportunities with meaningful charts and reports.</span>
-                <Button asChild variant={"outline"} className="rounded font-mono mt-3">
+                <Button asChild  className="rounded font-mono mt-3">
                     <Link href="/sign-in">Get Started</Link>
                 </Button>
             </div>
