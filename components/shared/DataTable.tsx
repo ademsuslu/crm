@@ -1,4 +1,6 @@
 "use client"
+import { FaEye } from "react-icons/fa";
+import { AiTwotoneDelete } from "react-icons/ai";
 
 import * as React from "react"
 import {
@@ -37,9 +39,9 @@ import {
 } from "@/components/ui/table"
 import Link from "next/link"
 import { Customer } from "@/types/customer/model"
+import { useRouter } from "next/navigation";
 
  
-
 
 export const columns: ColumnDef<Customer>[] = [
   {
@@ -106,24 +108,32 @@ export const columns: ColumnDef<Customer>[] = [
     header: "E-posta",
     cell: ({ row }) => <div>{row.original.iletisim_bilgileri?.email || "Bilgi yok"}</div>,
   },
-  
-  // {
-  //   accessorKey: "satin_alma_gecmisi",
-  //   header: "Satın Alma Geçmişi",
-  //   cell: ({ row }) => (
-  //     <ul>
-  //       {row.original.satin_alma_gecmisi.map((siparis) => (
-  //         <li key={siparis.siparis_id}>
-  //           {siparis.urun} - {siparis.toplam_fiyat} TL ({new Date(siparis.tarih).toLocaleDateString()})
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   ),
-  // },
   {
     id: "actions",
     enableHiding: false,
     cell: ({ row }) => {
+      const router = useRouter()
+      const handleDelete = async (id: string) => {
+        try {
+          const response = await fetch(`${process.env.NEXT_API_URL}/customers/${id}`, {
+            method: 'DELETE',
+            headers: {
+              'Content-Type': 'application/json',
+            }
+          });
+          
+          if (!response.ok) {
+            throw new Error('Something went wrong!');
+          }
+          
+          const result = await response.json();
+          console.log('Item deleted successfully:', result);
+          router.refresh();
+          // Burada başarılı silme işlemi sonrası yapılacak işlemleri ekleyebilirsiniz.
+        } catch (error) {
+          console.error('Error deleting item:', error);
+        }
+      };
       
     return  <DropdownMenu>
         <DropdownMenuTrigger asChild>
@@ -136,12 +146,14 @@ export const columns: ColumnDef<Customer>[] = [
           <DropdownMenuLabel>Actions</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuItem > 
-             <Link href={`/customer/${row.original._id}`}>
-               Müşteriyi Görüntüle
+             <Link className="inline-flex items-center" href={`/customer/${row.original._id}`}>
+             <FaEye className="w-4 h-4 mr-2" /> Show  Details
           </Link>
           </DropdownMenuItem>
-          <DropdownMenuItem>Ödeme Detaylarını Görüntüle</DropdownMenuItem>
-        </DropdownMenuContent>
+          <DropdownMenuItem onClick={() => handleDelete(row.original._id)} className="inline-flex items-center cursor-pointer">
+      <AiTwotoneDelete className="mr-1 w-4 h-4" /> Delete Customer
+    </DropdownMenuItem>
+         </DropdownMenuContent>
       </DropdownMenu>
       }
   },

@@ -94,28 +94,28 @@ export const columns: ColumnDef<Orders>[] = [
       <div>{new Date(row.original.tarih).toLocaleDateString("tr-TR")}</div>
     ),
   },
-  {
-    id: "actions",
-    enableHiding: false,
-    cell: ({ row }) => (
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="ghost" className="h-8 w-8 p-0">
-            <span className="sr-only">Open menu</span>
-            <MoreHorizontal />
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="end">
-          <DropdownMenuLabel>Actions</DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>
-            <Link href={`/customer/${row.original._id}`}>Müşteriyi Görüntüle</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem>Ödeme Detaylarını Görüntüle</DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
-    ),
-  },
+  // {
+  //   id: "actions",
+  //   enableHiding: false,
+  //   cell: ({ row }) => (
+  //     <DropdownMenu>
+  //       <DropdownMenuTrigger asChild>
+  //         <Button variant="ghost" className="h-8 w-8 p-0">
+  //           <span className="sr-only">Open menu</span>
+  //           <MoreHorizontal />
+  //         </Button>
+  //       </DropdownMenuTrigger>
+  //       <DropdownMenuContent align="end">
+  //         <DropdownMenuLabel>Actions</DropdownMenuLabel>
+  //         <DropdownMenuSeparator />
+  //         <DropdownMenuItem>
+  //           <Link href={`/customer/${row.original._id}`}>Müşteriyi Görüntüle</Link>
+  //         </DropdownMenuItem>
+  //         <DropdownMenuItem>Ödeme Detaylarını Görüntüle</DropdownMenuItem>
+  //       </DropdownMenuContent>
+  //     </DropdownMenu>
+  //   ),
+  // },
 ];
 
 
