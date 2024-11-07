@@ -5,9 +5,6 @@ import { Button } from '@/components/ui/button'
 import { Customer } from '@/types/model'
 
 const ButtonsExport = (data:Customer) => {
-
-
-
      const handleCvs =(data:Customer)=>{
         ExportToExcel(data)
        }

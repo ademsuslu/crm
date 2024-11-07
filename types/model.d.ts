@@ -1,6 +1,5 @@
-
-
-type IletisimBilgileri = {
+// customer.ts - Customer model tanımı
+export type IletisimBilgileri = {
     adres: {
         sokak: string;
         sehir: string;
@@ -15,7 +14,7 @@ type IletisimBilgileri = {
     email: string;
 };
 
-type SirketBilgileri = {
+export type SirketBilgileri = {
     sirket_adresi: {
         sokak: string;
         sehir: string;
@@ -26,24 +25,24 @@ type SirketBilgileri = {
     gorev: string;
 };
 
-type Segmentasyon = {
+export type Segmentasyon = {
     musteri_segmenti: string;
     ilgi_alanlari: string[];
     sadakat_durumu: string;
 };
 
-type Iliskiler = {
+export type Iliskiler = {
     asama: string;
     notlar: string;
 };
 
-type PazarlamaIzinleri = {
+export type PazarlamaIzinleri = {
     email_izni: boolean;
     sms_izni: boolean;
     tercih_edilen_kanal: string;
 };
 
-type SatinAlmaGecmisi = {
+export type SatinAlmaGecmisi = {
     siparis_id: string;
     urun: string;
     miktar: number;
