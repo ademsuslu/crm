@@ -1,5 +1,4 @@
 import ButtonsExport from "@/components/shared/detay/buttons-export"
-import { ExportToCSV } from "@/utils/ExportToCSV"
 
 export default async function CustomerDetails({
     params,
@@ -31,7 +30,7 @@ export default async function CustomerDetails({
 
     return <div className="flex flex-col md:flex-row justify-between items-center gap-2">
 
-<ButtonsExport data={data} />
+          <ButtonsExport data={data} />
 
 
       <div className="border">Customer id is: {data?.ad}</div>

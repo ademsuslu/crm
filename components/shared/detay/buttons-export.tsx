@@ -1,19 +1,20 @@
 "use client"
 import React from 'react'
-import { Customer } from '../DataTable'
-import { ExportToCSV } from '@/utils/ExportToCSV'
+import { ExportToExcel } from '@/utils/ExportToCSV'
+import { Button } from '@/components/ui/button'
+import { Customer } from '@/types/model'
 
 const ButtonsExport = (data:Customer) => {
 
 
-    
-     const handleCvs =()=>{
-         ExportToCSV(data)
+
+     const handleCvs =(data:Customer)=>{
+        ExportToExcel(data)
        }
           
   return (
     <div>
-        <button onClick={handleCvs}>Export Cvs</button>
+        <Button  onClick={()=>handleCvs(data)}>Export Cvs</Button>
           {/* <button type="button" onClick={handleCvs}>Export to CSV</button> */}
       
     </div>
