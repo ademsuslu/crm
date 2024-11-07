@@ -21,14 +21,14 @@ export default async function CustomerDetails({
     </div>
     <div className="w-full">
       <Tabs defaultValue="Personal" className="">
-        <TabsList>
-          <TabsTrigger value="Personal">Personal</TabsTrigger>
-          <TabsTrigger value="contact_information">Contact information</TabsTrigger>
-          <TabsTrigger value="company_information">Company information</TabsTrigger>
-          <TabsTrigger value="segmentasyon">Segmentasyon</TabsTrigger>
-          <TabsTrigger value="iliskiler">Relations</TabsTrigger>
-          <TabsTrigger value="pazarlama_izinleri">Marketing Permissions</TabsTrigger>
-          <TabsTrigger value="order_details">Order Details</TabsTrigger>
+        <TabsList className="items-start justify-start rounded-md bg-muted p-1 text-muted-foreground grid h-auto min-h-10 w-full grid-cols-1 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7">
+          <TabsTrigger className="" value="Personal">Personal</TabsTrigger>
+          <TabsTrigger className="" value="contact_information">Contact information</TabsTrigger>
+          <TabsTrigger className="" value="company_information">Company information</TabsTrigger>
+          <TabsTrigger className="" value="segmentasyon">Segmentasyon</TabsTrigger>
+          <TabsTrigger className="" value="iliskiler">Relations</TabsTrigger>
+          <TabsTrigger className="" value="pazarlama_izinleri">Marketing Permissions</TabsTrigger>
+          <TabsTrigger className="" value="order_details">Order Details</TabsTrigger>
         </TabsList>
         <TabsContent className="flex gap-2 " value="Personal">
           <div className="flex flex-col gap-2">
