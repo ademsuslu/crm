@@ -17,7 +17,7 @@ const ButtonsExport: React.FC<ButtonsExportProps> = ({ data }) => {
 
   return (
     <div> 
-      <Button onClick={handleCvs}  >Export to Excel <BiSolidFileExport className='w-4 h-4 ml-1' />
+      <Button onClick={handleCvs} className='text-sm'>Export to Excel <BiSolidFileExport className='w-4 h-4 ml-1' />
       </Button>
     </div>
   );
