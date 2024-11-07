@@ -30,19 +30,19 @@ export default async function CustomerDetails({
           <div className="flex flex-col gap-2">
             <div className="flex gap-2">
                 <label>Name: </label>
-                <span>{data.ad}</span> <hr />
+                <span>{data.ad}</span>
             </div>
             <div className="flex gap-2">
                 <label>Surname: </label>
-                <span>{data.soyad}</span> <hr />
+                <span>{data.soyad}</span>
             </div>
             <div className="flex gap-2">
                 <label>Birth Day: </label>
-                <span>{new Date(data.dogum_tarihi).toLocaleDateString('tr-TR', { timeZone: 'Europe/Istanbul' })}</span> <hr />
+                <span>{new Date(data.dogum_tarihi).toLocaleDateString('tr-TR', { timeZone: 'Europe/Istanbul' })}</span>
             </div>
             <div className="flex gap-2">
                 <label>Gender: </label>
-                <span>{data.cinsiyet}</span> <hr />
+                <span>{data.cinsiyet}</span>
             </div>
           </div>
         </TabsContent>
@@ -66,21 +66,14 @@ export default async function CustomerDetails({
           */}
        <div className="flex flex-col gap-2">
             <div className="flex gap-2">
-                <label>Name: </label>
-                <span>{data.ad}</span> <hr />
+                <label>Phone: </label>
+                <span>{data.iletisim_bilgileri.telefon}</span> 
             </div>
             <div className="flex gap-2">
-                <label>Surname: </label>
-                <span>{data.soyad}</span> <hr />
+                <label>Email: </label>
+                <span>{data.iletisim_bilgileri.email}</span> 
             </div>
-            <div className="flex gap-2">
-                <label>Birth Day: </label>
-                <span>{new Date(data.dogum_tarihi).toLocaleDateString('tr-TR', { timeZone: 'Europe/Istanbul' })}</span> <hr />
-            </div>
-            <div className="flex gap-2">
-                <label>Gender: </label>
-                <span>{data.cinsiyet}</span> <hr />
-            </div>
+
           </div>
         </TabsContent>
       </Tabs>
