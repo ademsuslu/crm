@@ -1,5 +1,6 @@
 import { Suspense } from 'react'
 import DataTableDemo  from "@/components/shared/DataTable"
+import SearchComponent from '@/components/shared/detay/search';
 
 export default async function CustomerPage(){
     
@@ -11,6 +12,7 @@ export default async function CustomerPage(){
        <Suspense fallback={<p>Loading feed...</p>}>
         <DataTableDemo data={data} />  
        </Suspense> 
+       <SearchComponent />
         
     </div>
 }
