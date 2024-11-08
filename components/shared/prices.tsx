@@ -7,14 +7,14 @@ const Prices = () => {
     return (
         <div className='flex flex-col w-full'>
             <div className='flex flex-col'>
-                <h1 className='text-4xl font-mono text-center'>
+                <h1 className='text-2xl font-mono text-start'>
                     Marketing Software That Grows With You
                 </h1>
-                <span className='text-center font-mono mt-3'>
+                <span className='text-start font-mono my-2'>
                     Start with free tools and pay as you grow, or hit the ground running with one of our premium editions.
                 </span>
             </div>
-            <div className='flex flex-col md:flex-row my-4 gap-3'>
+            <div className='flex flex-col md:flex-row  mt-4 gap-3'>
                 <div className='flex  border flex-col w-full rounded-lg md:w-1/4 hover:scale-105 transition-all'>
                     <div className='flex flex-col items-start justify-start p-4'>
                         <h2 className='text-3xl font-mono'>
