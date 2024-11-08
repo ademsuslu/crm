@@ -7,6 +7,7 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 import Logo from "./logo";
+import { Button } from "../ui/button";
 
 
 const Navbar = () => {
@@ -51,8 +52,15 @@ const Navbar = () => {
           </SignedIn>
           <SignedOut>
             <div className="flex items-center gap-2 text-sm">
-              <Link className="font-mono text-white" href="/sign-in">Login</Link>
-              <Link className="font-mono text-white" href="/sign-up">Register</Link>
+            <Button variant={"ghost"} asChild  className="rounded font-mono mt-3">
+              <Link className="border px-4 py-1 rounded-md text-lg font-bold" href="/sign-in">Login</Link>
+                </Button>
+             
+            <Button variant={"ghost"} asChild  className="rounded font-mono mt-3">
+              <Link className="border px-4 py-1 rounded-md text-lg font-bold" href="/sign-up">Register</Link>
+                </Button>
+             
+             
             </div>
           </SignedOut>
         </ClerkLoaded>
