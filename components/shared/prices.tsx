@@ -14,17 +14,19 @@ const Prices = () => {
                     Start with free tools and pay as you grow, or hit the ground running with one of our premium editions.
                 </span>
             </div>
-            <div className='flex flex-col md:flex-row  mt-4 gap-3'>
+     
+            <div className='flex flex-col md:flex-row   mt-4 gap-3'>
                 <div className='flex  border flex-col w-full rounded-lg md:w-1/4 hover:scale-105 transition-all'>
                     <div className='flex flex-col items-start justify-start p-4'>
-                        <h2 className='text-3xl font-mono'>
+                        <h2 className='text-2xl font-mono'>
                             Free
                         </h2>
                         <p className='font-mono text-foreground my-2 text-gray-300'>No credit card required</p>
                         <span className='text-center font-mono'>
                             $0/month
                         </span>
-                        <div className='flex flex-col mt-6'>
+                        <div className="border w-full mt-4 border-slate-600 "></div>
+                        <div className='flex flex-col  mt-6'>
 
                             <h1 className='font-mono text-xl my-2'>Popular features</h1>
                             <ul className=' space-y-1'>
@@ -43,13 +45,15 @@ const Prices = () => {
 
                 <div className='flex  border flex-col w-full rounded-lg md:w-1/4 hover:scale-105 transition-all'>
                     <div className='flex flex-col items-start justify-start p-4'>
-                        <h2 className='text-3xl font-mono'>
+                        <h2 className='text-2xl font-mono'>
                             Starter
                         </h2>
                         <p className='font-mono text-foreground my-2 text-gray-300'>Starts at</p>
                         <span className='text-center font-mono'>
                             $20/month
                         </span>
+                        
+                        <div className="border w-full mt-4 border-slate-600 "></div>
                         <div className='flex flex-col mt-6'>
                             <h1 className='font-mono text-xl my-2'>Popular features</h1>
                             <ul className=' space-y-1'>
@@ -68,13 +72,15 @@ const Prices = () => {
              
                 <div className='flex  border flex-col w-full rounded-lg md:w-1/4 hover:scale-105 transition-all'>
                     <div className='flex flex-col items-start justify-start p-4'>
-                        <h2 className='text-3xl font-mono'>
+                        <h2 className='text-2xl font-mono'>
                             Professional
                         </h2>
                         <p className='font-mono text-foreground my-2 text-gray-300'>Starts at</p>
                         <span className='text-center font-mono'>
                         $890/month
                         </span>
+                        
+                        <div className="border w-full mt-4 border-slate-600 "></div>
                         <div className='flex flex-col mt-6'>
                             <h1 className='font-mono text-xl my-2'>Popular features</h1>
                             <ul className=' space-y-1'>
@@ -93,13 +99,15 @@ const Prices = () => {
              
                 <div className='flex  border flex-col w-full rounded-lg md:w-1/4 hover:scale-105 transition-all'>
                     <div className='flex flex-col items-start justify-start p-4'>
-                        <h2 className='text-3xl font-mono'>
+                        <h2 className='text-2xl font-mono'>
                         Enterprise
                         </h2>
                         <p className='font-mono text-foreground my-2 text-gray-300'>Starts at</p>
                         <span className='text-center font-mono'>
                         $3,600/month
                         </span>
+                        
+                        <div className="border w-full mt-4 border-slate-600 "></div>
                         <div className='flex flex-col mt-6'>
                             <h1 className='font-mono text-xl my-2'>Popular features</h1>
                             <ul className=' space-y-1'>
