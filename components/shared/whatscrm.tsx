@@ -15,11 +15,11 @@ const Whatscrm = () => {
             <h2 className='text-2xl font-mono'>What is Crm?</h2>
             <span className='my-4 font-mono'>Customer relationship management is an approach to managing a company's interactions with existing and potential customers.</span>
             <div className='flex items-center justify-start space-x-3'>
-                <Button asChild variant={"secondary"} className="rounded border font-mono mt-3">
-                    <Link href="/sign-in">Get a demo</Link>
+                <Button asChild variant={"outline"} size={"default"} className="rounded font-mono mt-3">
+                    <Link href="/sign-in" className='text-lg'>Get Started free</Link>
                 </Button>
-                <Button asChild variant={"outline"} className="rounded font-mono mt-3">
-                    <Link href="/sign-in">Get Started free</Link>
+                <Button asChild size={"default"}  variant={"secondary"} className="rounded  border border-slate-400 px-10 font-mono mt-3">
+                    <Link href="/sign-in" className='text-lg'>Get a demo</Link>
                 </Button>
             </div>
         </div>
