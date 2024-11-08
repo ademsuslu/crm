@@ -6,12 +6,15 @@ import { Customer } from '@/types/customer/model';
 import { BiSolidFileExport } from "react-icons/bi";
 import { AiFillDelete } from 'react-icons/ai';
 import { useRouter } from 'next/navigation';
+import { useToast } from '@/hooks/use-toast';
+
 
 type ButtonsExportProps = {
   data: Customer
-};
 
+};
 const ButtonsExport: React.FC<ButtonsExportProps> = ({ data }) => {
+  const { toast } = useToast()
   const router = useRouter();
   const handleCvs = () => {
     ExportToExcel(data);
@@ -26,8 +29,14 @@ const ButtonsExport: React.FC<ButtonsExportProps> = ({ data }) => {
         });
     
         if (!response.ok) {
+          toast({
+            description: "Customer not deleted.",
+          })
           throw new Error('Bir hata oluştu!');
         }
+         toast({
+          description: "Customer deleted.",
+        })
         router.refresh();
       } catch (error) {
         console.error('Silme işleminde hata:', error);
