@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
+import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
   title: 'Süslü Crm',
@@ -21,6 +22,7 @@ export default function RootLayout({
         <body className={`${inter.className}`} suppressHydrationWarning>
         <Providers>
           {children}
+          <Toaster />
         </Providers>
         </body>
     </html>
