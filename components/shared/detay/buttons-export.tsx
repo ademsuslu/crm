@@ -46,12 +46,12 @@ const ButtonsExport: React.FC<ButtonsExportProps> = ({ data }) => {
   
 
   return (
-    <div className='flex items-center justify-center gap-2'> 
+    <div className='flex  items-center gap-2 '> 
       <Button onClick={handleCvs} className='text-sm'>
-        Export to Excel <BiSolidFileExport className='w-4 h-4 ml-1' />
+        <BiSolidFileExport className='w-4 h-4 ml-1' />
       </Button>
       <Button onClick={()=>handleDelete(data._id)}>
-      Delete <AiFillDelete />
+       <AiFillDelete />
        </Button>
     </div>
   );
