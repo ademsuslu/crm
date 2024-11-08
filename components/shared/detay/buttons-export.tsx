@@ -1,11 +1,9 @@
-// components/ButtonsExport.tsx - Export buton bileşeni
 "use client";
 import React from 'react';
 import { ExportToExcel } from '@/utils/ExportToCSV';
 import { Button } from '@/components/ui/button';
 import { Customer } from '@/types/customer/model';
 import { BiSolidFileExport } from "react-icons/bi";
-import { Delete } from 'lucide-react';
 import { AiFillDelete } from 'react-icons/ai';
 import { useRouter } from 'next/navigation';
 
@@ -30,8 +28,6 @@ const ButtonsExport: React.FC<ButtonsExportProps> = ({ data }) => {
         if (!response.ok) {
           throw new Error('Bir hata oluştu!');
         }
-        console.log("Müşteri başarıyla silindi.");
-        alert("Müşteri başarıyla silindi.");
         router.refresh();
       } catch (error) {
         console.error('Silme işleminde hata:', error);
