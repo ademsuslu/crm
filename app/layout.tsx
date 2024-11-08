@@ -1,7 +1,12 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
-const inter = Inter({ subsets: ['latin'] })
+import { Roboto } from 'next/font/google'
+ 
+const roboto = Roboto({
+  weight: ['400', '700'],
+  subsets: ['latin',"cyrillic","cyrillic-ext","greek","greek-ext","vietnamese"],
+})
+ 
 import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
@@ -19,7 +24,7 @@ export default function RootLayout({
   return (
 <ClerkProvider>
     <html lang="en" suppressHydrationWarning>
-        <body className={`${inter.className}`} suppressHydrationWarning>
+        <body className={`${roboto.className}`} suppressHydrationWarning>
         <Providers>
           {children}
           <Toaster />
