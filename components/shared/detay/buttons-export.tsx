@@ -18,10 +18,9 @@ const ButtonsExport: React.FC<ButtonsExportProps> = ({ data }) => {
   const handleCvs = () => {
     ExportToExcel(data);
   };
-
     const handleDelete = async (id:string) => {
       try {
-        const response = await fetch(`${"https://cors-anywhere.herokuapp.com/https://crm-backend-production-e80f.up.railway.app/api"}/customers/${id}`, {
+        const response = await fetch(`${"https://crm-backend-production-e80f.up.railway.app/api"}/customers/${id}`, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',
