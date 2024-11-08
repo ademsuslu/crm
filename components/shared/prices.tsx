@@ -37,8 +37,8 @@ const Prices = () => {
                                 <li className='flex items-center font-mono'> <TiTick className='mr-2 text-xl' /><span>Mobile Optimization</span></li>
                             </ul>
                         </div>
-                        <Button asChild className='rounded font-mono mt-3'>
-                            <Link href='/sign-in'>Start</Link>
+                        <Button  asChild className='rounded w-full font-mono mt-3'>
+                            <Link href='/sign-in' className='text-lg font-bold'>Start</Link>
                         </Button>
                     </div>
                 </div>
@@ -64,8 +64,8 @@ const Prices = () => {
                                 <li className='flex items-center font-mono'> <TiTick className='mr-2 text-xl' /><span>No Crm branding </span></li>
                             </ul>
                         </div>
-                        <Button asChild className='rounded font-mono mt-3'>
-                            <Link href='/sign-in'>Start</Link>
+                        <Button  asChild className='rounded w-full font-mono mt-3'>
+                            <Link href='/sign-in' className='text-lg font-bold'>Start</Link>
                         </Button>
                     </div>
                 </div>
@@ -91,8 +91,8 @@ const Prices = () => {
                                 <li className='flex items-center font-mono'> <TiTick className='mr-2 text-xl' /><span>Custom reporting</span></li>
                             </ul>
                         </div>
-                        <Button asChild className='rounded font-mono mt-3'>
-                            <Link href='/sign-in'>Start</Link>
+                        <Button  asChild className='rounded w-full font-mono mt-3'>
+                            <Link href='/sign-in' className='text-lg font-bold'>Start</Link>
                         </Button>
                     </div>
                 </div>
@@ -115,11 +115,10 @@ const Prices = () => {
                                 <li className='flex items-center font-mono'> <TiTick className='mr-2 text-xl' /> <span>Adaptive testing</span></li>
                                 <li className='flex items-center font-mono'> <TiTick className='mr-2 text-xl' /> <span>Multuple revenue attribution</span></li>
                                 <li className='flex items-center font-mono'> <TiTick className='mr-2 text-xl' /> <span>Customer journey analytics</span></li>
-                                <li className='flex items-center font-mono'> <TiTick className='mr-2 text-xl' /><span>Social media                                </span></li>
                             </ul>
                         </div>
-                        <Button asChild className='rounded font-mono mt-3'>
-                            <Link href='/sign-in'>Start</Link>
+                        <Button   asChild className='rounded w-full font-mono mt-4'>
+                            <Link href='/sign-in' className='text-lg font-bold'>Start</Link>
                         </Button>
                     </div>
                 </div>
