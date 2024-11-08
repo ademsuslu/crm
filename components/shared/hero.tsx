@@ -47,12 +47,12 @@ const Hero = () => {
     return (
         <div className="flex  mt-16 flex-col md:flex-row  items-center justify-between">
             <div className="flex z-30 flex-col items-start justify-start">
-                <h1 className="text-3xl  mb-2 text-white font-mono capitalize">
+                <h1 className="text-3xl  mb-2 text-white font-mono uppercase">
                     Shape the Future with Your Data!
                 </h1>
                 <span className="my-1 text-white font-mono leading-normal">Analyze your data to optimize your business processes and strengthen your strategic decisions. <br /> Discover growth opportunities with meaningful charts and reports.</span>
-                <Button asChild  className="rounded font-mono mt-3">
-                    <Link href="/sign-in">Get Started</Link>
+                <Button asChild  size={"lg"} className="rounded font-mono mt-3">
+                    <Link href="/sign-in" className="text-lg" >Get Started</Link>
                 </Button>
             </div>
             <div className="flex  z-30 items-center my-3 md:my-0 justify-between w-full md:w-96">
