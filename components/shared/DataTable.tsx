@@ -39,7 +39,6 @@ import {
 } from "@/components/ui/table"
 import Link from "next/link"
 import { Customer } from "@/types/customer/model"
-import { useRouter } from "next/navigation";
 
 
 
@@ -91,11 +90,6 @@ export const columns: ColumnDef<Customer>[] = [
     header: "Cinsiyet",
     cell: ({ row }) => <div>{row.getValue("cinsiyet")}</div>,
   },
-  // {
-  //   accessorKey: "dogum_tarihi",
-  //   header: "Doğum Tarihi",
-  //   cell: ({ row }) => <div>{new Date(row.getValue("dogum_tarihi")).toLocaleTimeString()}</div>,
-  // },
   {
     header: "Müşteri Segmenti",
     cell: ({ row }) => <div>{row.original.segmentasyon?.musteri_segmenti || "Bilgi yok"}</div>,
@@ -112,30 +106,6 @@ export const columns: ColumnDef<Customer>[] = [
     id: "actions",
     enableHiding: false,
     cell: ({ row }) => {
-
-      const router = useRouter()
-      const handleDelete = async (id: string) => {
-        try {
-          const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/customers/${"672b8a28902b3222e0af38a8"}`, {
-            cache: "no-store",
-            method: 'DELETE',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          });
-
-          if (!response.ok) {
-            throw new Error('Something went wrong!');
-          }
-
-          router.refresh();
-          console.log("success");
-        } catch (error) {
-          console.error('Error deleting item:', error);
-        }
-      };
-
-
       return <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="h-8 w-8 p-0">
@@ -151,9 +121,12 @@ export const columns: ColumnDef<Customer>[] = [
               <FaEye className="w-4 h-4 mr-2" /> Show  Details
             </Link>
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handleDelete(row.original._id)} className="inline-flex items-center cursor-pointer">
+          {/* buraya delete işlemi eklermisin */}
+          {/* <DropdownMenuItem
+              className="inline-flex items-center cursor-pointer"
+            >
             <AiTwotoneDelete className="mr-1 w-4 h-4" /> Delete Customer
-          </DropdownMenuItem>
+          </DropdownMenuItem> */}
         </DropdownMenuContent>
       </DropdownMenu>
     }
