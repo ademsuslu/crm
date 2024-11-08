@@ -8,11 +8,11 @@ const BetterGrow = () => {
             <div className='flex flex-col'>
              <h1 className='font-mono text-2xl my-2'>Grow better with Crm today</h1>
              <div className='flex items-center justify-center space-x-3'>
-                <Button asChild  className="rounded font-mono mt-3">
-                    <Link href="/sign-in">Get a demo</Link>
+             <Button asChild variant={"outline"} size={"default"} className="rounded   border border-slate-400 font-mono mt-3">
+                    <Link href="/sign-in" className='text-lg'>Get Started free</Link>
                 </Button>
-                <Button asChild  className="rounded font-mono mt-3">
-                    <Link href="/sign-in">Get Started free</Link>
+                <Button asChild size={"default"}  variant={"secondary"} className="rounded border px-10 font-mono mt-3">
+                    <Link href="/sign-in" className='text-lg'>Get a demo</Link>
                 </Button>
             </div>
             </div>
