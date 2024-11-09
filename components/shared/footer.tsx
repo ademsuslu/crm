@@ -20,7 +20,7 @@ const Footer = () => {
                     <Link href="/">
                         <Logo/>
                     </Link>
-                    <p className='font-mono text-muted'>Copyright © 2024 CRM, Inc.</p>
+                    <p className=' text-muted'>Copyright © 2024 CRM, Inc.</p>
                 </div>
                 <div className="hsg-footer__copyright">
                     <ul className='flex flex-col md:flex-row  md:space-x-6'>
