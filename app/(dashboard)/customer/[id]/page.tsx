@@ -23,13 +23,13 @@ export default async function CustomerDetails({
       <Tabs defaultValue="Personal" className="">
         <TabsList
          className="items-start justify-start rounded-md bg-muted p-1 gap-3 text-muted-foreground grid h-auto min-h-10 w-full grid-cols-1 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-5">
-          <TabsTrigger className="text-sm font-mono p-0 w-full" value="Personal">Personal</TabsTrigger>
-          <TabsTrigger className="text-sm font-mono p-0 w-full" value="contact_information">Contact information</TabsTrigger>
-          <TabsTrigger className="text-sm font-mono p-0 w-full" value="company_information">Company information</TabsTrigger>
-          <TabsTrigger className="text-sm font-mono p-0 w-full" value="segmentasyon">Segmentasyon</TabsTrigger>
-          <TabsTrigger className="text-sm font-mono p-0 w-full" value="iliskiler">Relations</TabsTrigger>
-          <TabsTrigger className="text-sm font-mono p-0 w-full" value="pazarlama_izinleri">Permissions</TabsTrigger>
-          <TabsTrigger className="text-sm font-mono p-0 w-full" value="order_details">Order</TabsTrigger>
+          <TabsTrigger className="text-sm  p-0 w-full" value="Personal">Personal</TabsTrigger>
+          <TabsTrigger className="text-sm  p-0 w-full" value="contact_information">Contact information</TabsTrigger>
+          <TabsTrigger className="text-sm  p-0 w-full" value="company_information">Company information</TabsTrigger>
+          <TabsTrigger className="text-sm  p-0 w-full" value="segmentasyon">Segmentasyon</TabsTrigger>
+          <TabsTrigger className="text-sm  p-0 w-full" value="iliskiler">Relations</TabsTrigger>
+          <TabsTrigger className="text-sm  p-0 w-full" value="pazarlama_izinleri">Permissions</TabsTrigger>
+          <TabsTrigger className="text-sm  p-0 w-full" value="order_details">Order</TabsTrigger>
         </TabsList>
         <TabsContent className="flex gap-2 " value="Personal">
           <div className="flex flex-col gap-2">
