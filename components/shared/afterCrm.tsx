@@ -7,7 +7,7 @@ const AfterCrm = () => {
         <div className="">
           <h2
             id="homepage_stats_heading"
-            className="text-2xl font-mono"
+            className="text-2xl "
           >
             Crm customer’s results after 1 year:
           </h2>
@@ -26,8 +26,8 @@ const AfterCrm = () => {
                 />
               </div>
               <div className="my-2 flex flex-col justify-start items-center ">
-                <h3 className="text-xl font-mono ">114%</h3>
-                <span className="font-mono">
+                <h3 className="text-xl  ">114%</h3>
+                <span className="">
                   More web traffic
                 </span>
               </div>
@@ -44,8 +44,8 @@ const AfterCrm = () => {
                 />
               </div>
               <div className="my-2 flex flex-col justify-start items-center ">
-                <h3 className="text-xl font-mono ">55%</h3>
-                <span className="font-mono">
+                <h3 className="text-xl  ">55%</h3>
+                <span className="">
                   More deals
                 </span>
               </div>
@@ -63,8 +63,8 @@ const AfterCrm = () => {
                 />
               </div>
               <div className="my-2 flex flex-col justify-start items-center ">
-              <h3 className="text-xl font-mono ">43%</h3>
-                <span className="font-mono">
+              <h3 className="text-xl  ">43%</h3>
+                <span className="">
                   More tickets resolved
                 </span>
               </div>
