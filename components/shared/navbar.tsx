@@ -25,10 +25,10 @@ const Navbar = () => {
         {/* LINKS */}
         <div className="flex gap-6 text-white ">
           <Link href="/mission" className="flex items-center gap-2">
-            <span className="font-mono text-lg ">Mission</span>
+            <span className=" text-lg ">Mission</span>
           </Link>
           <Link href="/analytics" className="flex items-center gap-2">
-            <span className="font-mono text-lg ">Analytics</span>
+            <span className=" text-lg ">Analytics</span>
           </Link>
         </div>
       </div>
@@ -52,11 +52,11 @@ const Navbar = () => {
           </SignedIn>
           <SignedOut>
             <div className="flex items-center gap-2 text-sm">
-            <Button variant={"ghost"} asChild  className="rounded font-mono mt-3">
+            <Button variant={"ghost"} asChild  className="rounded  mt-3">
               <Link className="border px-4 py-1 rounded-md text-lg font-bold" href="/sign-in">Login</Link>
                 </Button>
              
-            <Button variant={"ghost"} asChild  className="rounded font-mono mt-3">
+            <Button variant={"ghost"} asChild  className="rounded  mt-3">
               <Link className="border px-4 py-1 rounded-md text-lg font-bold" href="/sign-up">Register</Link>
                 </Button>
              
