@@ -1,6 +1,5 @@
 "use client"
 import { FaEye } from "react-icons/fa";
-import { AiTwotoneDelete } from "react-icons/ai";
 import * as React from "react"
 import {
   ColumnDef,
@@ -38,6 +37,7 @@ import {
 } from "@/components/ui/table"
 import Link from "next/link"
 import { Customer } from "@/types/customer/model"
+import { sanitizeInput } from "@/utils/regex";
 
 
 
@@ -146,8 +146,11 @@ const DataTableDemo: React.FC<DataTableDemoProps> = ({ data }) => {
 
   React.useEffect(() => {
     const handleSearch = async () => {
+      let cleanQuery = sanitizeInput(query)
+
+      console.log(cleanQuery)
       try {
-        const response = await fetch(`https://crm-backend-production-e80f.up.railway.app/api/customers/search?ad=${query}`, {
+        const response = await fetch(`https://crm-backend-production-e80f.up.railway.app/api/customers/search?ad=${cleanQuery}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -160,7 +163,6 @@ const DataTableDemo: React.FC<DataTableDemoProps> = ({ data }) => {
         const data = await response.json();
         setResults(data);
       } catch (error) {
-        console.error('Arama işleminde hata:', error);
       }
     };
 
