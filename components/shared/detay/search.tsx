@@ -1,39 +1,34 @@
 "use client"
 import React,{ useState } from 'react';
 
-const searchCustomers = async (query:string) => {
-  try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/customers/search?ad=${query}`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error('Arama işlemi başarısız oldu.');
-    }
-
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Arama işleminde hata:', error);
-  }
-};
 
 // Örnek bir arama bileşeni
 export default function SearchComponent() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
-
   const handleSearch = async () => {
-    const data = await searchCustomers(query);
-    setResults(data);
+    try {
+      const response = await fetch(`https://crm-backend-production-e80f.up.railway.app/api/customers/search?ad=${query}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      if (!response.ok) {
+        throw new Error('Arama işlemi başarısız oldu.');
+      }
+      const data = await response.json();
+      setResults(data);
+    } catch (error) {
+      console.error('Arama işleminde hata:', error);
+    }
   };
 
   return (
     <div>
       <input
+      className='text-black'
         type="text"
         placeholder="Enter Customer Name"
         value={query}
