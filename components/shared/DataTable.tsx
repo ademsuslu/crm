@@ -91,7 +91,7 @@ export const columns: ColumnDef<Customer>[] = [
   },
   {
     header: "Müşteri Segmenti",
-    cell: ({ row }) => <div>{row.original.segmentasyon?.musteri_segmenti || "Bilgi yok"}</div>,
+    cell: ({ row }) => <div className="whitespace-nowrap	">{row.original.segmentasyon?.musteri_segmenti || "Bilgi yok"}</div>,
   },
   {
     header: "Telefon",
@@ -141,8 +141,6 @@ const DataTableDemo: React.FC<DataTableDemoProps> = ({ data }) => {
 
   const [query, setQuery] = React.useState('');
   const [results, setResults] = React.useState([]);
-
-
 
   React.useEffect(() => {
     const handleSearch = async () => {
@@ -246,7 +244,7 @@ const DataTableDemo: React.FC<DataTableDemoProps> = ({ data }) => {
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id}>
+                    <TableHead className="whitespace-nowrap" key={header.id}>
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -267,7 +265,7 @@ const DataTableDemo: React.FC<DataTableDemoProps> = ({ data }) => {
                   data-state={row.getIsSelected() && "selected"}
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
+                    <TableCell className="whitespace-nowrap	" key={cell.id}>
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()
