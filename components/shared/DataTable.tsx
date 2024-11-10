@@ -13,7 +13,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table"
-import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react"
+import { ArrowUpDown, ChevronDown, MoreHorizontal, Plus } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
@@ -199,7 +199,7 @@ const DataTableDemo: React.FC<DataTableDemoProps> = ({ data }) => {
 
   return (
     <div className="w-full">
-      <div className="flex items-center py-4">
+      <div className="flex items-center justify-between w-full py-4">
         <Input
           placeholder="Filter Names..."
           // value={(table.getColumn("ad")?.getFilterValue() as string) ?? ""}
@@ -211,11 +211,16 @@ const DataTableDemo: React.FC<DataTableDemoProps> = ({ data }) => {
           className="max-w-sm"
         />
         <DropdownMenu>
+          <div className="flex space-x-2">
+          <Button className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 w-9 ml-auto rounded-full" data-state="closed">
+              <Plus className="w-4 h-4 text-white"/>
+          </Button>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">
               Columns <ChevronDown />
             </Button>
           </DropdownMenuTrigger>
+          </div>
           <DropdownMenuContent align="end">
             {table
               .getAllColumns()
