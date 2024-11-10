@@ -1,7 +1,6 @@
 "use client"
 import { FaEye } from "react-icons/fa";
 import { AiTwotoneDelete } from "react-icons/ai";
-
 import * as React from "react"
 import {
   ColumnDef,
@@ -140,6 +139,37 @@ type DataTableDemoProps = {
 
 const DataTableDemo: React.FC<DataTableDemoProps> = ({ data }) => {
 
+  const [query, setQuery] = React.useState('');
+  const [results, setResults] = React.useState([]);
+
+
+
+  React.useEffect(() => {
+    const handleSearch = async () => {
+      try {
+        const response = await fetch(`https://crm-backend-production-e80f.up.railway.app/api/customers/search?ad=${query}`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+    
+        if (!response.ok) {
+          throw new Error('Arama işlemi başarısız oldu.');
+        }
+        const data = await response.json();
+        setResults(data);
+      } catch (error) {
+        console.error('Arama işleminde hata:', error);
+      }
+    };
+
+    if (query) {
+      handleSearch();
+    }
+  }, [query]);
+
+
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -149,7 +179,7 @@ const DataTableDemo: React.FC<DataTableDemoProps> = ({ data }) => {
   const [rowSelection, setRowSelection] = React.useState({})
 
   const table = useReactTable({
-    data,
+    data: results.length > 0 ? results : data,
     columns,
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
@@ -172,10 +202,12 @@ const DataTableDemo: React.FC<DataTableDemoProps> = ({ data }) => {
       <div className="flex items-center py-4">
         <Input
           placeholder="Filter Names..."
-          value={(table.getColumn("ad")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("ad")?.setFilterValue(event.target.value)
-          }
+          // value={(table.getColumn("ad")?.getFilterValue() as string) ?? ""}
+          // onChange={(event) =>
+          //   table.getColumn("ad")?.setFilterValue(event.target.value)
+          // }
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
           className="max-w-sm"
         />
         <DropdownMenu>
