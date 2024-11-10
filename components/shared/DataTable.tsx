@@ -196,7 +196,6 @@ const DataTableDemo: React.FC<DataTableDemoProps> = ({ data }) => {
       rowSelection,
     },
   })
-
   return (
     <div className="w-full">
       <div className="flex items-center justify-between w-full py-4">
@@ -212,8 +211,10 @@ const DataTableDemo: React.FC<DataTableDemoProps> = ({ data }) => {
         />
         <DropdownMenu>
           <div className="flex space-x-2">
-          <Button className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 w-9 ml-auto rounded-full" data-state="closed">
+          <Button asChild className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 w-9 ml-auto rounded-full" data-state="closed">
+          <Link href="/customer/create">
               <Plus className="w-4 h-4 text-white"/>
+          </Link>
           </Button>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">
