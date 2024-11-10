@@ -1,6 +1,5 @@
 import { Suspense } from 'react'
 import DataTableDemo  from "@/components/shared/DataTable"
-import SearchComponent from '@/components/shared/detay/search';
 
 export default async function CustomerPage(){
     const url = process.env.NEXT_API_URL || "http://localhost:5000/api/customers" 
@@ -10,7 +9,6 @@ export default async function CustomerPage(){
        <Suspense fallback={<p>Loading feed...</p>}>
         <DataTableDemo data={data} />  
        </Suspense> 
-       <SearchComponent />
         
     </div>
 }
