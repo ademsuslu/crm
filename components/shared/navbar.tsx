@@ -33,7 +33,7 @@ const Navbar = () => {
           </Link>
           <Link href="/dashboard" className="inline-flex items-center gap-2">
             <span className=" text-lg ">Open Dashboard</span>
-            <GoLinkExternal className="w-4 h-4 ml-2"/>
+            <GoLinkExternal className="w-4 h-4 ml-1"/>
           </Link>
         </div>
       </div>
