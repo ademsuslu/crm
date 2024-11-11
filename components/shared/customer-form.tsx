@@ -74,18 +74,18 @@ export function CustomerCreateForm() {
     });
 
   async  function onSubmit(values: z.infer<typeof formSchema>) {
-    const url = `https://crm-backend-production-e80f.up.railway.app/api/customers`
-     const response = await fetch(url,{
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(values)
-     })  
-    const res = await response.json()
-    toast({title:res?.message})
-    console.log(res) 
-    router.push("/customer")   
+     const url = `https://crm-backend-production-e80f.up.railway.app/api/customers`
+      const response = await fetch(url,{
+         method: 'POST',
+         headers: {
+             'Content-Type': 'application/json'
+         },
+         body: JSON.stringify(values)
+      })  
+     const res = await response.json()
+     toast({title:res?.message})
+     console.log(res) 
+     router.push("/customer")   
     }
 
     return (

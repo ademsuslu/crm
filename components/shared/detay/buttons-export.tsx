@@ -37,7 +37,7 @@ const ButtonsExport: React.FC<ButtonsExportProps> = ({ data }) => {
          toast({
           description: "Customer deleted.",
         })
-        router.refresh();
+        router.push("/customer");
       } catch (error) {
         console.error('Silme işleminde hata:', error);
       }
