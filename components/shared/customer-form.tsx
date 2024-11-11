@@ -13,6 +13,14 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+  } from "@/components/ui/select"
+
 import { Input } from "@/components/ui/input"
 import { formSchema } from "@/types/form/customerSchema"
 import { Switch } from "../ui/switch"
@@ -105,16 +113,22 @@ export function CustomerCreateForm() {
           name="cinsiyet"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Cinsiyet</FormLabel>
+            <FormLabel>Gender</FormLabel>
+            <Select onValueChange={field.onChange} defaultValue={field.value}>
               <FormControl>
-                <select {...field}>
-                  <option value="Erkek">Erkek</option>
-                  <option value="Kadın">Kadın</option>
-                  <option value="Diğer">Diğer</option>
-                </select>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select a verified email to display" />
+                </SelectTrigger>
               </FormControl>
-              <FormMessage />
-            </FormItem>
+              <SelectContent>
+                <SelectItem value="Kadın">Kadın</SelectItem>
+                <SelectItem value="Erkek">Erkek</SelectItem>
+                <SelectItem value="Diğer">Diğer</SelectItem>
+              </SelectContent>
+            </Select>
+          
+            <FormMessage />
+          </FormItem>
           )}
         />
 
@@ -124,9 +138,9 @@ export function CustomerCreateForm() {
           name="iletisim_bilgileri.telefon"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Telefon</FormLabel>
+              <FormLabel>Phone</FormLabel>
               <FormControl>
-                <Input placeholder="Telefon numaranızı girin" {...field} />
+                <Input type="number" placeholder="Telefon numaranızı girin" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
