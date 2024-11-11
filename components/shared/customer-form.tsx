@@ -163,7 +163,7 @@ export function CustomerCreateForm() {
                                 <FormItem>
                                     <FormLabel>Phone</FormLabel>
                                     <FormControl>
-                                        <Input type="number" placeholder="Telefon numaranızı girin" {...field} />
+                                        <Input type="number" placeholder="Enter phone number" {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -178,7 +178,7 @@ export function CustomerCreateForm() {
                                 <FormItem>
                                     <FormLabel>Email</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="E-posta adresinizi girin" {...field} />
+                                        <Input placeholder="Enter e posta" {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -191,9 +191,9 @@ export function CustomerCreateForm() {
                             name="iletisim_bilgileri.adres.sokak"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Sokak</FormLabel>
+                                    <FormLabel>Districk</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="Sokak adresinizi girin" {...field} />
+                                        <Input placeholder="Enter districk" {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -204,7 +204,7 @@ export function CustomerCreateForm() {
                             name="iletisim_bilgileri.adres.sehir"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Sehir</FormLabel>
+                                    <FormLabel>City</FormLabel>
                                     <FormControl>
                                         <Input placeholder="Enter your city" {...field} />
                                     </FormControl>
@@ -219,7 +219,7 @@ export function CustomerCreateForm() {
                                 <FormItem>
                                     <FormLabel>Zip Code</FormLabel>
                                     <FormControl>
-                                        <Input type="number" placeholder="Enter your zipcode  girin" {...field} />
+                                        <Input type="number" placeholder="Enter your zipcode " {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -232,7 +232,7 @@ export function CustomerCreateForm() {
                                 <FormItem>
                                     <FormLabel>Country</FormLabel>
                                     <FormControl>
-                                        <Input type="text" placeholder="Enter your Country  girin" {...field} />
+                                        <Input type="text" placeholder="Enter your Country " {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
