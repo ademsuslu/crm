@@ -3,7 +3,7 @@ import React from 'react'
 
 const CustomerCreatePage = () => {
   return (
-    <div>
+    <div className='my-3'>
       <CustomerCreateForm/>
     </div>
   )

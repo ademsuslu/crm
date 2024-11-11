@@ -63,3 +63,5 @@ Güvenlik ve Erişim Kontrolü
     Kullanıcı arayüzü ve alanların kişiselleştirilebilmesi
     İş akışlarını ve otomasyonları özelleştirme imkanı
     Farklı departmanların ihtiyaçlarına göre yapılandırılabilir modüller
+
+
