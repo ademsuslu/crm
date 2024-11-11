@@ -108,7 +108,7 @@ export function CustomerCreateForm() {
                                 <FormItem>
                                     <FormLabel>Ad</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="Adınızı girin" className="placeholderColor" {...field} />
+                                        <Input placeholder="Enter Name" className="" {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -123,7 +123,7 @@ export function CustomerCreateForm() {
                                 <FormItem>
                                     <FormLabel>Soyad</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="Soyadınızı girin" {...field} />
+                                        <Input placeholder="Enter Surname" {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -140,7 +140,7 @@ export function CustomerCreateForm() {
                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
                                             <SelectTrigger>
-                                                <SelectValue placeholder="Select a verified email to display" />
+                                                <SelectValue placeholder="Select a gender" />
                                             </SelectTrigger>
                                         </FormControl>
                                         <SelectContent>
