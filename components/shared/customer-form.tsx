@@ -26,9 +26,10 @@ import { formSchema } from "@/types/form/customerSchema"
 import { Switch } from "../ui/switch"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs"
 import { toast } from "@/hooks/use-toast"
-
+import { useRouter } from "next/navigation"
 
 export function CustomerCreateForm() {
+    const router = useRouter()
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -82,8 +83,9 @@ export function CustomerCreateForm() {
         body: JSON.stringify(values)
      })  
     const res = await response.json()
-    toast(res?.message)
-    console.log(res)    
+    toast({title:res?.message})
+    console.log(res) 
+    router.push("/customer")   
     }
 
     return (
