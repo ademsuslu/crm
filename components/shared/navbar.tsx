@@ -30,6 +30,9 @@ const Navbar = () => {
           <Link href="/analytics" className="flex items-center gap-2">
             <span className=" text-lg ">Analytics</span>
           </Link>
+          <Link href="/dashboard" className="flex items-center gap-2">
+            <span className=" text-lg ">Open Dashboard</span>
+          </Link>
         </div>
       </div>
       {/* RIGHT */}

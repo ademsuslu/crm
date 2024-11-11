@@ -125,12 +125,6 @@ export const columns: ColumnDef<Customer>[] = [
               <FaEdit className="w-4 h-4 mr-2" /> Edit
             </Link>
           </DropdownMenuItem>
-          {/* buraya delete işlemi eklermisin */}
-          {/* <DropdownMenuItem
-              className="inline-flex items-center cursor-pointer"
-            >
-            <AiTwotoneDelete className="mr-1 w-4 h-4" /> Delete Customer
-          </DropdownMenuItem> */}
         </DropdownMenuContent>
       </DropdownMenu>
     }
