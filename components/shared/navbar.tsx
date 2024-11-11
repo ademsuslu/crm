@@ -9,6 +9,7 @@ import {
 import Logo from "./logo";
 import { Button } from "../ui/button";
 
+import { GoLinkExternal } from "react-icons/go";
 
 const Navbar = () => {
 
@@ -31,7 +32,7 @@ const Navbar = () => {
             <span className=" text-lg ">Analytics</span>
           </Link>
           <Link href="/dashboard" className="flex items-center gap-2">
-            <span className=" text-lg ">Open Dashboard</span>
+            <span className=" text-lg ">Open Dashboard <GoLinkExternal className="w-4 h-4 ml-2"/></span>
           </Link>
         </div>
       </div>
