@@ -65,6 +65,10 @@ export function CustomerCreateForm() {
                 ilgi_alanlari: "",
                 sadakat_durumu: "Yeni Müşteri",
             },
+            iliskiler: {
+                asama: "Yeni",
+                notlar: "",
+            },
             pazarlama_izinleri: {
                 email_izni: true,
                 sms_izni: true,

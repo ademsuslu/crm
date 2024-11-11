@@ -131,11 +131,11 @@ export default async function CustomerDetails({
           <div className="flex flex-col gap-2">
             <div className="flex gap-2">
               <label>Step: </label>
-              <span>{data.iliskiler.asama}</span>
+              <span>{data?.iliskiler?.asama}</span>
             </div>
             <div className="flex gap-2">
               <label>Notes: </label>
-              <span>{data.iliskiler.notlar}</span>
+              <span>{data?.iliskiler?.notlar}</span>
             </div>
           </div>
         </TabsContent>
