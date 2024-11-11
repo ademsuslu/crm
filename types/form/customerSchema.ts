@@ -47,7 +47,7 @@ export const formSchema = z.object({
 
     segmentasyon: z.object({
         musteri_segmenti: z.enum(['Bireysel', 'Kurumsal', 'VIP']).optional(),
-        ilgi_alanlari: z.array(z.string()).optional(),
+        ilgi_alanlari: z.string(),
         sadakat_durumu: z.enum(['Yeni Müşteri', 'Sadık Müşteri', 'Potansiyel Müşteri']).optional(),
     }).optional(),
 
