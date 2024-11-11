@@ -36,8 +36,9 @@ const ButtonsExport: React.FC<ButtonsExportProps> = ({ data }) => {
           throw new Error('Bir hata oluştu!');
         }
          toast({
-          description: <div className='inline-flex '>Customer deleted <TiTick className='w-6 h-6 ml-2 text-green-500'/>.</div>  ,
+          description: <div className='inline-flex items-center '>Customer deleted <TiTick className='w-6 h-6 ml-2 text-green-500'/>.</div>  ,
         })
+        router.refresh();
         router.push("/customer");
       } catch (error) {
         console.error('Silme işleminde hata:', error);

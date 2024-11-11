@@ -3,6 +3,8 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
+import { format } from "date-fns"
+
 
 import { Button } from "@/components/ui/button"
 import {
@@ -97,8 +99,7 @@ export function CustomerCreateForm() {
          body: JSON.stringify(values)
       })  
      const res = await response.json()
-     toast({description: <div>{res?.message} <TiTick className='w-6 h-6 ml-2 text-green-500'/></div>})
-     console.log(res) 
+     toast({description: <div className="inline-flex items-center">{res?.message} <TiTick className='w-6 h-6 ml-2 text-green-500'/></div>})
      router.push("/customer")   
     }
 
@@ -115,7 +116,7 @@ export function CustomerCreateForm() {
                         <TabsTrigger className="text-sm  p-0 w-full" value="relations">Relations</TabsTrigger>
                         <TabsTrigger className="text-sm  p-0 w-full" value="marketing">Marketing</TabsTrigger>
                     </TabsList>
-                    <TabsContent className="grid grid-cols-1 md:grid-cols-4  gap-2 " value="Personal">
+                    <TabsContent className="grid grid-cols-1 md:grid-cols-4   gap-2 " value="Personal">
                         <FormField
                             control={form.control}
                             name="ad"
@@ -148,11 +149,11 @@ export function CustomerCreateForm() {
                             control={form.control}
                             name="dogum_tarihi"
                             render={({ field }) => (
-                                <FormItem className="flex flex-col">
+                                <FormItem className="flex flex-col mt-2.5">
                                 <FormLabel>Date of birth</FormLabel>
                                 <Popover>
                                   <PopoverTrigger asChild>
-                                    <FormControl>
+                                    <FormControl className="">
                                       <Button
                                         variant={"outline"}
                                         className={cn(
@@ -181,9 +182,7 @@ export function CustomerCreateForm() {
                                     />
                                   </PopoverContent>
                                 </Popover>
-                                <FormDescription>
-                                  Your date of birth is used to calculate your age.
-                                </FormDescription>
+                                
                                 <FormMessage />
                               </FormItem>
                             )}
