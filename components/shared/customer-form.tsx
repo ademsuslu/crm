@@ -24,6 +24,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { formSchema } from "@/types/form/customerSchema"
 import { Switch } from "../ui/switch"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs"
 
 
 export function CustomerCreateForm() {
@@ -77,63 +78,77 @@ export function CustomerCreateForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        {/* Ad Alanı */}
-        <FormField
-          control={form.control}
-          name="ad"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Ad</FormLabel>
-              <FormControl>
-                <Input placeholder="Adınızı girin" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
 
-        {/* Soyad Alanı */}
-        <FormField
-          control={form.control}
-          name="soyad"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Soyad</FormLabel>
-              <FormControl>
-                <Input placeholder="Soyadınızı girin" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+      <Tabs defaultValue="Personal" className="">
+        <TabsList
+         className="items-start justify-start rounded-md bg-muted p-1 gap-3 text-muted-foreground grid h-auto min-h-10 w-full grid-cols-1 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-5">
+          <TabsTrigger className="text-sm  p-0 w-full" value="Personal">Personal</TabsTrigger>
+          <TabsTrigger className="text-sm  p-0 w-full" value="Contact">Contact</TabsTrigger>
+          <TabsTrigger className="text-sm  p-0 w-full" value="Company">Company</TabsTrigger>
+          <TabsTrigger className="text-sm  p-0 w-full" value="segmentasyon">Segmentasyon</TabsTrigger>
+          <TabsTrigger className="text-sm  p-0 w-full" value="marketing">Marketing</TabsTrigger>
+        </TabsList>
+            <TabsContent className="grid  gap-2 " value="Personal">
+                <div className="gap-3">
 
-        {/* Cinsiyet Alanı */}
-        <FormField
-          control={form.control}
-          name="cinsiyet"
-          render={({ field }) => (
-            <FormItem>
-            <FormLabel>Gender</FormLabel>
-            <Select onValueChange={field.onChange} defaultValue={field.value}>
-              <FormControl>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select a verified email to display" />
-                </SelectTrigger>
-              </FormControl>
-              <SelectContent>
-                <SelectItem value="Kadın">Kadın</SelectItem>
-                <SelectItem value="Erkek">Erkek</SelectItem>
-                <SelectItem value="Diğer">Diğer</SelectItem>
-              </SelectContent>
-            </Select>
-          
-            <FormMessage />
-          </FormItem>
-          )}
-        />
 
-        {/* Telefon Alanı */}
-        <FormField
+                <FormField
+                control={form.control}
+                name="ad"
+                render={({ field }) => (
+                    <FormItem>
+                    <FormLabel>Ad</FormLabel>
+                    <FormControl>
+                        <Input  placeholder="Adınızı girin" className="placeholderColor" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                    </FormItem>
+                )}
+                />
+
+                {/* Soyad Alanı */}
+                <FormField
+                control={form.control}
+                name="soyad"
+                render={({ field }) => (
+                    <FormItem>
+                    <FormLabel>Soyad</FormLabel>
+                    <FormControl>
+                        <Input placeholder="Soyadınızı girin" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                    </FormItem>
+                )}
+                />
+
+                {/* Cinsiyet Alanı */}
+                <FormField
+                control={form.control}
+                name="cinsiyet"
+                render={({ field }) => (
+                    <FormItem>
+                    <FormLabel>Gender</FormLabel>
+                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <FormControl>
+                        <SelectTrigger>
+                        <SelectValue placeholder="Select a verified email to display" />
+                        </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                        <SelectItem value="Kadın">Kadın</SelectItem>
+                        <SelectItem value="Erkek">Erkek</SelectItem>
+                        <SelectItem value="Diğer">Diğer</SelectItem>
+                    </SelectContent>
+                    </Select>
+                
+                    <FormMessage />
+                </FormItem>
+                )}
+                />
+                </div>
+            </TabsContent>
+            <TabsContent className="flex gap-2 " value="Contact">
+            <FormField
           control={form.control}
           name="iletisim_bilgileri.telefon"
           render={({ field }) => (
@@ -242,8 +257,9 @@ export function CustomerCreateForm() {
             </FormItem>
           )}
         />
-{/* company info */}
-        <FormField
+            </TabsContent>
+          <TabsContent value="Company">
+          <FormField
           control={form.control}
           name="sirket_bilgileri.sirket_adi"
           render={({ field }) => (
@@ -321,8 +337,9 @@ export function CustomerCreateForm() {
             </FormItem>
           )}
         />
-        {/* Segmentasyon */}
-        <FormField
+          </TabsContent>
+          <TabsContent value="segmentasyon">
+          <FormField
           control={form.control}
           name="segmentasyon.musteri_segmenti"
           render={({ field }) => (
@@ -361,8 +378,9 @@ export function CustomerCreateForm() {
             </FormItem>
           )}
         />
-{/* pazarlama izinleri */}
-       <FormField
+          </TabsContent>
+          <TabsContent value="marketing" >
+          <FormField
           control={form.control}
           name="pazarlama_izinleri.email_izni"
           render={({ field }) => (
@@ -399,7 +417,7 @@ export function CustomerCreateForm() {
           name="pazarlama_izinleri.tercih_edilen_kanal"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Customer Access Channel</FormLabel>
+              <FormLabel>Customer Preferred channel</FormLabel>
               <FormControl>
                 <Input type="text" placeholder="Enter customer loyalty status" {...field} />
               </FormControl>
@@ -407,6 +425,16 @@ export function CustomerCreateForm() {
             </FormItem>
           )}
         />
+          </TabsContent>
+        </Tabs>
+
+     
+{/* company info */}
+      
+        {/* Segmentasyon */}
+     
+{/* pazarlama izinleri */}
+      
         <Button type="submit">Gönder</Button>
       </form>
     </Form>
