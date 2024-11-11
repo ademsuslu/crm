@@ -7,6 +7,7 @@ import { BiSolidFileExport } from "react-icons/bi";
 import { AiFillDelete } from 'react-icons/ai';
 import { useRouter } from 'next/navigation';
 import { useToast } from '@/hooks/use-toast';
+import { TiTick } from "react-icons/ti";
 
 
 type ButtonsExportProps = {
@@ -35,7 +36,7 @@ const ButtonsExport: React.FC<ButtonsExportProps> = ({ data }) => {
           throw new Error('Bir hata oluştu!');
         }
          toast({
-          description: "Customer deleted.",
+          description: <div className='inline-flex '>Customer deleted <TiTick className='w-6 h-6 ml-2 text-green-500'/>.</div>  ,
         })
         router.push("/customer");
       } catch (error) {

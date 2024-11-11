@@ -12,6 +12,7 @@ import {
     FormItem,
     FormLabel,
     FormMessage,
+    FormDescription
 } from "@/components/ui/form"
 import {
     Select,
@@ -20,13 +21,21 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
+import {  Popover,
+    PopoverContent,
+    PopoverTrigger, } from "../ui/popover"
+    import { Calendar } from "@/components/ui/calendar"
+    import { Input } from "@/components/ui/input"
+    import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs"
 
-import { Input } from "@/components/ui/input"
 import { formSchema } from "@/types/form/customerSchema"
 import { Switch } from "../ui/switch"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs"
 import { toast } from "@/hooks/use-toast"
 import { useRouter } from "next/navigation"
+import { TiTick } from "react-icons/ti"
+
+import { CalendarIcon } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 export function CustomerCreateForm() {
     const router = useRouter()
@@ -36,6 +45,7 @@ export function CustomerCreateForm() {
             ad: "",
             soyad: "",
             cinsiyet: "Erkek", // Varsayılan değerler, isteğe göre ayarlanabilir
+            dogum_tarihi: new Date(),
             iletisim_bilgileri: {
                 telefon: "",
                 email: "",
@@ -87,7 +97,7 @@ export function CustomerCreateForm() {
          body: JSON.stringify(values)
       })  
      const res = await response.json()
-     toast({title:res?.message})
+     toast({description: <div>{res?.message} <TiTick className='w-6 h-6 ml-2 text-green-500'/></div>})
      console.log(res) 
      router.push("/customer")   
     }
@@ -105,7 +115,7 @@ export function CustomerCreateForm() {
                         <TabsTrigger className="text-sm  p-0 w-full" value="relations">Relations</TabsTrigger>
                         <TabsTrigger className="text-sm  p-0 w-full" value="marketing">Marketing</TabsTrigger>
                     </TabsList>
-                    <TabsContent className="grid grid-cols-1 md:grid-cols-3  gap-2 " value="Personal">
+                    <TabsContent className="grid grid-cols-1 md:grid-cols-4  gap-2 " value="Personal">
                         <FormField
                             control={form.control}
                             name="ad"
@@ -132,6 +142,50 @@ export function CustomerCreateForm() {
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="dogum_tarihi"
+                            render={({ field }) => (
+                                <FormItem className="flex flex-col">
+                                <FormLabel>Date of birth</FormLabel>
+                                <Popover>
+                                  <PopoverTrigger asChild>
+                                    <FormControl>
+                                      <Button
+                                        variant={"outline"}
+                                        className={cn(
+                                          "w-[240px] pl-3 text-left font-normal",
+                                          !field.value && "text-muted-foreground"
+                                        )}
+                                      >
+                                        {field.value ? (
+                                          format(field.value, "PPP")
+                                        ) : (
+                                          <span>Pick a date</span>
+                                        )}
+                                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                                      </Button>
+                                    </FormControl>
+                                  </PopoverTrigger>
+                                  <PopoverContent className="w-auto p-0" align="start">
+                                    <Calendar
+                                      mode="single"
+                                      selected={field.value}
+                                      onSelect={field.onChange}
+                                      disabled={(date) =>
+                                        date > new Date() || date < new Date("1900-01-01")
+                                      }
+                                      initialFocus
+                                    />
+                                  </PopoverContent>
+                                </Popover>
+                                <FormDescription>
+                                  Your date of birth is used to calculate your age.
+                                </FormDescription>
+                                <FormMessage />
+                              </FormItem>
                             )}
                         />
 
