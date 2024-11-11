@@ -66,8 +66,8 @@ export function CustomerCreateForm() {
                 sadakat_durumu: "Yeni Müşteri",
             },
             pazarlama_izinleri: {
-                email_izni: false,
-                sms_izni: false,
+                email_izni: true,
+                sms_izni: true,
                 tercih_edilen_kanal: "Email",
             },
         },
@@ -93,11 +93,12 @@ export function CustomerCreateForm() {
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                 <Tabs defaultValue="Personal" className="">
                     <TabsList
-                        className="items-start justify-start rounded-md bg-muted p-1 gap-3 text-muted-foreground grid h-auto min-h-5 w-full grid-cols-2 sm:grid-cols-4 md:grid-cols-5">
+                        className="items-start justify-start rounded-md bg-muted p-1 gap-3 text-muted-foreground grid h-auto min-h-5 w-full grid-cols-2 sm:grid-cols-4 md:grid-cols-6">
                         <TabsTrigger className="text-sm  p-0 w-full" value="Personal">Personal</TabsTrigger>
                         <TabsTrigger className="text-sm  p-0 w-full" value="Contact">Contact</TabsTrigger>
                         <TabsTrigger className="text-sm  p-0 w-full" value="Company">Company</TabsTrigger>
                         <TabsTrigger className="text-sm  p-0 w-full" value="segmentasyon">Segmentasyon</TabsTrigger>
+                        <TabsTrigger className="text-sm  p-0 w-full" value="relations">Relations</TabsTrigger>
                         <TabsTrigger className="text-sm  p-0 w-full" value="marketing">Marketing</TabsTrigger>
                     </TabsList>
                     <TabsContent className="grid grid-cols-1 md:grid-cols-3  gap-2 " value="Personal">
@@ -353,12 +354,21 @@ export function CustomerCreateForm() {
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel>Customer segmentasyon</FormLabel>
-                                    <FormControl>
-                                        <Input type="text" placeholder="Enter customer segmentasyon" {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
+                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                        <FormControl>
+                                            <SelectTrigger>
+                                                <SelectValue placeholder="Select a segmentasyon" />
+                                            </SelectTrigger>
+                                        </FormControl>
+                                        <SelectContent>
+                                            <SelectItem value="Bireysel">Individual</SelectItem>
+                                            <SelectItem value="Kurumsal">Corporate</SelectItem>
+                                            <SelectItem value="VIP">Vip</SelectItem>
+                                        </SelectContent>
+                                         <FormMessage />
+                                    </Select>
+                                 </FormItem>
+                                )}
                         />
                         <FormField
                             control={form.control}
@@ -377,15 +387,63 @@ export function CustomerCreateForm() {
                             control={form.control}
                             name="segmentasyon.sadakat_durumu"
                             render={({ field }) => (
+                                    <FormItem>
+                                    <FormLabel>Customer loyalty status</FormLabel>
+                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                        <FormControl>
+                                            <SelectTrigger>
+                                                <SelectValue placeholder="Select a segmentasyon" />
+                                            </SelectTrigger>
+                                        </FormControl>
+                                        <SelectContent>
+                                            <SelectItem value="Yeni Müşteri">New customer</SelectItem>
+                                            <SelectItem value="Sadık Müşteri">Loyal customer</SelectItem>
+                                            <SelectItem value="Potansiyel Müşteri">potential customer</SelectItem>
+                                        </SelectContent>
+                                         <FormMessage />
+                                    </Select>
+                                 </FormItem>
+                                )}
+                        />
+                    </TabsContent>
+                    
+                    <TabsContent value="relations" className="grid grid-cols-1 md:grid-cols-3  gap-2 ">
+                        <FormField
+                            control={form.control}
+                            name="iliskiler.asama"
+                            render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Customer Hobbies</FormLabel>
+                                    <FormLabel>Customer segmentasyon</FormLabel>
+                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                        <FormControl>
+                                            <SelectTrigger>
+                                                <SelectValue placeholder="Select a segmentasyon" />
+                                            </SelectTrigger>
+                                        </FormControl>
+                                        <SelectContent>
+                                            <SelectItem value="Yeni">New Customer</SelectItem>
+                                            <SelectItem value="Mevcut Müşteri">Current Customer</SelectItem>
+                                            <SelectItem value="Potansiyel Müşteri">Potential Customer</SelectItem>
+                                        </SelectContent>
+                                         <FormMessage />
+                                    </Select>
+                                 </FormItem>
+                                )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="iliskiler.notlar"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Relations notes</FormLabel>
                                     <FormControl>
-                                        <Input type="text" placeholder="Enter customer loyalty status" {...field} />
+                                        <Input type="text" placeholder="Enter Notes" {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
                             )}
                         />
+                     
                     </TabsContent>
                     <TabsContent value="marketing" className="grid grid-cols-1 md:grid-cols-3 my-auto  gap-2 " >
                         <FormField
@@ -427,11 +485,20 @@ export function CustomerCreateForm() {
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel>Customer Preferred channel</FormLabel>
-                                    <FormControl>
-                                        <Input type="text" placeholder="Enter customer loyalty status" {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
+                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                        <FormControl>
+                                            <SelectTrigger>
+                                                <SelectValue placeholder="Select a Preferred channel" />
+                                            </SelectTrigger>
+                                        </FormControl>
+                                        <SelectContent>
+                                            <SelectItem value="Email">Email</SelectItem>
+                                            <SelectItem value="SMS">Sms</SelectItem>
+                                            <SelectItem value="Telefon">Phone</SelectItem>
+                                        </SelectContent>
+                                         <FormMessage />
+                                    </Select>
+                                 </FormItem>
                             )}
                         />
                         
