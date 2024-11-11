@@ -25,6 +25,7 @@ import { Input } from "@/components/ui/input"
 import { formSchema } from "@/types/form/customerSchema"
 import { Switch } from "../ui/switch"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs"
+import { toast } from "@/hooks/use-toast"
 
 
 export function CustomerCreateForm() {
@@ -81,6 +82,7 @@ export function CustomerCreateForm() {
         body: JSON.stringify(values)
      })  
     const res = await response.json()
+    toast(res?.message)
     console.log(res)    
     }
 
