@@ -31,7 +31,7 @@ const Navbar = () => {
           <Link href="/analytics" className="flex items-center gap-2">
             <span className=" text-lg ">Analytics</span>
           </Link>
-          <Link href="/dashboard" className="flex items-center gap-2">
+          <Link href="/dashboard" className="inline-flex items-center gap-2">
             <span className=" text-lg ">Open Dashboard <GoLinkExternal className="w-4 h-4 ml-2"/></span>
           </Link>
         </div>
