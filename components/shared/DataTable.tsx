@@ -1,5 +1,5 @@
 "use client"
-import { FaEye } from "react-icons/fa";
+import { FaEdit, FaEye } from "react-icons/fa";
 import * as React from "react"
 import {
   ColumnDef,
@@ -118,6 +118,11 @@ export const columns: ColumnDef<Customer>[] = [
           <DropdownMenuItem >
             <Link className="inline-flex items-center" href={`/customer/${row.original._id}`}>
               <FaEye className="w-4 h-4 mr-2" /> Show  Details
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem >
+            <Link className="inline-flex items-center" href={`/customer/edit/${row.original._id}`}>
+              <FaEdit className="w-4 h-4 mr-2" /> Edit
             </Link>
           </DropdownMenuItem>
           {/* buraya delete işlemi eklermisin */}
