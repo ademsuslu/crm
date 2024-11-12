@@ -6,7 +6,7 @@ import { z } from "zod"
 import { format } from "date-fns"
 
 
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import {
     Form,
     FormControl,
@@ -41,6 +41,7 @@ import { CalendarIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Customer } from "@/types/customer/model"
 import Link from "next/link"
+import { FaArrowRight } from "react-icons/fa"
 
 
 const CustomerEditForm: React.FC<{ data: Customer }> = ({ data }) => {
@@ -109,7 +110,10 @@ const CustomerEditForm: React.FC<{ data: Customer }> = ({ data }) => {
             description: <div className="inline-flex items-center">
                 {res?.message}
                 <TiTick className='w-6 h-6 ml-2 text-green-500' />
-                <Link href="/customer">Back</Link>
+                <Link href={"/customer"} className={buttonVariants({
+                    size: 'sm',
+                    variant: 'ghost',
+                })}>Come back <FaArrowRight className="w-4 h-4 mr-2"/> </Link>
             </div>
         })
         router.refresh()
