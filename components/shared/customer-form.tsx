@@ -94,10 +94,11 @@ export function CustomerCreateForm() {
      const url = `https://crm-backend-production-e80f.up.railway.app/api/customers`
       const response = await fetch(url,{
          method: 'POST',
+         cache:"no-store",
          headers: {
              'Content-Type': 'application/json'
-         },
-         body: JSON.stringify(values)
+            },
+            body: JSON.stringify(values)
       })  
      const res = await response.json()
      toast({description: <div className="inline-flex items-center">{res?.message} <TiTick className='w-6 h-6 ml-2 text-green-500'/></div>})
