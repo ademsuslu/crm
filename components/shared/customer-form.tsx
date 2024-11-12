@@ -94,7 +94,7 @@ export function CustomerCreateForm() {
      const url = `https://crm-backend-production-e80f.up.railway.app/api/customers`
       const response = await fetch(url,{
          method: 'POST',
-         cache:"no-store",
+         cache:"no-cache",
          headers: {
              'Content-Type': 'application/json'
             },
