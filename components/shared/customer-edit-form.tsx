@@ -41,7 +41,7 @@ import { CalendarIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Customer } from "@/types/customer/model"
 import Link from "next/link"
-import { FaArrowRight } from "react-icons/fa"
+import { FaArrowLeft } from "react-icons/fa"
 
 
 const CustomerEditForm: React.FC<{ data: Customer }> = ({ data }) => {
@@ -113,7 +113,7 @@ const CustomerEditForm: React.FC<{ data: Customer }> = ({ data }) => {
                 <Link href={"/customer"} className={buttonVariants({
                     size: 'sm',
                     variant: 'ghost',
-                })}>Come back <FaArrowRight className="w-4 h-4 mr-2"/> </Link>
+                })}>Come back <FaArrowLeft className="w-4 h-4 mr-2"/> </Link>
             </div>
         })
         router.refresh()
