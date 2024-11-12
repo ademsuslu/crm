@@ -21,7 +21,6 @@ const Navbar = () => {
             <Logo/>
         </Link>
       </div>
-      {/* CENTER */}
       <div className="hidden md:flex w-[50%] text-sm items-center justify-between">
         {/* LINKS */}
         <div className="flex gap-6 text-white ">

@@ -1,10 +1,7 @@
 import ButtonsExport from "@/components/shared/detay/buttons-export"
 import { buttonVariants } from "@/components/ui/button"
 import Link from "next/link"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import DataTableOrders from "@/components/shared/detay/DataTableOrders"
-
-
+import  CustomerEditForm  from "@/components/shared/customer-edit-form"
 export default async function CustomerDetails({
   params,
 }: {
@@ -20,9 +17,7 @@ export default async function CustomerDetails({
       <ButtonsExport data={data} />
     </div>
     <div className="w-full">
-    {
-      data.ad
-    }
+      <CustomerEditForm data={data}/>
     </div>
 
   </div>
