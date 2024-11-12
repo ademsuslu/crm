@@ -10,7 +10,7 @@ export const formSchema = z.object({
     dogum_tarihi: z.date().optional(),
 
     iletisim_bilgileri: z.object({
-        telefon: z.string().min(10, "Telefon numarası en az 10 karakter olmalıdır").max(15, "Telefon numarası en fazla 15 karakter olmalıdır"),
+        telefon: z.string({ coerce: true }).min(10, "Telefon numarası en az 10 karakter olmalıdır").max(15, "Telefon numarası en fazla 15 karakter olmalıdır"),
         email: z.string().email("Geçerli bir e-posta adresi girin").optional(),
         adres: z.object({
             sokak: z.string().optional(),
