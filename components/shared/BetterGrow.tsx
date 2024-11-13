@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from '../ui/button'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const BetterGrow = () => {
   return (
@@ -17,12 +18,12 @@ const BetterGrow = () => {
             </div>
             </div>
             <div>
-            <img
+            <Image
                   className="rounded"
                   src="/assets/bettergrow.jpeg"
                   alt=""
-                  width="350"
-                  height="300"
+                  width={350}
+                  height={300}
                   loading="lazy"
                 />
             </div>

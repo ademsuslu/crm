@@ -7,8 +7,8 @@ const Solitions = () => {
     return (
         <div className='flex flex-col justify-start w-full'>
 
-            <div className='min-w-full  h-[500px] bg-red-400  relative'>
-                <Image src="/assets/crms.jpeg" fill style={{objectFit:"contain"}} className='aspect-square rounded' alt="crms.jpeg" />
+            <div className=' aspect-[.7/.7]  w-full bg-red-400  relative'>
+                <Image src="/assets/crms.jpeg" fill style={{objectFit:"contain"}} className=' rounded' alt="crms.jpeg" />
             </div>
             <div className='mt-6 '>
                 <h1 className='mb-3 text-2xl '>

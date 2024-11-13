@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const AfterCrm = () => {
@@ -16,12 +17,12 @@ const AfterCrm = () => {
           <ul className="grid grid-cols-1 md:grid-cols-3 gap-6 my-6">
             <li className=" bg-secondary flex flex-col justify-center items-center p-4 rounded min-w-[300px] hover:scale-110 transition-all ">
               <div className="">
-                <img
+                <Image
                   className="rounded"
                   src="/assets/artış.webp"
                   alt=""
-                  height="200"
-                  width="200"
+                  height={200}
+                  width={200}
                   loading="lazy"
                 />
               </div>
@@ -34,12 +35,12 @@ const AfterCrm = () => {
             </li>
              <li className=" bg-secondary flex flex-col justify-center items-center p-4 rounded min-w-[300px] hover:scale-110 transition-all ">
               <div className="">
-                <img
+                <Image
                   className="rounded"
                   src="/assets/deals.jpeg"
                   alt=""
-                  height="200"
-                  width="200"
+                  height={200}
+                  width={200}
                   loading="lazy"
                 />
               </div>
@@ -53,13 +54,12 @@ const AfterCrm = () => {
             <li className=" bg-secondary flex flex-col justify-center items-center p-4 rounded min-w-[300px] hover:scale-110 transition-all ">
               
               <div className="">
-                <img
+                <Image
                   className="rounded"
                   src="/assets/tickets.jpeg"
                   alt=""
-                   height="200"
-                  width="200"
-                  loading="lazy"
+                   height={200}
+                  width={200}
                 />
               </div>
               <div className="my-2 flex flex-col justify-start items-center ">
