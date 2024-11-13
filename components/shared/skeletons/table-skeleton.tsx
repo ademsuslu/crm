@@ -6,7 +6,7 @@ const TableSkeleton = () => {
       <div className="gap-2">
         {/* Başlık için skeleton */}
         <div  className="flex justify-between items-center p-4 rounded">
-          <Skeleton className="h-[20px] mr-4 w-[40%]" />
+          <Skeleton  className="h-[20px] mr-4 w-[50%]" />
 
           <div className="w-full flex items-center justify-end ">
           <Skeleton className="h-[25px] mr-4 w-[25px]  rounded-full" />

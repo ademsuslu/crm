@@ -7,9 +7,8 @@ export default async function CustomerPage(){
         const response = await fetch(`${url}/customers`,{ cache: 'no-cache' });
         const data = await response.json();
     return <div className="w-full">
-       <TableSkeleton/>
        <Suspense fallback={<TableSkeleton/>}>
-        <DataTableDemo data={data} />  
+         <DataTableDemo data={data} />  
        </Suspense> 
         
     </div>
