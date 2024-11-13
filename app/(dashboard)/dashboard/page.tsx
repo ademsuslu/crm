@@ -3,7 +3,7 @@ import DashboardCharts from '@/components/shared/dashboard/dashboard-charts';
 import React from 'react'
 
 export const metadata = {
-  title: 'Dashboard : Overview'
+  title: 'Crm Dashboard'
 };
 
 const DashboardPage = () => {

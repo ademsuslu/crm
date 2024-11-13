@@ -18,7 +18,7 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart"
 
-export const description = "A line chart with a label"
+export const description = "Bir etiketli çizgi grafiği"
 
 const chartData = [
   { month: "January", desktop: 186, mobile: 80 },
@@ -49,7 +49,7 @@ export function LineCharts() {
         <CardDescription className="">January - June 2024</CardDescription>
       </CardHeader>
       <CardContent>
-        <ChartContainer     className="mx-auto aspect-square max-h-[250px]" config={chartConfig}>
+        <ChartContainer className="mx-auto aspect-square max-h-[250px]" config={chartConfig}>
           <LineChart
             accessibilityLayer
             data={chartData}
@@ -88,16 +88,17 @@ export function LineCharts() {
                 offset={12}
                 className="fill-foreground"
                 fontSize={12}
+                formatter={(value:any) => value.toLocaleString("en-US")} // Sayı formatını ayarladık
               />
             </Line>
           </LineChart>
         </ChartContainer>
       </CardContent>
       <CardFooter className="flex-col items-start gap-2 text-sm">
-        <div className="flex gap-2  leading-none">
+        <div className="flex gap-2 leading-none">
           Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
         </div>
-        <div className="leading-none  text-muted-foreground">
+        <div className="leading-none text-muted-foreground">
           Showing total visitors for the last 6 months
         </div>
       </CardFooter>

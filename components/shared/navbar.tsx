@@ -18,22 +18,20 @@ const Navbar = () => {
       {/* LEFT */}
       <div className="md:hidden lg:block w-[20%]">
         <Link href="/" className="from-accent-foreground text-xl text-white">
-            <Logo/>
+          <Logo />
         </Link>
       </div>
       <div className="hidden md:flex w-[50%] text-sm items-center justify-between">
         {/* LINKS */}
         <div className="flex gap-6 text-white ">
           <Link href="/mission" className="flex items-center gap-2">
-            <span className=" text-lg ">Mission</span>
+            <span className="text-lg">
+              Mission</span>
           </Link>
           <Link href="/analytics" className="flex items-center gap-2">
             <span className=" text-lg ">Analytics</span>
           </Link>
-          <Link href="/dashboard" className="inline-flex items-center gap-2">
-            <span className=" text-lg ">Open Dashboard</span>
-            <GoLinkExternal className="w-4 h-4 ml-1"/>
-          </Link>
+
         </div>
       </div>
       {/* RIGHT */}
@@ -43,28 +41,22 @@ const Navbar = () => {
         </ClerkLoading>
         <ClerkLoaded>
           <SignedIn>
-            <div className="cursor-pointer">
-              People
-            </div>
-            <div className="cursor-pointer">
-              Message
-            </div>
-            <div className="cursor-pointer">
-              notifications
-            </div>
+            <Link href="/dashboard" className="inline-flex items-center text-lg gap-2">
+              Open Dashboard
+              <GoLinkExternal className="w-4 h-4 ml-1" />
+            </Link>
             <UserButton />
           </SignedIn>
           <SignedOut>
             <div className="flex items-center gap-2 text-sm">
-            <Button variant={"ghost"} asChild  className="rounded  mt-3">
-              <Link className="border px-4 py-1 rounded-md text-lg font-bold" href="/sign-in">Login</Link>
-                </Button>
-             
-            <Button variant={"ghost"} asChild  className="rounded  mt-3">
-              <Link className="border px-4 py-1 rounded-md text-lg font-bold" href="/sign-up">Register</Link>
-                </Button>
-             
-             
+              <Button variant={"ghost"} asChild className="rounded  mt-3">
+                <Link className="border px-4 py-1 rounded-md text-lg font-bold" href="/sign-in">Login</Link>
+              </Button>
+              <Button variant={"ghost"} asChild className="rounded  mt-3">
+                <Link className="border px-4 py-1 rounded-md text-lg font-bold" href="/sign-up">Register</Link>
+              </Button>
+
+
             </div>
           </SignedOut>
         </ClerkLoaded>

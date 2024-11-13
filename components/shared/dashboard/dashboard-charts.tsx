@@ -3,7 +3,6 @@ import { BarGraph } from './charts/bar-graph';
 import { PieGraph } from './charts/pie-graph';
 import { RecentSales } from './charts/recent-sales';
 
-import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -11,7 +10,6 @@ import {
   CardHeader,
   CardTitle
 } from '@/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import React from 'react'
 
 const DashboardCharts = () => {
