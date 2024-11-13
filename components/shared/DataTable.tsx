@@ -66,7 +66,7 @@ export const columns: ColumnDef<Customer>[] = [
   },
   {
     accessorKey: "ad",
-    header: "Adı",
+    header: "Name",
     cell: ({ row }) => (
       <div className="capitalize">{row.getValue("ad")}</div>
     ),
@@ -79,7 +79,7 @@ export const columns: ColumnDef<Customer>[] = [
         className="text-md flex justify-start items-start px-0 font-extrabold" 
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
-        Soyadı
+        Surname
         <ArrowUpDown  className="w-4 h-4"/>
       </Button>
     ),
@@ -87,19 +87,19 @@ export const columns: ColumnDef<Customer>[] = [
   },
   {
     accessorKey: "cinsiyet",
-    header: "Cinsiyet",
+    header: "Gender",
     cell: ({ row }) => <div>{row.getValue("cinsiyet")}</div>,
   },
   {
-    header: "Müşteri Segmenti",
+    header: "Customer Segmentation",
     cell: ({ row }) => <div className="whitespace-nowrap	">{row.original.segmentasyon?.musteri_segmenti || "Bilgi yok"}</div>,
   },
   {
-    header: "Telefon",
+    header: "Phone",
     cell: ({ row }) => <div>{row.original.iletisim_bilgileri?.telefon || "Bilgi yok"}</div>,
   },
   {
-    header: "E-posta",
+    header: "E-mail",
     cell: ({ row }) => <div>{row.original.iletisim_bilgileri?.email || "Bilgi yok"}</div>,
   },
   {
