@@ -194,10 +194,10 @@ const DataTableOrders: React.FC<DataTableOrdersProps> = ({ data }) => {
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
+              <TableRow key={headerGroup.id} className="border-b border-neutral-100 ">
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead className="whitespace-nowrap	" key={header.id}>
+                    <TableHead className="whitespace-nowrap	text-md font-extrabold"  key={header.id}>
                       {header.isPlaceholder
                         ? null
                         : flexRender(
