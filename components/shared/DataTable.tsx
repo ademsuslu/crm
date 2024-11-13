@@ -76,6 +76,7 @@ export const columns: ColumnDef<Customer>[] = [
     header: ({ column }) => (
       <Button
         variant="ghost"
+        className="text-md font-extrabold" 
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
         Soyadı
@@ -246,10 +247,10 @@ const DataTableDemo: React.FC<DataTableDemoProps> = ({ data }) => {
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
+              <TableRow key={headerGroup.id} className="border-b border-neutral-100 ">
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead className="whitespace-nowrap" key={header.id}>
+                    <TableHead className="whitespace-nowrap text-md font-extrabold" key={header.id}>
                       {header.isPlaceholder
                         ? null
                         : flexRender(
