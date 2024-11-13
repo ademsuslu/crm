@@ -1,8 +1,15 @@
+import Cards from '@/components/shared/dashboard/cards'
 import React from 'react'
+
+export const metadata = {
+  title: 'Dashboard : Overview'
+};
 
 const DashboardPage = () => {
   return (
-    <div>DashboardPage</div>
+    <div className=''>
+      <Cards/>
+    </div>
   )
 }
 
