@@ -13,7 +13,9 @@ const TableSkeleton = () => {
           <Skeleton className="h-[20px] w-[20%]" />
           </div>
         </div>
-          <Skeleton className="h-[2px] w-[100%] px-4" />
+         <div  className="space-x-8 px-4 " >
+          <Skeleton className="h-[2px] w-[100%] "/>
+         </div>
 
         {/* Satırların skeletonları */}
         {[...Array(5)].map((_, index) => (
