@@ -2,8 +2,8 @@ Müşteri Yönetimi
 
    +  Müşteri bilgilerini kaydetme, düzenleme ve görüntüleme
    + İletişim bilgileri, satın alma geçmişi, 
-   -  notlar gibi detaylı müşteri profili oluşturma
-   -  Müşteri etiketleme ve segmentasyon
+   +  notlar gibi detaylı müşteri profili oluşturma
+   +  Müşteri etiketleme ve segmentasyon
 
 İletişim ve Etkileşim Takibi
 
