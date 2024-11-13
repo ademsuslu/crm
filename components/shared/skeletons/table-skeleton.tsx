@@ -8,8 +8,8 @@ const TableSkeleton = () => {
         <div  className="flex justify-between items-center p-4 bg-gray-700 rounded">
           <Skeleton className="h-[20px] mr-4 w-[40%]" />
 
-          <div className="w-full flex items-end justify-end ">
-          <Skeleton className="h-[40px] mr-4 w-[40px]  rounded-full" />
+          <div className="w-full flex items-center justify-end ">
+          <Skeleton className="h-[25px] mr-4 w-[25px]  rounded-full" />
           <Skeleton className="h-[20px] w-[20%]" />
           </div>
         </div>
