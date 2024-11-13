@@ -72,32 +72,32 @@ const Suponsores = ({
         className
       )}
     >
-   <ul
-  ref={scrollerRef}
-  className={cn(
-    "flex min-w-full shrink-0 gap-4 py-4 w-max  flex-nowrap",
-    start && "animate-scroll",
-    pauseOnHover && "hover:[animation-play-state:paused]"
-  )}
->
-  {[{ name: "/assets/sponser.jpg" }, { name: "/assets/sponser.jpg" }, { name: "/assets/sponser.jpg" }, { name: "/assets/sponser.jpg" }].map((item, idx) => (
-    <li
-      className="w-[250px] md:w-[350px] h-[100px]  object-contain bg-red-400 max-w-full relative rounded border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6"
-      style={{
-        background:
-          "linear-gradient(180deg, var(--slate-800), var(--slate-900)",
-      }}
-      key={idx}
-    >
-      <Image
-        src={item.name}
-        fill
-        alt={item.name}
-        style={{ objectFit: "cover" }}
-      />
-    </li>
-  ))}
-</ul>
+      <ul
+        ref={scrollerRef}
+        className={cn(
+          "flex min-w-full shrink-0 gap-4 py-4 w-max  flex-nowrap",
+          start && "animate-scroll",
+          pauseOnHover && "hover:[animation-play-state:paused]"
+        )}
+      >
+        {[{ name: "/assets/sponser.jpg" }, { name: "/assets/sponser.jpg" }, { name: "/assets/sponser.jpg" }, { name: "/assets/sponser.jpg" }].map((item, idx) => (
+          <li
+            className="w-[250px] md:w-[350px] h-[100px]  object-contain bg-red-400 max-w-full relative rounded border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6"
+            style={{
+              background:
+                "linear-gradient(180deg, var(--slate-800), var(--slate-900)",
+            }}
+            key={idx}
+          >
+            <Image
+              src={item.name}
+              fill
+              alt={item.name}
+              style={{ objectFit: "cover" }}
+            />
+          </li>
+        ))}
+      </ul>
 
     </div>
   );

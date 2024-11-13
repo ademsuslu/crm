@@ -1,13 +1,14 @@
 import React from 'react'
 import { Button } from '../ui/button'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Solitions = () => {
     return (
         <div className='flex flex-col justify-start w-full'>
 
-            <div className='max-w-[1500px] w-full  h-[500px] mx-auto '>
-                <img src="/assets/crms.jpeg" className='w-full h-full object-cover rounded' alt="" />
+            <div className='min-w-full  h-[500px] bg-red-400  relative'>
+                <Image src="/assets/crms.jpeg" fill style={{objectFit:"contain"}} className='aspect-square rounded' alt="crms.jpeg" />
             </div>
             <div className='mt-6 '>
                 <h1 className='mb-3 text-2xl '>
