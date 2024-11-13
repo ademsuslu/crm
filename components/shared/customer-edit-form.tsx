@@ -138,7 +138,7 @@ const CustomerEditForm: React.FC<{ data: Customer }> = ({ data }) => {
                             name="ad"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Ad</FormLabel>
+                                    <FormLabel>Name</FormLabel>
                                     <FormControl>
                                         <Input placeholder="Enter Name" className="" {...field} />
                                     </FormControl>
@@ -153,7 +153,7 @@ const CustomerEditForm: React.FC<{ data: Customer }> = ({ data }) => {
                             name="soyad"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Soyad</FormLabel>
+                                    <FormLabel>Surname</FormLabel>
                                     <FormControl>
                                         <Input placeholder="Enter Surname" {...field} />
                                     </FormControl>

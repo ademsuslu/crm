@@ -24,6 +24,7 @@ export default function RootLayout({
   return (
 <ClerkProvider>
     <html lang="en" suppressHydrationWarning>
+
         <body className={`${roboto.className}`} suppressHydrationWarning>
         <Providers>
           {children}
