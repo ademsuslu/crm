@@ -5,7 +5,7 @@ const TableSkeleton = () => {
     <div>
       <div className="gap-2">
         {/* Başlık için skeleton */}
-        <div  className="flex justify-between items-center p-4 bg-gray-700 rounded">
+        <div  className="flex justify-between items-center p-4 rounded">
           <Skeleton className="h-[20px] mr-4 w-[40%]" />
 
           <div className="w-full flex items-center justify-end ">
@@ -13,6 +13,7 @@ const TableSkeleton = () => {
           <Skeleton className="h-[20px] w-[20%]" />
           </div>
         </div>
+          <Skeleton className="h-[2px] w-[100%] px-4" />
 
         {/* Satırların skeletonları */}
         {[...Array(5)].map((_, index) => (
