@@ -49,12 +49,12 @@ const Hero = () => {
     } satisfies ChartConfig
 
     return (
-        <div className={`flex flex-col md:flex-row items-center justify-between mt-16 ${roboto.className}`}>
+        <div className={`flex flex-col md:flex-row items-center justify-between mt-16`}>
             <div className="flex flex-col items-start z-30">
                 <h1 className="text-3xl text-white uppercase mb-2">
                     Shape the Future with Your Data!
                 </h1>
-                <span className={`text-white tracking-wide  my-1  ${roboto.className}`} >
+                <span className={`text-white tracking-wide  my-1`} >
                     Analyze your data to optimize your business processes and strengthen your strategic decisions.
                     <br />
                     Discover growth opportunities with meaningful charts and reports.
