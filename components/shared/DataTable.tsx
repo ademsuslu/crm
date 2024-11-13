@@ -76,11 +76,11 @@ export const columns: ColumnDef<Customer>[] = [
     header: ({ column }) => (
       <Button
         variant="ghost"
-        className="text-md font-extrabold" 
+        className="text-md flex justify-start items-start px-0 font-extrabold" 
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
         Soyadı
-        <ArrowUpDown />
+        <ArrowUpDown  className="w-4 h-4"/>
       </Button>
     ),
     cell: ({ row }) => <div className="lowercase">{row.getValue("soyad")}</div>,
