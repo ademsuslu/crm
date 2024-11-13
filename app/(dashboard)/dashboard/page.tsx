@@ -8,7 +8,7 @@ export const metadata = {
 
 const DashboardPage = () => {
   return (
-    <div className=''>
+    <div className='space-y-4'>
       <Cards/>
       <DashboardCharts/>
     </div>
