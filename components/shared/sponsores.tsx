@@ -9,6 +9,7 @@ const Suponsores = ({
   speed = "slow",
   pauseOnHover = true,
   className,
+  
 }: {
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";

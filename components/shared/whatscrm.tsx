@@ -7,10 +7,6 @@ const Whatscrm = () => {
     <>
 <div className="mt-6"></div>
     <div className='flex flex-col md:flex-row items-center gap-4 bg-secondary rounded p-4 justify-between'>
-       <div className='w-full aspect-video rounded-lg'>
-
-           <video src="/assets/crm.mp4" className="w-full  h-full" controls ></video>
-       </div>
         <div className='flex flex-col w-full '>
             <h2 className='text-2xl '>What is Crm?</h2>
             <span className='my-4 '>
