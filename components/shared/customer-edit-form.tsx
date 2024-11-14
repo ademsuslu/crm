@@ -97,6 +97,7 @@ const CustomerEditForm: React.FC<{ data: Customer }> = ({ data }) => {
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
         console.log(values)
+        form.reset()
         const url = `https://crm-backend-production-e80f.up.railway.app/api/customers/${data?._id}`
         const response = await fetch(url, {
             method: 'PUT',

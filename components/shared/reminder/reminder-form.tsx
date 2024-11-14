@@ -13,16 +13,12 @@ import {
     FormMessage,
 } from "@/components/ui/form"
 
-import { Calendar } from "@/components/ui/calendar"
 import { Input } from "@/components/ui/input"
 import { useRouter } from "next/navigation"
-import { CalendarIcon } from "lucide-react"
-import { cn } from "@/lib/utils"
 import { reminderFormSchema } from "@/types/form/reminderSchema"
 import { Textarea } from "@/components/ui/textarea"
 import { IoIosTimer } from "react-icons/io"
 import React, { useState } from "react"
-import { AnyNaptrRecord } from "dns"
 import { DateTimePicker } from "./dattimepicker"
 export function ReminderForm() {
     const router = useRouter()

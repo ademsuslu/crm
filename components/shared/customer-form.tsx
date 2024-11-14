@@ -91,6 +91,7 @@ export function CustomerCreateForm() {
 
   async  function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values)
+    form.reset()
      const url = `https://crm-backend-production-e80f.up.railway.app/api/customers`
       const response = await fetch(url,{
          method: 'POST',
