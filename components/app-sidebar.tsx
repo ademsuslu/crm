@@ -176,7 +176,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 className="group/label text-sm text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
               >
                 <CollapsibleTrigger>
-                  {item.title}{" "}
+                 <Link href={item.url}>
+                  {item.title}
+                 </Link>
                   <ChevronRightIcon className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90" />
                 </CollapsibleTrigger>
               </SidebarGroupLabel>
@@ -184,9 +186,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 <SidebarGroupContent>
                   <SidebarMenu>
                     {item?.items?.map((item) => {
-                      console.log("itemm")
-                      console.log(item)
-                      return    <SidebarMenuItem className="ms-3" key={item.title}>
+                  
+                      return   <SidebarMenuItem className="ms-3" key={item.title}>
+                        {/* @ts-ignore */}
                       <SidebarMenuButton asChild isActive={item?.isActive}>
                         <Link href={item.url}>{item.title}</Link>
                       </SidebarMenuButton>
