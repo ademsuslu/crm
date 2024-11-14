@@ -97,7 +97,7 @@ export function ReminderForm() {
                         name="sendTime"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Receiver Mail</FormLabel>
+                                <FormLabel>Send Mail Time</FormLabel>
                                 <FormControl>
                                 <DateTimePicker className="w-full"  onChange={field.onChange} value={field.value} />
                                 </FormControl >

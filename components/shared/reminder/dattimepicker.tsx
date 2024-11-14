@@ -256,6 +256,8 @@ function Calendar({
       classNames={{
         months: 'flex flex-col sm:flex-row space-y-4  sm:space-y-0 justify-center',
         month: 'flex flex-col items-center space-y-4',
+       
+        
         //@ts-ignore
         month_caption: 'flex justify-center pt-1 relative items-center',
         caption_label: 'text-sm font-medium',
@@ -289,16 +291,17 @@ function Calendar({
         ...classNames,
       }}
       components={{
-                //@ts-ignore
+               
 
+        //@ts-ignore
         Chevron: ({ ...props }) =>
           props.orientation === 'left' ? (
             <ChevronLeft className="h-4 w-4" />
           ) : (
             <ChevronRight className="h-4 w-4" />
           ),
-        //@ts-ignore
-          MonthCaption: ({ calendarMonth }) => {
+       
+          MonthCaption: ({ calendarMonth }:any) => {
           return (
             <div className="inline-flex gap-2">
               <Select
@@ -348,7 +351,7 @@ function Calendar({
   );
 }
 Calendar.displayName = 'Calendar';
-
+//!
 interface PeriodSelectorProps {
   period: Period;
   setPeriod?: (m: Period) => void;
