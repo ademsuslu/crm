@@ -1,0 +1,206 @@
+import * as React from "react"
+import { SearchForm } from "@/components/search-form"
+import { VersionSwitcher } from "@/components/version-switcher"
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible"
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarRail,
+} from "@/components/ui/sidebar"
+import { ChevronRightIcon } from "@radix-ui/react-icons"
+import Logo from "./shared/logo"
+import Link from "next/link"
+
+// This is sample data.
+const data = {
+  versions: ["1.0.1", "1.1.0-alpha", "2.0.0-beta1"],
+  navMain: [
+   
+    {
+      title: "Home",
+      url: "/dashboard",
+      // items: [
+      //   {
+      //     title: "Routing",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Data Fetching",
+      //     url: "#",
+      //     isActive: true,
+      //   },
+      //   {
+      //     title: "Rendering",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Caching",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Styling",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Optimizing",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Configuring",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Testing",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Authentication",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Deploying",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Upgrading",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Examples",
+      //     url: "#",
+      //   },
+      // ],
+    },
+    {
+      title: "Customers",
+      url: "/customer",
+      items: [
+        {
+          title: "Reminders",
+          url: "/customer/reminder",
+        },
+        {
+          title: "Create",
+          url: "/customer/create",
+        },
+      
+      ],
+    },
+    {
+      title: "Bussiness",
+      url: "/bussiness",
+      // items: [
+      //   {
+      //     title: "Accessibility",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Fast Refresh",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Next.js Compiler",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Supported Browsers",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Turbopack",
+      //     url: "#",
+      //   },
+      // ],
+    },
+    {
+      title: "Employees",
+      url: "/employee",
+      // items: [
+      //   {
+      //     title: "Contribution Guide",
+      //     url: "#",
+      //   },
+      // ],
+    },
+     // {
+    //   title: "Getting Started",
+    //   url: "#",
+    //   items: [
+    //     {
+    //       title: "Installation",
+    //       url: "#",
+    //     },
+    //     {
+    //       title: "Project Structure",
+    //       url: "#",
+    //     },
+    //   ],
+    // },
+  ],
+}
+
+export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  return (
+    <Sidebar {...props}>
+      <SidebarHeader>
+        {/* <VersionSwitcher
+          versions={data.versions}
+          defaultVersion={data.versions[0]}
+        />
+        <SearchForm /> */}
+        <Logo/>
+      </SidebarHeader>
+      <SidebarContent className="gap-0">
+        {/* We create a collapsible SidebarGroup for each parent. */}
+        {data.navMain.map((item) => (
+          <Collapsible
+            key={item.title}
+            title={item.title}
+            defaultOpen
+            className="group/collapsible"
+          >
+            <SidebarGroup>
+              <SidebarGroupLabel
+                asChild
+                className="group/label text-sm text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+              >
+                <CollapsibleTrigger>
+                  {item.title}{" "}
+                  <ChevronRightIcon className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90" />
+                </CollapsibleTrigger>
+              </SidebarGroupLabel>
+              <CollapsibleContent>
+                <SidebarGroupContent>
+                  <SidebarMenu>
+                    {item?.items?.map((item) => {
+                      console.log("itemm")
+                      console.log(item)
+                      return    <SidebarMenuItem className="ms-3" key={item.title}>
+                      <SidebarMenuButton asChild isActive={item?.isActive}>
+                        <Link href={item.url}>{item.title}</Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                    }
+                   )}
+                  </SidebarMenu>
+                </SidebarGroupContent>
+              </CollapsibleContent>
+            </SidebarGroup>
+          </Collapsible>
+        ))}
+      </SidebarContent>
+      <SidebarRail />
+    </Sidebar>
+  )
+}
