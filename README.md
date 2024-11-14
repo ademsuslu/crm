@@ -8,6 +8,7 @@ Müşteri Yönetimi
 İletişim ve Etkileşim Takibi
     + hatırlatıcı oluşturuluyor
     + Otomatik bildirimler
+    - reminder delete ve detay pages yapılıcak 
     E-posta ve SMS entegrasyonu ile müşterilere doğrudan ulaşma
     Müşteri ile yapılan tüm etkileşimleri (e-postalar, telefon görüşmeleri, toplantılar) kaydetme
 
