@@ -3,8 +3,6 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { format } from "date-fns"
-
 import { Button } from "@/components/ui/button"
 import {
     Form,
@@ -14,13 +12,7 @@ import {
     FormLabel,
     FormMessage,
 } from "@/components/ui/form"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-import {
-    Popover,
-    PopoverContent,
-    PopoverTrigger,
-} from "@/components/ui/popover"
 import { Calendar } from "@/components/ui/calendar"
 import { Input } from "@/components/ui/input"
 import { useRouter } from "next/navigation"
@@ -45,6 +37,7 @@ export function ReminderForm() {
     });
 
     async function onSubmit(values: z.infer<typeof reminderFormSchema>) {
+        form.reset()
         console.log(values)
         // const url = `https://crm-backend-production-e80f.up.railway.app/api/customers`
         // const response = await fetch(url, {
