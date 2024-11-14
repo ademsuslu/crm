@@ -32,6 +32,8 @@ import { IoIosTimer } from "react-icons/io"
 import React, { useState } from "react"
 import { cn } from "@/lib/utils"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+import { toast } from "@/hooks/use-toast"
+import { TiTick } from "react-icons/ti"
 
 export function ReminderForm() {
     const router = useRouter()
@@ -77,18 +79,18 @@ export function ReminderForm() {
     async function onSubmit(values: z.infer<typeof reminderFormSchema>) {
         form.reset()
         console.log(values)
-        // const url = `https://crm-backend-production-e80f.up.railway.app/api/customers`
-        // const response = await fetch(url, {
-        //     method: 'POST',
-        //     cache: "no-cache",
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(values)
-        // })
-        // const res = await response.json()
-        // toast({ description: <div className="inline-flex items-center">{res?.message} <TiTick className='w-6 h-6 ml-2 text-green-500' /></div> })
-        // router.push("/customer")
+        const url = `https://crm-backend-production-e80f.up.railway.app/api/reminder`
+        const response = await fetch(url, {
+            method: 'POST',
+            cache: "no-cache",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(values)
+        })
+        const res = await response.json()
+        toast({ description: <div className="inline-flex items-center">{res?.message} <TiTick className='w-6 h-6 ml-2 text-green-500' /></div> })
+        router.push("/customer")
     }
 
     return (
