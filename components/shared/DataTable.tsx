@@ -1,4 +1,6 @@
 "use client"
+
+import { IoIosTimer  } from "react-icons/io";
 import { FaEdit, FaEye } from "react-icons/fa";
 import * as React from "react"
 import {
@@ -124,6 +126,11 @@ export const columns: ColumnDef<Customer>[] = [
           <DropdownMenuItem >
             <Link className="inline-flex items-center" href={`/customer/edit/${row.original._id}`}>
               <FaEdit className="w-4 h-4 mr-2" /> Edit
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem >
+            <Link className="inline-flex items-center" href={`/customer/create/reminder/${row.original._id}`}>
+              <IoIosTimer  className="w-5 h-5 mr-2" /> Add Reminder
             </Link>
           </DropdownMenuItem>
         </DropdownMenuContent>

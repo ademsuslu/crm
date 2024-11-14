@@ -1,15 +1,15 @@
 Müşteri Yönetimi
 
    +  Müşteri bilgilerini kaydetme, düzenleme ve görüntüleme
-   + İletişim bilgileri, satın alma geçmişi, 
+   +  İletişim bilgileri, satın alma geçmişi, 
    +  notlar gibi detaylı müşteri profili oluşturma
    +  Müşteri etiketleme ve segmentasyon
 
 İletişim ve Etkileşim Takibi
-
-    Müşteri ile yapılan tüm etkileşimleri (e-postalar, telefon görüşmeleri, toplantılar) kaydetme
-    Otomatik bildirimler ve hatırlatıcılar ayarlama
+    + hatırlatıcı oluşturuluyor
+    + Otomatik bildirimler
     E-posta ve SMS entegrasyonu ile müşterilere doğrudan ulaşma
+    Müşteri ile yapılan tüm etkileşimleri (e-postalar, telefon görüşmeleri, toplantılar) kaydetme
 
 Satış Yönetimi
 
