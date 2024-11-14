@@ -37,6 +37,7 @@ import { TiTick } from "react-icons/ti"
 import { CalendarIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { reminderFormSchema } from "@/types/form/reminderSchema"
+import { Textarea } from "@/components/ui/textarea"
 
 export function ReminderForm() {
     const router = useRouter()
@@ -106,7 +107,7 @@ export function ReminderForm() {
                             <FormItem>
                                 <FormLabel>Content</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="Enter Content" {...field} />
+                                    <Textarea rows={4} placeholder="Enter Content" {...field} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
