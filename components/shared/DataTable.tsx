@@ -129,7 +129,7 @@ export const columns: ColumnDef<Customer>[] = [
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem >
-            <Link className="inline-flex items-center" href={`/customer/create/reminder/${row.original._id}`}>
+            <Link className="inline-flex items-center" href={`/customer/${row.original._id}/create`}>
               <IoIosTimer  className="w-5 h-5 mr-2" /> Add Reminder
             </Link>
           </DropdownMenuItem>

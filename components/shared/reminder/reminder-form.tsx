@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
-import { z } from "zod"
+import { string, z } from "zod"
 import { Button } from "@/components/ui/button"
 import {
     Form,
@@ -30,13 +30,18 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { toast } from "@/hooks/use-toast"
 import { TiTick } from "react-icons/ti"
 
-export function ReminderForm() {
+interface Props  {
+    email: string;
+}
+ const ReminderForm:React.FC<Props>=(email)=> {
+
+    
     const router = useRouter()
     const form = useForm<z.infer<typeof reminderFormSchema>>({
         resolver: zodResolver(reminderFormSchema),
         defaultValues: {
             senderMail: "",
-            receiverMail: "",
+            receiverMail: email.email ? email.email : "",
             content: "",
             sendTime: new Date()
         },
@@ -267,4 +272,4 @@ export function ReminderForm() {
 }
 
 
-
+export default ReminderForm
