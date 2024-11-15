@@ -28,7 +28,7 @@ export default async function CustomerCreateReminder({
         </div>
         <div>
           Send Time:
-          <span className="ml-2">{data.data.sendTime}</span>
+          <span className="ml-2">{new Date(data.data?.sendTime).toLocaleString('tr-TR', { timeZone: 'Europe/Istanbul' })}</span>
         </div>
         <div>
           Content:
