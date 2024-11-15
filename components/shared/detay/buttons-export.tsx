@@ -12,17 +12,18 @@ import { TiTick } from "react-icons/ti";
 
 type ButtonsExportProps = {
   data: Customer
-
+type:"reminder"|"customer"
 };
-const ButtonsExport: React.FC<ButtonsExportProps> = ({ data }) => {
+const ButtonsExport: React.FC<ButtonsExportProps> = ({ data ,type}) => {
   const { toast } = useToast()
   const router = useRouter();
   const handleCvs = () => {
     ExportToExcel(data);
   };
     const handleDelete = async (id:string) => {
+      const url = type !== 'reminder' ? ` ${"https://crm-backend-production-e80f.up.railway.app/api"}/customers/${id} ` :` ${"https://crm-backend-production-e80f.up.railway.app/api"}/reminder/${id}`
       try {
-        const response = await fetch(`${"https://crm-backend-production-e80f.up.railway.app/api"}/customers/${id}`, {
+        const response = await fetch(`${url}`, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',
@@ -36,10 +37,10 @@ const ButtonsExport: React.FC<ButtonsExportProps> = ({ data }) => {
           throw new Error('Bir hata oluştu!');
         }
          toast({
-          description: <div className='inline-flex items-center '>Customer deleted <TiTick className='w-6 h-6 ml-2 text-green-500'/>.</div>  ,
+          description: <div className='inline-flex items-center'>{ type  ===  "reminder" ? "Reminder " : "Customer"} deleted <TiTick className='w-6 h-6 ml-2 text-green-500'/>.</div>  ,
         })
         router.refresh();
-        router.push("/customer");
+        router.push( type  === "reminder" ?"/customer/reminder" : "/customer" );
       } catch (error) {
         console.error('Silme işleminde hata:', error);
       }
@@ -53,7 +54,7 @@ const ButtonsExport: React.FC<ButtonsExportProps> = ({ data }) => {
         <BiSolidFileExport className='w-4 h-4 ml-1' />
       </Button>
       <Button onClick={()=>handleDelete(data._id)}>
-       <AiFillDelete />
+        <AiFillDelete />
        </Button>
     </div>
   );

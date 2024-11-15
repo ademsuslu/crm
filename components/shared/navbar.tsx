@@ -41,7 +41,7 @@ const Navbar = () => {
         </ClerkLoading>
         <ClerkLoaded>
           <SignedIn>
-            <Link href="/dashboard" className="inline-flex items-center text-lg gap-2">
+            <Link href="/dashboard" className="inline-flex items-center whitespace-nowrap text-lg gap-2">
               Open Dashboard
               <GoLinkExternal className="w-4 h-4 ml-1" />
             </Link>
