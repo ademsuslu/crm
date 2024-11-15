@@ -1,7 +1,6 @@
 import ButtonsExport from "@/components/shared/detay/buttons-export"
 import { buttonVariants } from "@/components/ui/button"
 import Link from "next/link"
-import  CustomerEditForm  from "@/components/shared/customer-edit-form"
 import ReminderEditForm from "@/components/shared/reminder/reminder-edit-form"
 export default async function CustomerDetails({
   params,
@@ -16,7 +15,7 @@ export default async function CustomerDetails({
   return <div className="flex flex-col justify-between items-center  gap-2">
     <div className="flex w-full justify-between gap-2">
       <Link href={"/customer/reminder"} className={buttonVariants({})}>Back</Link>
-       <ButtonsExport data={data?.data} type="reminder" />
+       <ButtonsExport  type="reminder" />
     </div>
     <div className="w-full">
     <ReminderEditForm data={data?.data} />

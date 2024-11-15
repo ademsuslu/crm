@@ -11,7 +11,7 @@ import { TiTick } from "react-icons/ti";
 
 
 type ButtonsExportProps = {
-  data: Customer
+  data?: Customer
   type?: "reminder" | "customer"
 };
 const ButtonsExport: React.FC<ButtonsExportProps> = ({ data, type }) => {
@@ -21,7 +21,7 @@ const ButtonsExport: React.FC<ButtonsExportProps> = ({ data, type }) => {
     ExportToExcel(data);
   };
   const handleDelete = async () => {
-    const url = type !== 'reminder' ? ` ${"https://crm-backend-production-e80f.up.railway.app/api"}/customers/${data._id} ` : ` ${"https://crm-backend-production-e80f.up.railway.app/api"}/reminder/${data._id}`
+    const url = type !== 'reminder' ? ` ${"https://crm-backend-production-e80f.up.railway.app/api"}/customers/${data?._id} ` : ` ${"https://crm-backend-production-e80f.up.railway.app/api"}/reminder/${data?._id}`
     try {
       const response = await fetch(`${url}`, {
         method: 'DELETE',

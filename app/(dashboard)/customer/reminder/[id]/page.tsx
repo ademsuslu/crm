@@ -14,7 +14,7 @@ export default async function CustomerCreateReminder({
   return <div className="flex flex-col justify-between items-center  gap-2">
     <div className="flex w-full justify-between gap-2">
       <Link href={"/customer/reminder"} className={buttonVariants({})}>Back</Link>
-      <ButtonsExport type="reminder" data={data?.data} />
+      <ButtonsExport type="reminder"  />
     </div>
     <div className="w-full">
       <div className="flex flex-col">
