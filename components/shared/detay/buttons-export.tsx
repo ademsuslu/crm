@@ -12,7 +12,7 @@ import { TiTick } from "react-icons/ti";
 
 type ButtonsExportProps = {
   data: Customer
-  type: "reminder" | "customer"
+  type?: "reminder" | "customer"
 };
 const ButtonsExport: React.FC<ButtonsExportProps> = ({ data, type }) => {
   const { toast } = useToast()
