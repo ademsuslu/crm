@@ -1,5 +1,4 @@
 import ButtonsExport from "@/components/shared/detay/buttons-export"
-import { ReminderForm } from "@/components/shared/reminder/reminder-form"
 import { buttonVariants } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -18,11 +17,24 @@ export default async function CustomerCreateReminder({
       <ButtonsExport type="reminder" data={data} />
     </div>
     <div className="w-full">
-      {/* <ReminderForm /> */}
-      reminder details
-      {
-        data.data.content
-      }
+      <div className="flex flex-col">
+        <div>
+          Sender Mail:
+          <span className="ml-2">{data.data.senderMail}</span>
+        </div>
+        <div>
+          Receiver Mail
+          <span className="ml-2">{data.data.receiverMail}</span>
+        </div>
+        <div>
+          Send Time:
+          <span className="ml-2">{data.data.sendTime}</span>
+        </div>
+        <div>
+          Content:
+          <span className="ml-2">{data.data.content}</span>
+        </div>
+      </div>
     </div>
 
   </div>

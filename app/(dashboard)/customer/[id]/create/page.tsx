@@ -11,8 +11,7 @@ export default async function CustomerDetails({
     const response = await fetch(`https://crm-backend-production-e80f.up.railway.app/api/customers/${id}`,{ cache: 'no-cache' })
     const data = await response.json()
      let email = String(data?.iletisim_bilgileri?.email)
-    console.log("data")
-  console.log(data.iletisim_bilgileri?.email)
+   
   return (
     <div>
         <ReminderForm email={email}/>
