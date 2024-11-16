@@ -41,17 +41,20 @@ const KanbanTable: React.FC<Props> = ({ data }) => {
               .filter((opp) => opp.stage === stage)
               .map((opp) => (
                 <motion.div
-                  key={opp._id}
-                  className="p-4 bg-white rounded-lg shadow-sm cursor-pointer"
-                  draggable // HTML native drag özelliği
-                  onDragStart={(e) =>
-                    e.dataTransfer.setData("text/plain", opp._id) // Fırsatın ID'sini taşı
-                  }
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {opp.name}
-                </motion.div>
+                key={opp._id}
+                className="p-4 bg-white rounded-lg shadow-sm cursor-pointer"
+                draggable
+                onDragStart={(e: any) => {
+                  e.dataTransfer.setData("text/plain", opp._id);
+                }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {opp.name}
+              </motion.div>
+              
+
+              
               ))}
           </div>
         </div>
