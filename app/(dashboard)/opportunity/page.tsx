@@ -1,5 +1,6 @@
+import KanbanTable from '@/components/shared/drag_drop/Tables'
 import React from 'react'
-import KanbanTable from './Tables'
+
 
 export default function OpportunityPage() {
   
