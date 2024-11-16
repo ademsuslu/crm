@@ -12,16 +12,18 @@ import { TiTick } from "react-icons/ti";
 
 type ButtonsExportProps = {
   data?: Customer
-  type?: "reminder" | "customer"
+  type?: "reminder" | "customer",
+  id?: string
 };
-const ButtonsExport: React.FC<ButtonsExportProps> = ({ data, type }) => {
+const ButtonsExport: React.FC<ButtonsExportProps> = ({ data,  type,id}) => {
   const { toast } = useToast()
   const router = useRouter();
   const handleCvs = () => {
     ExportToExcel(data);
   };
   const handleDelete = async () => {
-    const url = type !== 'reminder' ? ` ${"https://crm-backend-production-e80f.up.railway.app/api"}/customers/${data?._id} ` : ` ${"https://crm-backend-production-e80f.up.railway.app/api"}/reminder/${data?._id}`
+    let ById = id || data?._id
+    const url = type !== 'reminder' ? ` ${"https://crm-backend-production-e80f.up.railway.app/api"}/customers/${ById} ` : ` ${"https://crm-backend-production-e80f.up.railway.app/api"}/reminder/${ById}`
     try {
       const response = await fetch(`${url}`, {
         method: 'DELETE',
@@ -46,13 +48,13 @@ const ButtonsExport: React.FC<ButtonsExportProps> = ({ data, type }) => {
     }
   };
 
-
-
   return (
     <div className='flex  items-center gap-2 '>
-      <Button onClick={handleCvs} className='text-sm'>
+     { type === "customer" &&
+       <Button onClick={handleCvs} className='text-sm'>
         <BiSolidFileExport className='w-4 h-4 ml-1' />
       </Button>
+      }
       <Button onClick={() => handleDelete()}>
         <AiFillDelete />
       </Button>

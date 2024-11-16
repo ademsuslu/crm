@@ -15,7 +15,7 @@ export default async function CustomerDetails({
   return <div className="flex flex-col justify-between items-center  gap-2">
     <div className="flex w-full justify-between gap-2">
       <Link href={"/customer/reminder"} className={buttonVariants({})}>Back</Link>
-       <ButtonsExport  type="reminder" />
+       <ButtonsExport id={id} type="reminder" />
     </div>
     <div className="w-full">
     <ReminderEditForm data={data?.data} />
