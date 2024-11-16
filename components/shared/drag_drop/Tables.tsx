@@ -10,12 +10,16 @@ const stages = ["Görüşme", "Teklif Verildi", "Sözleşme Yapıldı"] as const
 type Stage = typeof stages[number];
 
 
+interface Props {
+  data: Opportunity[]
+}
+
 // Başlangıç verisi
 
 
-const KanbanTable: React.FC<Opportunity[]> = (data) => {
+const KanbanTable: React.FC<Props> = (data) => {
   const [opportunities, setOpportunities] = useState<Opportunity[]>(
-    data
+    data.data
   );
 
   // Fırsatın aşamasını güncelleme
