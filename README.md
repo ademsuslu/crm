@@ -1,24 +1,22 @@
 Müşteri Yönetimi
-
    +  Müşteri bilgilerini kaydetme, düzenleme ve görüntüleme
    +  İletişim bilgileri, satın alma geçmişi, 
    +  notlar gibi detaylı müşteri profili oluşturma
    +  Müşteri etiketleme ve segmentasyon
 
 İletişim ve Etkileşim Takibi
-    + hatırlatıcı oluşturuluyor
-    + Otomatik bildirimler
-    - reminder delete ve detay pages yapılıcak 
-    E-posta ve SMS entegrasyonu ile müşterilere doğrudan ulaşma
-    Müşteri ile yapılan tüm etkileşimleri (e-postalar, telefon görüşmeleri, toplantılar) kaydetme
+   + hatırlatıcı oluşturuluyor
+   + Otomatik bildirimler
+   + reminder delete ve detay pages yapılıcak 
+    + E-posta ve SMS entegrasyonu ile müşterilere doğrudan ulaşma
+    + Müşteri ile yapılan tüm etkileşimleri (e-postalar, telefon görüşmeleri, toplantılar) kaydetme
 
-Satış Yönetimi
-
+3. Preferences Satış Yönetimi
     Satış fırsatlarını izleme ve yönetme (pipeline yönetimi)
     Teklif, sözleşme ve satış süreci takibi
     Satış ekibi performans analizleri
-Görev ve İş Takibi
 
+Görev ve İş Takibi
     Görev oluşturma ve görevlere ekip üyeleri atama
     Görevler için hatırlatıcılar ve son tarih belirleme
     Görev tamamlama oranlarını takip etme
