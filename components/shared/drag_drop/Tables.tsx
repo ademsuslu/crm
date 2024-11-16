@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Opportunity } from "@/types/Opportunity/model";
 
 // Aşamalar için sabit liste
-const stages = ["Görüşme", "Teklif Verildi", "Sözleşme Yapıldı"] as const;
+const stages = ['İletişim', 'Teklif', 'Görüşme', 'Kapalı', 'Kazandı', 'Kaybetti']as const;
 
 // Tip tanımları
 type Stage = typeof stages[number];
