@@ -12,9 +12,61 @@ type Stage = typeof stages[number];
 
 // Başlangıç verisi
 const initialOpportunities: Opportunity[] = [
-  { id: 1, name: "Yeni Müşteri 1", stage: "Görüşme" },
-  { id: 2, name: "Proje 2", stage: "Teklif Verildi" },
-  { id: 3, name: "Hizmet 3", stage: "Görüşme" },
+  {
+    _id: "6738ab78507239385cb71d27",
+    name: "Yeni CRM Projesi",
+    stage: "Teklif",
+    value: 15000,
+    assignedTo: {
+      _id: "6738aa57507239385cb71d14",
+      name: "Adem Süslü",
+      email: "ademsuslu9080@gmail.com",
+      password: "123456",
+      role: "admin",
+      createdAt: "2024-11-16T14:21:11.622Z",
+      __v: 0
+    },
+    createdAt: "2024-11-16T14:26:00.744Z",
+    updatedAt: "2024-11-16T14:26:00.744Z",
+    __v: 0
+  },
+  {
+    _id: "6738ab78507239385cb71d28",
+    name: "Yeni CRM Projesi",
+    stage: "Teklif",
+    value: 15000,
+    assignedTo: {
+      _id: "6738aa57507239385cb71d14",
+      name: "Adem Süslü",
+      email: "ademsuslu9080@gmail.com",
+      password: "123456",
+      role: "admin",
+      createdAt: "2024-11-16T14:21:11.622Z",
+      __v: 0
+    },
+    createdAt: "2024-11-16T14:26:00.744Z",
+    updatedAt: "2024-11-16T14:26:00.744Z",
+    __v: 0
+  },
+  {
+    _id: "6738ab78507239385cb71d29",
+    name: "Yeni CRM Projesi",
+    stage: "Teklif",
+    value: 15000,
+    assignedTo: {
+      _id: "6738aa57507239385cb71d14",
+      name: "Adem Süslü",
+      email: "ademsuslu9080@gmail.com",
+      password: "123456",
+      role: "admin",
+      createdAt: "2024-11-16T14:21:11.622Z",
+      __v: 0
+    },
+    createdAt: "2024-11-16T14:26:00.744Z",
+    updatedAt: "2024-11-16T14:26:00.744Z",
+    __v: 0
+  },
+  
 ];
 
 const KanbanTable: React.FC = () => {
@@ -27,7 +79,7 @@ const KanbanTable: React.FC = () => {
     const opportunityId = parseInt(event.dataTransfer.getData("text/plain"), 10);
     setOpportunities((prev) =>
       prev.map((opp) =>
-        opp.id === opportunityId ? { ...opp, stage: targetStage } : opp
+        opp?.id === opportunityId ? { ...opp, stage: targetStage } : opp
       )
     );
   };
