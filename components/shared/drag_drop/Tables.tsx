@@ -11,67 +11,11 @@ type Stage = typeof stages[number];
 
 
 // Başlangıç verisi
-const initialOpportunities: Opportunity[] = [
-  {
-    _id: "6738ab78507239385cb71d27",
-    name: "Yeni CRM Projesi",
-    stage: "Teklif",
-    value: 15000,
-    assignedTo: {
-      _id: "6738aa57507239385cb71d14",
-      name: "Adem Süslü",
-      email: "ademsuslu9080@gmail.com",
-      password: "123456",
-      role: "admin",
-      createdAt: "2024-11-16T14:21:11.622Z",
-      __v: 0
-    },
-    createdAt: "2024-11-16T14:26:00.744Z",
-    updatedAt: "2024-11-16T14:26:00.744Z",
-    __v: 0
-  },
-  {
-    _id: "6738ab78507239385cb71d28",
-    name: "Yeni CRM Projesi",
-    stage: "Teklif",
-    value: 15000,
-    assignedTo: {
-      _id: "6738aa57507239385cb71d14",
-      name: "Adem Süslü",
-      email: "ademsuslu9080@gmail.com",
-      password: "123456",
-      role: "admin",
-      createdAt: "2024-11-16T14:21:11.622Z",
-      __v: 0
-    },
-    createdAt: "2024-11-16T14:26:00.744Z",
-    updatedAt: "2024-11-16T14:26:00.744Z",
-    __v: 0
-  },
-  {
-    _id: "6738ab78507239385cb71d29",
-    name: "Yeni CRM Projesi",
-    stage: "Teklif",
-    value: 15000,
-    assignedTo: {
-      _id: "6738aa57507239385cb71d14",
-      name: "Adem Süslü",
-      email: "ademsuslu9080@gmail.com",
-      password: "123456",
-      role: "admin",
-      createdAt: "2024-11-16T14:21:11.622Z",
-      __v: 0
-    },
-    createdAt: "2024-11-16T14:26:00.744Z",
-    updatedAt: "2024-11-16T14:26:00.744Z",
-    __v: 0
-  },
-  
-];
 
-const KanbanTable: React.FC = () => {
+
+const KanbanTable: React.FC<Opportunity[]> = (data) => {
   const [opportunities, setOpportunities] = useState<Opportunity[]>(
-    initialOpportunities
+    data
   );
 
   // Fırsatın aşamasını güncelleme
@@ -99,7 +43,7 @@ const KanbanTable: React.FC = () => {
               .filter((opp) => opp.stage === stage)
               .map((opp) => (
                 <motion.div
-                  key={opp.id}
+                  key={opp._id}
                   className="p-4 bg-white rounded-lg shadow-sm cursor-pointer"
                   draggable // HTML native drag özelliği
                   onDragStart={(e) =>
