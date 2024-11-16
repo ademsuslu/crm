@@ -1,33 +1,27 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Opportunity } from "@/types/Opportunity/model";
 
 // Aşamalar için sabit liste
-const stages = ['İletişim', 'Teklif', 'Görüşme', 'Kapalı', 'Kazandı', 'Kaybetti']as const;
+const stages = ['İletişim', 'Teklif', 'Görüşme', 'Kapalı', 'Kazandı', 'Kaybetti'] as const;
 
 // Tip tanımları
 type Stage = typeof stages[number];
 
-
 interface Props {
-  data: Opportunity[]
+  data: Opportunity[];
 }
 
-// Başlangıç verisi
-
-
-const KanbanTable: React.FC<Props> = (data) => {
-  const [opportunities, setOpportunities] = useState<Opportunity[]>(
-    data.data
-  );
+const KanbanTable: React.FC<Props> = ({ data }) => {
+  const [opportunities, setOpportunities] = useState<Opportunity[]>(data);
 
   // Fırsatın aşamasını güncelleme
   const onDrop = (event: React.DragEvent<HTMLDivElement>, targetStage: Stage) => {
-    const opportunityId = parseInt(event.dataTransfer.getData("text/plain"), 10);
+    const opportunityId = event.dataTransfer.getData("text/plain"); // ID string olarak taşınır
     setOpportunities((prev) =>
       prev.map((opp) =>
-        opp?.id === opportunityId ? { ...opp, stage: targetStage } : opp
+        opp._id === opportunityId ? { ...opp, stage: targetStage } : opp
       )
     );
   };
@@ -51,11 +45,8 @@ const KanbanTable: React.FC<Props> = (data) => {
                   className="p-4 bg-white rounded-lg shadow-sm cursor-pointer"
                   draggable // HTML native drag özelliği
                   onDragStart={(e) =>
-
-                    // Fırsatın ID'sini taşı
-                    // @ts-ignore
-                    e.dataTransfer.setData("text/plain", opp.id.toString())
-                  } 
+                    e.dataTransfer.setData("text/plain", opp._id) // Fırsatın ID'sini taşı
+                  }
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
