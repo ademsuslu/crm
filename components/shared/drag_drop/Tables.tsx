@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Opportunity } from "@/types/Opportunity/model";
 
 // Aşamalar için sabit liste
 const stages = ["Görüşme", "Teklif Verildi", "Sözleşme Yapıldı"] as const;
@@ -8,11 +9,6 @@ const stages = ["Görüşme", "Teklif Verildi", "Sözleşme Yapıldı"] as const
 // Tip tanımları
 type Stage = typeof stages[number];
 
-interface Opportunity {
-  id: number;
-  name: string;
-  stage: Stage;
-}
 
 // Başlangıç verisi
 const initialOpportunities: Opportunity[] = [
