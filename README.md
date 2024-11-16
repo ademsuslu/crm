@@ -14,6 +14,7 @@ Müşteri Yönetimi
 3. Preferences Satış Yönetimi
     Satış fırsatlarını izleme ve yönetme (pipeline yönetimi)
     Teklif, sözleşme ve satış süreci takibi
+    Satis Teklifi sunuldugunda  mail gonderilicek
     Satış ekibi performans analizleri
 
 Görev ve İş Takibi
