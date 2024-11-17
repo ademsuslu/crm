@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Opportunity } from "@/types/Opportunity/model";
 import { MdOutlineDragIndicator } from "react-icons/md";
+import { Button } from "@/components/ui/button";
 
 // Aşamalar için sabit liste
 const stages = ["İletişim", "Teklif", "Görüşme", "Kapalı", "Kazandı", "Kaybetti"] as const;
@@ -53,37 +54,42 @@ const KanbanTable: React.FC<Props> = ({ data }) => {
   };
 
   return (
-    <div className="flex  bg-red-300 gap-4 p-4 overflow-x-scroll max-w-[1000px] space-x-4  border rounded	">
-      {stages.map((stage) => (
-        <div
-          key={stage}
-          className="flex-1  p-4  bg-secondary-foreground rounded-lg shadow-md"
-          onDragOver={(e) => e.preventDefault()} // Drop işlemini etkinleştirme
-          onDrop={(e) => onDrop(e, stage)} // Bırakma sırasında çağırılan fonksiyon
-        >
-          <h2 className="text-lg font-bold mb-4 text-gray-700">{stage}</h2>
-          <div className="space-y-4  w-[250px] ">
-            {opportunities
-              .filter((opp) => opp.stage === stage)
-              .map((opp) => (
-                <motion.div
-                  key={opp._id}
-                  className="p-4 flex items-center justify-start text-sm text-black bg-white rounded-lg shadow-sm cursor-grab"
-                  draggable
-                  onDragStart={(e: any) => {
-                    e.dataTransfer.setData("text/plain", opp._id);
-                  }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <MdOutlineDragIndicator className="w-6 h-6 mr-2" />
+    <div className="flex flex-col space-y-2 w-full">
+      <div className="">
+        <Button variant={"secondary"}>Add to cart</Button>
+      </div>
+      <div className="flex   gap-4 p-4 scrollbar overflow-x-scroll max-w-[1070px] app-scrollbar app-scrollbar--dark space-x-4  border rounded	">
+        {stages.map((stage) => (
+          <div
+            key={stage}
+            className="flex-1  p-4  bg-secondary-foreground rounded-lg shadow-md"
+            onDragOver={(e) => e.preventDefault()} // Drop işlemini etkinleştirme
+            onDrop={(e) => onDrop(e, stage)} // Bırakma sırasında çağırılan fonksiyon
+          >
+            <h2 className="text-lg font-bold mb-4 text-gray-700">{stage}</h2>
+            <div className="space-y-4  w-[200px] ">
+              {opportunities
+                .filter((opp) => opp.stage === stage)
+                .map((opp) => (
+                  <motion.div
+                    key={opp._id}
+                    className="p-4 flex items-center justify-start text-sm text-black bg-white rounded-lg shadow-sm cursor-grab"
+                    draggable
+                    onDragStart={(e: any) => {
+                      e.dataTransfer.setData("text/plain", opp._id);
+                    }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <MdOutlineDragIndicator className="w-6 h-6 mr-2" />
 
-                  {opp.name}
-                </motion.div>
-              ))}
+                    {opp.name}
+                  </motion.div>
+                ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

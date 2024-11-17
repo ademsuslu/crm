@@ -111,9 +111,29 @@
   body {
     @apply bg-background text-foreground;
   }
+
   @layer utilities {
     .custom-shadow {
       box-shadow: 0 0 7px 0px rgba(0, 0, 0, 0.25); /* Sadece alta gölge */
+    }
+    .scrollbar::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+
+    .scrollbar::-webkit-scrollbar-track {
+      border-radius: 100vh;
+      background: #374151;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb {
+      background: #111827;
+      border-radius: 100vh;
+      border: 3px solid #f6f7ed;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+      background: ##d1d5db;
     }
   }
 }
