@@ -124,6 +124,32 @@ const data = {
       // ],
     },
     {
+      title: "Opportunity",
+      url: "/opportunity",
+      // items: [
+      //   {
+      //     title: "Accessibility",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Fast Refresh",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Next.js Compiler",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Supported Browsers",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Turbopack",
+      //     url: "#",
+      //   },
+      // ],
+    },
+    {
       title: "Employees",
       url: "/employee",
       // items: [
