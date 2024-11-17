@@ -9,7 +9,7 @@ export default async function OpportunityPage() {
   console.log(data)
 
   return (
-    <div className='  '>
+    <div className=''>
         <KanbanTable  data={data} />
     </div>
   )

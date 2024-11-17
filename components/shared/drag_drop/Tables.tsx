@@ -53,7 +53,7 @@ const KanbanTable: React.FC<Props> = ({ data }) => {
   };
 
   return (
-    <div className="flex  bg-red-300 gap-4 p-4 overflow-x-scroll w-[1000px] space-x-4  border rounded	">
+    <div className="flex  bg-red-300 gap-4 p-4 overflow-x-scroll max-w-[1000px] space-x-4  border rounded	">
       {stages.map((stage) => (
         <div
           key={stage}
