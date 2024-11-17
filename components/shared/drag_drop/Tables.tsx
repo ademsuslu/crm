@@ -1,7 +1,9 @@
 "use client";
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Opportunity } from "@/types/Opportunity/model";
+import { MdOutlineDragIndicator } from "react-icons/md";
 
 // Aşamalar için sabit liste
 const stages = ["İletişim", "Teklif", "Görüşme", "Kapalı", "Kazandı", "Kaybetti"] as const;
@@ -51,22 +53,22 @@ const KanbanTable: React.FC<Props> = ({ data }) => {
   };
 
   return (
-    <div className="flex gap-4 p-4">
+    <div className="flex  bg-red-300 gap-4 p-4 overflow-x-scroll w-[1000px] space-x-4  border rounded	">
       {stages.map((stage) => (
         <div
           key={stage}
-          className="flex-1 bg-gray-500 p-4 rounded-lg shadow-md"
+          className="flex-1  p-4  bg-secondary-foreground rounded-lg shadow-md"
           onDragOver={(e) => e.preventDefault()} // Drop işlemini etkinleştirme
           onDrop={(e) => onDrop(e, stage)} // Bırakma sırasında çağırılan fonksiyon
         >
-          <h2 className="text-lg font-bold mb-4">{stage}</h2>
-          <div className="space-y-4">
+          <h2 className="text-lg font-bold mb-4 text-gray-700">{stage}</h2>
+          <div className="space-y-4  w-[250px] ">
             {opportunities
               .filter((opp) => opp.stage === stage)
               .map((opp) => (
                 <motion.div
                   key={opp._id}
-                  className="p-4 bg-white rounded-lg shadow-sm cursor-grab"
+                  className="p-4 flex items-center justify-start text-sm text-black bg-white rounded-lg shadow-sm cursor-grab"
                   draggable
                   onDragStart={(e: any) => {
                     e.dataTransfer.setData("text/plain", opp._id);
@@ -74,6 +76,8 @@ const KanbanTable: React.FC<Props> = ({ data }) => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
+                  <MdOutlineDragIndicator className="w-6 h-6 mr-2" />
+
                   {opp.name}
                 </motion.div>
               ))}
