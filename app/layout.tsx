@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 
 import { ClerkProvider } from '@clerk/nextjs'
 import { Providers } from '@/components/provider/provider'
+import { ModalProvider } from '@/components/provider/modal-providers'
 
 export default function RootLayout({
   children,
@@ -27,6 +28,7 @@ export default function RootLayout({
 
         <body className={`${roboto.className}`} suppressHydrationWarning>
         <Providers>
+        <ModalProvider />
           {children}
           <Toaster />
         </Providers>

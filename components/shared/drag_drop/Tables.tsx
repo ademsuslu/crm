@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Opportunity } from "@/types/Opportunity/model";
 import { MdOutlineDragIndicator } from "react-icons/md";
 import { Button } from "@/components/ui/button";
+import { useStoreModal } from "@/hooks/use-store-modal";
 
 // Aşamalar için sabit liste
 const stages = ["İletişim", "Teklif", "Görüşme", "Kapalı", "Kazandı", "Kaybetti"] as const;
@@ -17,6 +18,7 @@ interface Props {
 }
 
 const KanbanTable: React.FC<Props> = ({ data }) => {
+  const storeModal = useStoreModal()
   const [opportunities, setOpportunities] = useState<Opportunity[]>(data);
 
   // PUT isteği gönderme fonksiyonu
@@ -56,7 +58,7 @@ const KanbanTable: React.FC<Props> = ({ data }) => {
   return (
     <div className="flex flex-col space-y-2 w-full">
       <div className="">
-        <Button variant={"secondary"}>Add to cart</Button>
+        <Button onClick={()=>storeModal.onOpen()} variant={"secondary"}>Add to cart</Button>
       </div>
       <div className="flex   gap-4 p-4 scrollbar overflow-x-scroll max-w-[1070px] app-scrollbar app-scrollbar--dark space-x-4  border rounded	">
         {stages.map((stage) => (
