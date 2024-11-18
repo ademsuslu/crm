@@ -1,4 +1,5 @@
 import DeleteOpportunityButton from "@/components/shared/delete-oppornuty-button"
+import { OpportunityEdit } from "@/components/shared/forms/oppornuty-edit-form"
 import { buttonVariants } from "@/components/ui/button"
 import { toast } from "@/hooks/use-toast"
 import Link from "next/link"
@@ -11,7 +12,7 @@ export default async function OppornutyDetails({
 
   const id = (await params).id
    const url = `https://crm-backend-production-e80f.up.railway.app/api/opportunity`
-  const response = await fetch(`${url}/${id}`, { cache: 'no-cache' })
+  const response = await fetch(`${url}/${id}`, { cache: 'no-store' })
   const data = await response.json()
 console.log("data")
 console.log(data)
@@ -21,8 +22,8 @@ console.log(data)
     <DeleteOpportunityButton id={id} />
      
     </div>
-    <div className="w-full">
-        {id}
+    <div className="w-full space-y-3" >
+    <OpportunityEdit data={data} />
     </div>
   </div>
 }

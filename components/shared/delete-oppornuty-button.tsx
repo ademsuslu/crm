@@ -15,7 +15,7 @@ const DeleteOpportunityButton:React.FC<Props> = (id) => {
     const router = useRouter()
     const handleDelete = async () => {
         try {
-          const url = `https://crm-backend-production-e80f.up.railway.app/api/opportunity/${id}`
+          const url = `https://crm-backend-production-e80f.up.railway.app/api/opportunity/${id.id}`
           const response = await fetch(url, {
             method: 'DELETE',
             headers: {
