@@ -118,10 +118,14 @@ const KanbanTable: React.FC<Props> = ({ data }) => {
 
                       </PopoverTrigger>
                       <PopoverContent className="w-55 p-3 bg-white">
-                        <div className="flex flex-col items-start justify-start gap-2">
-                            <Button className="flex items-start justify-start bg-transparent shadow-none hover:bg-transparent "><MdOutlineDelete className="w-4 h-4 " /> Delete</Button>
-                        <div className="w-full h-0.5 bg-slate-400" />
-                            <Button className="flex items-start  justify-start bg-transparent shadow-none hover:bg-transparent "><GrFormEdit className="w-5 h-5" /> Edit</Button>
+                        <div className="flex  items-start justify-start gap-2 w-full">
+                         <Button size={"icon"} className="border border-white shadow-md">
+
+                          <MdOutlineDelete className="w-4 h-4 " /> 
+                         </Button>
+                         <Button size={"icon"} className="border border-white shadow-md">
+                              <GrFormEdit className="w-5 h-5" /> 
+                         </Button>
                         </div>
 
                       </PopoverContent>
