@@ -16,8 +16,6 @@ import { useRouter } from "next/navigation"
 import { User } from "@/types/User/model"
 
 
-
-
 export const StoreModal = () => {
 const router = useRouter()
 
@@ -51,7 +49,6 @@ useEffect(() => {
 
 
     const onSubmit = async (values: z.infer<typeof opportunityformSchema>) => {
-        console.log(values)
         storeModal.onClose()
         form.reset()
          const url = `https://crm-backend-production-e80f.up.railway.app/api/opportunity`
@@ -63,8 +60,8 @@ useEffect(() => {
                 },
                 body: JSON.stringify(values)
           })  
-         const res = await response.json()
-         router.refresh()  
+          const res = await response.json()
+          router.refresh();
          toast({description: <div className="inline-flex items-center">{res?.message} <TiTick className='w-6 h-6 ml-2 text-green-500'/></div>})
     };
 

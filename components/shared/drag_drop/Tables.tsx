@@ -3,9 +3,25 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Opportunity } from "@/types/Opportunity/model";
-import { MdOutlineDragIndicator } from "react-icons/md";
-import { Button } from "@/components/ui/button";
 import { useStoreModal } from "@/hooks/use-store-modal";
+
+import { GrFormEdit } from "react-icons/gr";
+import { MdOutlineDragIndicator } from "react-icons/md";
+import { HiOutlineDotsVertical } from "react-icons/hi";
+import { MdOutlineDelete } from "react-icons/md";
+
+
+import { Button } from "@/components/ui/button";
+
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+
+
 
 // Aşamalar için sabit liste
 const stages = ["İletişim", "Teklif", "Görüşme", "Kapalı", "Kazandı", "Kaybetti"] as const;
@@ -75,7 +91,7 @@ const KanbanTable: React.FC<Props> = ({ data }) => {
                 .map((opp) => (
                   <motion.div
                     key={opp._id}
-                    className="p-4 flex items-center justify-start text-sm text-black bg-white rounded-lg shadow-sm cursor-grab"
+                    className="p-4 flex items-start justify-start text-sm text-black bg-white rounded-lg shadow-sm cursor-grab"
                     draggable
                     onDragStart={(e: any) => {
                       e.dataTransfer.setData("text/plain", opp._id);
@@ -92,6 +108,25 @@ const KanbanTable: React.FC<Props> = ({ data }) => {
                         {opp.assignedTo?.name}
                       </p>
                     </div>
+
+
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <Button className="bg-transparent shadow-none " size={"icon"}>
+                          <HiOutlineDotsVertical className="w-6 h-6" />
+                        </Button>
+
+                      </PopoverTrigger>
+                      <PopoverContent className="w-55 p-3 bg-white">
+                        <div className="flex flex-col items-start justify-start gap-2">
+                            <Button className="flex items-start justify-start bg-transparent shadow-none hover:bg-transparent "><MdOutlineDelete className="w-4 h-4 " /> Delete</Button>
+                        <div className="w-full h-0.5 bg-slate-400" />
+                            <Button className="flex items-start  justify-start bg-transparent shadow-none hover:bg-transparent "><GrFormEdit className="w-5 h-5" /> Edit</Button>
+                        </div>
+
+                      </PopoverContent>
+                    </Popover>
+
                   </motion.div>
                 ))}
             </div>
@@ -103,3 +138,4 @@ const KanbanTable: React.FC<Props> = ({ data }) => {
 };
 
 export default KanbanTable;
+
