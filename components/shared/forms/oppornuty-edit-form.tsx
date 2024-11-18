@@ -24,7 +24,7 @@ interface Props {
 }
 
 export const OpportunityEdit: React.FC<Props> = ({ data,users }) => {
-    console.log(data)
+
     const router = useRouter()
     const [loading, setLoading] = useState(false)
     const form = useForm<z.infer<typeof opportunityformSchema>>({
@@ -39,7 +39,6 @@ export const OpportunityEdit: React.FC<Props> = ({ data,users }) => {
 
 
     const onSubmit = async (values: z.infer<typeof opportunityformSchema>) => {
-        form.reset()
         const url = `https://crm-backend-production-e80f.up.railway.app/api/opportunity/${data._id}`
         const response = await fetch(url, {
             method: 'PUT',

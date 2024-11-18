@@ -28,11 +28,7 @@ interface Props {
 
 const KanbanTable: React.FC<Props> = ({ data }) => {
 
-
-  const router = useRouter()
-  const storeModal = useStoreModal()
   const [opportunities, setOpportunities] = useState<Opportunity[]>(data);
-
   // PUT isteği gönderme fonksiyonu
   const updateStage = async (id: string, newStage: Stage) => {
     try {
@@ -46,7 +42,6 @@ const KanbanTable: React.FC<Props> = ({ data }) => {
         body: JSON.stringify({ stage: newStage })
       })
       const res = await response.json()
-      console.log(`Fırsat ${id}, ${newStage} aşamasına taşındı.`);
     } catch (error) {
       console.error("Güncelleme hatası:", error);
     }
