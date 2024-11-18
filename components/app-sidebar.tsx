@@ -18,7 +18,10 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar"
+
+import { RxDotFilled } from "react-icons/rx";
 import { ChevronRightIcon } from "@radix-ui/react-icons"
+
 import Logo from "./shared/logo"
 import Link from "next/link"
 
@@ -217,7 +220,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   
                       return   <SidebarMenuItem className="ms-3" key={item.title}>
                       <SidebarMenuButton asChild isActive={item?.isActive}>
-                        <Link href={item.url}>{item.title}</Link>
+                      <Link href={item.url} className="flex gap-2">
+                      <RxDotFilled />
+                      {item.title}</Link>
                       </SidebarMenuButton>
                     </SidebarMenuItem>
                     }
