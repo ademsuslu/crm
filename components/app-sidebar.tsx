@@ -89,10 +89,12 @@ const data = {
         {
           title: "Reminders",
           url: "/customer/reminder",
+          isActive:false
         },
         {
           title: "Create",
           url: "/customer/create",
+          isActive:false
         },
       
       ],
@@ -214,7 +216,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                     {item?.items?.map((item) => {
                   
                       return   <SidebarMenuItem className="ms-3" key={item.title}>
-                        {/* @ts-ignore */}
                       <SidebarMenuButton asChild isActive={item?.isActive}>
                         <Link href={item.url}>{item.title}</Link>
                       </SidebarMenuButton>
