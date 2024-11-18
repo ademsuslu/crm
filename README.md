@@ -13,9 +13,9 @@ Müşteri Yönetimi
 
 3. Preferences Satış Yönetimi (satıs yonetımı magza sahıplerıne gıdecek yanı userlere) 
 
-    Satış fırsatlarını izleme ve yönetme (pipeline yönetimi)
-    Teklif, sözleşme ve satış süreci takibi
-    Satis Teklifi sunuldugunda  mail gonderilicek
+   + Satış fırsatlarını izleme ve yönetme (pipeline yönetimi)
+   + Teklif, sözleşme ve satış süreci takibi
+   + Satis Teklifi sunuldugunda  mail gonderilicek
     Satış ekibi performans analizleri
 
 Görev ve İş Takibi
@@ -24,7 +24,6 @@ Görev ve İş Takibi
     Görev tamamlama oranlarını takip etme
 
 Pazarlama Otomasyonu
-
     E-posta kampanyaları planlama ve yönetme
     Kampanyaların etkisini ölçme (açılma, tıklanma oranları)
     Otomatik müşteri segmentasyonu ve hedefleme

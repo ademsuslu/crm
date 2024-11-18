@@ -98,8 +98,8 @@ const data = {
       ],
     },
     {
-      title: "Bussiness",
-      url: "/bussiness",
+      title: "Bussines",
+      url: "/bussines",
       // items: [
       //   {
       //     title: "Accessibility",
