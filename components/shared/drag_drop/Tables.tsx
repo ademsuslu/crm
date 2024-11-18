@@ -20,6 +20,8 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { useRouter } from "next/navigation";
+import { toast } from "@/hooks/use-toast";
+import { TiTick } from "react-icons/ti";
 
 
 
@@ -83,15 +85,13 @@ const handleDelete = async(opportunityId:string)=>{
       }
     })
     const res = await response.json()
-   
-    console.log(`Fırsat ${opportunityId}, silindi.`);
+    toast({description: <div className="inline-flex items-center">{res?.message} <TiTick className='w-6 h-6 ml-2 text-green-500'/></div>})
   } catch (error) {
     console.error("Silme hatası:", error);
   }
+  router.refresh()
 }
-useEffect(() => {
-router.refresh();
-}, [handleDelete])
+
 
 
   return (
