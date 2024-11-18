@@ -27,11 +27,11 @@ const KanbanTable: React.FC<Props> = ({ data }) => {
 
       const url = `https://crm-backend-production-e80f.up.railway.app/api/opportunity/${id}`
       const response = await fetch(url, {
-          method: 'PUT',
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ stage: newStage })
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ stage: newStage })
       })
       const res = await response.json()
       console.log(`Fırsat ${id}, ${newStage} aşamasına taşındı.`);
@@ -58,7 +58,7 @@ const KanbanTable: React.FC<Props> = ({ data }) => {
   return (
     <div className="flex flex-col space-y-2 w-full">
       <div className="">
-        <Button onClick={()=>storeModal.onOpen()} variant={"secondary"}>Add to cart</Button>
+        <Button onClick={() => storeModal.onOpen()} variant={"secondary"}>Add to cart</Button>
       </div>
       <div className="flex   gap-4 p-4 scrollbar overflow-x-scroll max-w-[1070px] app-scrollbar app-scrollbar--dark space-x-4  border rounded	">
         {stages.map((stage) => (
@@ -84,8 +84,14 @@ const KanbanTable: React.FC<Props> = ({ data }) => {
                     whileTap={{ scale: 0.95 }}
                   >
                     <MdOutlineDragIndicator className="w-6 h-6 mr-2" />
-
-                    {opp.name}
+                    <div className="flex flex-col w-full gap-2">
+                      <p className="text-md font-bold">
+                        {opp.name}
+                      </p>
+                      <p>
+                        {opp.assignedTo?.name}
+                      </p>
+                    </div>
                   </motion.div>
                 ))}
             </div>

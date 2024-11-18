@@ -11,7 +11,8 @@ Müşteri Yönetimi
     + E-posta ve SMS entegrasyonu ile müşterilere doğrudan ulaşma
     + Müşteri ile yapılan tüm etkileşimleri (e-postalar, telefon görüşmeleri, toplantılar) kaydetme
 
-3. Preferences Satış Yönetimi 
+3. Preferences Satış Yönetimi (satıs yonetımı magza sahıplerıne gıdecek yanı userlere) 
+
     Satış fırsatlarını izleme ve yönetme (pipeline yönetimi)
     Teklif, sözleşme ve satış süreci takibi
     Satis Teklifi sunuldugunda  mail gonderilicek
