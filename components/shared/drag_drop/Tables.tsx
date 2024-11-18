@@ -1,18 +1,17 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Opportunity } from "@/types/Opportunity/model";
 import { useStoreModal } from "@/hooks/use-store-modal";
 
 import { GrFormEdit } from "react-icons/gr";
-import { MdOutlineDragIndicator } from "react-icons/md";
+import { MdOutlineAddBox, MdOutlineDragIndicator } from "react-icons/md";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { MdOutlineDelete } from "react-icons/md";
+import { IoAlertOutline } from "react-icons/io5";
 
-
-import { Button } from "@/components/ui/button";
-
+import { Button, buttonVariants } from "@/components/ui/button";
 
 import {
   Popover,
@@ -22,6 +21,7 @@ import {
 import { useRouter } from "next/navigation";
 import { toast } from "@/hooks/use-toast";
 import { TiTick } from "react-icons/ti";
+import Link from "next/link";
 
 
 
@@ -75,29 +75,34 @@ const KanbanTable: React.FC<Props> = ({ data }) => {
     // Backend'e güncelleme isteği gönderme
     await updateStage(opportunityId, targetStage);
   };
-const handleDelete = async(opportunityId:string)=>{
-  try {
-    const url = `https://crm-backend-production-e80f.up.railway.app/api/opportunity/${opportunityId}`
-    const response = await fetch(url, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    const res = await response.json()
-    toast({description: <div className="inline-flex items-center">{res?.message} <TiTick className='w-6 h-6 ml-2 text-green-500'/></div>})
-  } catch (error) {
-    console.error("Silme hatası:", error);
+  const handleDelete = async (opportunityId: string) => {
+    try {
+      const url = `https://crm-backend-production-e80f.up.railway.app/api/opportunity/${opportunityId}`
+      const response = await fetch(url, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      const res = await response.json()
+      toast({ description: <div className="inline-flex items-center">{res?.message} <TiTick className='w-6 h-6 ml-2 text-green-500' /></div> })
+    } catch (error) {
+      toast({ description: <div className="inline-flex items-center">Delete Unsuccess <IoAlertOutline className='w-6 h-6 ml-2 text-red-500' /></div> })
+    }
+    router.refresh()
   }
-  router.refresh()
-}
 
 
 
   return (
     <div className="flex flex-col space-y-2 w-full">
       <div className="">
-        <Button onClick={() => storeModal.onOpen()} variant={"secondary"}>Add to cart</Button>
+        <Link href={"/opportunity/create"} className={buttonVariants({
+          size: 'sm',
+          variant: 'outline',
+        })}>
+          Add to cart  <MdOutlineAddBox className="w-4 h-4 ml-1" />
+        </Link>
       </div>
       <div className="flex   gap-4 p-4 scrollbar overflow-x-scroll max-w-[1070px] app-scrollbar app-scrollbar--dark space-x-4  border rounded	">
         {stages.map((stage) => (
@@ -131,26 +136,22 @@ const handleDelete = async(opportunityId:string)=>{
                         {opp.assignedTo?.name}
                       </p>
                     </div>
-
-
                     <Popover>
                       <PopoverTrigger asChild>
                         <Button className="bg-transparent shadow-none " size={"icon"}>
                           <HiOutlineDotsVertical className="w-6 h-6" />
                         </Button>
-
                       </PopoverTrigger>
                       <PopoverContent className="w-55 p-3 bg-white">
                         <div className="flex  items-start justify-start gap-2 w-full">
-                         <Button onClick={()=>handleDelete(opp._id)} size={"icon"} className="border border-white shadow-md">
+                          <Button onClick={() => handleDelete(opp._id)} size={"icon"} className="border border-white shadow-md">
 
-                          <MdOutlineDelete className="w-4 h-4 " /> 
-                         </Button>
-                         <Button size={"icon"} className="border border-white shadow-md">
-                              <GrFormEdit className="w-5 h-5" /> 
-                         </Button>
+                            <MdOutlineDelete className="w-4 h-4 " />
+                          </Button>
+                          <Button size={"icon"} className="border border-white shadow-md">
+                            <GrFormEdit className="w-5 h-5" />
+                          </Button>
                         </div>
-
                       </PopoverContent>
                     </Popover>
 
