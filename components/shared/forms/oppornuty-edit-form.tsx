@@ -2,10 +2,8 @@
 import * as  z from "zod"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useStoreModal } from "@/hooks/use-store-modal"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-
-import React, { useEffect, useState } from "react"
+import React, {  useState } from "react"
 import { opportunityformSchema } from "@/types/form/opportunitySchema"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { TiTick } from "react-icons/ti"
@@ -22,22 +20,21 @@ interface Props {
 }
 
 export const OpportunityEdit: React.FC<Props> = ({ data }) => {
+    console.log(data)
     const router = useRouter()
-    const storeModal = useStoreModal()
     const [loading, setLoading] = useState(false)
     const form = useForm<z.infer<typeof opportunityformSchema>>({
         resolver: zodResolver(opportunityformSchema),
         defaultValues: {
-            name: "",
-            stage: "İletişim",
-            value: 0,
-            assignedTo: "",
+            name:data?.name,
+            stage: data?.stage as "İletişim" | "Teklif" | "Görüşme" | "Kapalı" | "Kazandı" | "Kaybetti",
+            value: data?.value,
+            assignedTo: data?.assignedTo?.name,
         }
     })
 
 
     const onSubmit = async (values: z.infer<typeof opportunityformSchema>) => {
-        storeModal.onClose()
         form.reset()
         const url = `https://crm-backend-production-e80f.up.railway.app/api/opportunity`
         const response = await fetch(url, {
@@ -52,7 +49,6 @@ export const OpportunityEdit: React.FC<Props> = ({ data }) => {
         router.push("/opportunity");
         toast({ description: <div className="inline-flex items-center">{res?.message} <TiTick className='w-6 h-6 ml-2 text-green-500' /></div> })
     };
-
 
     return <div className="space-y-4 ">
         <Form {...form}>
@@ -133,7 +129,7 @@ export const OpportunityEdit: React.FC<Props> = ({ data }) => {
                 <div className="pt-6 space-x-2 flex items-center justify-start w-full">
                     <Button disabled={loading} type="submit">
                         <MdOutlineAddBox className="w-4 h-4 mr-2" />
-                        Create
+                        Edit
                     </Button>
                 </div>
             </form>
