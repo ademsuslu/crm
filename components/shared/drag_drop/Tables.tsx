@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Opportunity } from "@/types/Opportunity/model";
 import { useStoreModal } from "@/hooks/use-store-modal";
@@ -13,13 +13,13 @@ import { MdOutlineDelete } from "react-icons/md";
 
 import { Button } from "@/components/ui/button";
 
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
+import { useRouter } from "next/navigation";
 
 
 
@@ -34,6 +34,9 @@ interface Props {
 }
 
 const KanbanTable: React.FC<Props> = ({ data }) => {
+
+
+  const router = useRouter()
   const storeModal = useStoreModal()
   const [opportunities, setOpportunities] = useState<Opportunity[]>(data);
 
@@ -70,6 +73,26 @@ const KanbanTable: React.FC<Props> = ({ data }) => {
     // Backend'e güncelleme isteği gönderme
     await updateStage(opportunityId, targetStage);
   };
+const handleDelete = async(opportunityId:string)=>{
+  try {
+    const url = `https://crm-backend-production-e80f.up.railway.app/api/opportunity/${opportunityId}`
+    const response = await fetch(url, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    const res = await response.json()
+   
+    console.log(`Fırsat ${opportunityId}, silindi.`);
+  } catch (error) {
+    console.error("Silme hatası:", error);
+  }
+}
+useEffect(() => {
+router.refresh();
+}, [handleDelete])
+
 
   return (
     <div className="flex flex-col space-y-2 w-full">
@@ -119,7 +142,7 @@ const KanbanTable: React.FC<Props> = ({ data }) => {
                       </PopoverTrigger>
                       <PopoverContent className="w-55 p-3 bg-white">
                         <div className="flex  items-start justify-start gap-2 w-full">
-                         <Button size={"icon"} className="border border-white shadow-md">
+                         <Button onClick={()=>handleDelete(opp._id)} size={"icon"} className="border border-white shadow-md">
 
                           <MdOutlineDelete className="w-4 h-4 " /> 
                          </Button>
