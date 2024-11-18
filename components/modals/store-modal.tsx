@@ -6,19 +6,39 @@ import { useStoreModal } from "@/hooks/use-store-modal"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "../ui/input"
 import { Button } from "../ui/button"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Modal } from "../ui/modal"
 import { opportunityformSchema } from "@/types/form/opportunitySchema"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select"
+import { TiTick } from "react-icons/ti"
+import { toast } from "@/hooks/use-toast"
+import { useRouter } from "next/navigation"
+import { User } from "@/types/User/model"
 
 
 
 
 export const StoreModal = () => {
+const router = useRouter()
+
+const [user,setUser] = useState<User[]>()
+
+useEffect(() => {
+   const handleFetch = async() =>{
+       const url = `https://crm-backend-production-e80f.up.railway.app/api/users`
+       const response = await fetch(url,{
+          method: 'GET',
+          cache:"no-cache",
+       })  
+       const res = await response.json()
+       setUser(res)
+   }
+    handleFetch();
+}, [])
+
+
     const storeModal = useStoreModal()
-
     const [loading, setLoading] = useState(false)
-
     const form = useForm<z.infer<typeof opportunityformSchema>>({
         resolver: zodResolver(opportunityformSchema),
         defaultValues: {
@@ -30,19 +50,22 @@ export const StoreModal = () => {
     })
 
 
-    const onSubmit = async (data: z.infer<typeof opportunityformSchema>) => {
-        //     try {
-        //         setLoading(true);
-        //         let respon
-        //         // const response = await axios.post("/api/store", data);
-        //         window.location.assign(`/${response?.data?.id}`)
-        //         window.location.reload();
-        //     } catch (error: any) {
-        //         toast.error("Bir şeyler yanlış gitti: " + error.message);
-        //         console.log(error);
-        //     } finally {
-        //         setLoading(false);
-        //     }
+    const onSubmit = async (values: z.infer<typeof opportunityformSchema>) => {
+        console.log(values)
+        storeModal.onClose()
+        form.reset()
+         const url = `https://crm-backend-production-e80f.up.railway.app/api/opportunity`
+          const response = await fetch(url,{
+             method: 'POST',
+             cache:"no-cache",
+             headers: {
+                 'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(values)
+          })  
+         const res = await response.json()
+         router.refresh()  
+         toast({description: <div className="inline-flex items-center">{res?.message} <TiTick className='w-6 h-6 ml-2 text-green-500'/></div>})
     };
 
 
@@ -52,14 +75,12 @@ export const StoreModal = () => {
         isOpen={storeModal.isOpen}
         onClose={storeModal.onClose}>
         <div>
-            <div className="space-y-4 py-2 pb-2">
+            <div className="space-y-4  py-2 pb-2">
                 <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)}>
-                    
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                         <FormField control={form.control} name="name" render={({ field }) => {
                             return <FormItem>
                                 <FormLabel>Name</FormLabel>
-
                                 <FormControl>
                                     <Input disabled={loading} placeholder="Enter name" {...field} />
                                 </FormControl>
@@ -82,7 +103,7 @@ export const StoreModal = () => {
                                         <SelectContent>
                                             {
                                                 ['İletişim', 'Teklif', 'Görüşme', 'Kapalı', 'Kazandı', 'Kaybetti'].map((item,index)=>{
-                                                    return <SelectItem value={item}>{item}</SelectItem>
+                                                    return <SelectItem key={index} value={item}>{item}</SelectItem>
                                                 })
                                             }
                                         </SelectContent>
@@ -105,9 +126,11 @@ export const StoreModal = () => {
                                             </SelectTrigger>
                                         </FormControl>
                                         <SelectContent>
-                                            <SelectItem value="Kadın">Kadın</SelectItem>
-                                            <SelectItem value="Erkek">Erkek</SelectItem>
-                                            <SelectItem value="Diğer">Diğer</SelectItem>
+                                            {
+                                                user?.map((item,index)=>{
+                                                    return <SelectItem key={index} value={item?._id}>{item?.name}</SelectItem>
+                                                })
+                                            }
                                         </SelectContent>
                                     </Select>
 
