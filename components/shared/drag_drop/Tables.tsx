@@ -4,17 +4,12 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Opportunity } from "@/types/Opportunity/model";
-import { useStoreModal } from "@/hooks/use-store-modal";
 
+import { CgDetailsMore } from "react-icons/cg";
 import { MdOutlineAddBox, MdOutlineDragIndicator } from "react-icons/md";
-import { MdOutlineSimCardAlert } from "react-icons/md";
 
 
 import { buttonVariants } from "@/components/ui/button";
-
-import { useRouter } from "next/navigation";
-
-
 
 // Aşamalar için sabit liste
 const stages = ["İletişim", "Teklif", "Görüşme", "Kapalı", "Kazandı", "Kaybetti"] as const;
@@ -98,8 +93,11 @@ const KanbanTable: React.FC<Props> = ({ data }) => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
+                    <div className="h-full my-auto">
+
                     <MdOutlineDragIndicator className="w-6 h-6 mr-2" />
-                    <div className="flex flex-col w-full gap-2">
+                    </div>
+                    <div className="flex flex-col w-full gap-1">
                       <p className="text-md font-bold">
                         {opp.name}
                       </p>
@@ -107,11 +105,15 @@ const KanbanTable: React.FC<Props> = ({ data }) => {
                         {opp.assignedTo?.name}
                       </p>
                     </div>
+                    <div className="h-full text-start">
+
                     <Link href={`/opportunity/${opp._id}`} className={buttonVariants({
-                      size: "icon"
+                      size: "icon",
+                      className:"bg-transparent flex items-start justify-start h-full shadow-none border-none p-0"
                         })} >
-                      <MdOutlineSimCardAlert className="w-6 h-6" />
+                      <CgDetailsMore  className="w-6 h-6" />
                     </Link>
+                      </div>
                   </motion.div>
                 ))}
             </div>
