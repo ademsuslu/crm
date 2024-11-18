@@ -161,20 +161,20 @@ const data = {
       //   },
       // ],
     },
-     // {
-    //   title: "Getting Started",
-    //   url: "#",
-    //   items: [
-    //     {
-    //       title: "Installation",
-    //       url: "#",
-    //     },
-    //     {
-    //       title: "Project Structure",
-    //       url: "#",
-    //     },
-    //   ],
-    // },
+      {
+       title: "Personal",
+       url: "/personal",
+      //  items: [
+      //    {
+      //      title: "Installation",
+      //      url: "#",
+      //    },
+      //    {
+      //      title: "Project Structure",
+      //      url: "#",
+      //    },
+      //  ],
+     },
   ],
 }
 
