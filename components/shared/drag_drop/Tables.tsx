@@ -1,27 +1,18 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Opportunity } from "@/types/Opportunity/model";
 import { useStoreModal } from "@/hooks/use-store-modal";
 
-import { GrFormEdit } from "react-icons/gr";
 import { MdOutlineAddBox, MdOutlineDragIndicator } from "react-icons/md";
-import { HiOutlineDotsVertical } from "react-icons/hi";
-import { MdOutlineDelete } from "react-icons/md";
-import { IoAlertOutline } from "react-icons/io5";
+import { MdOutlineSimCardAlert } from "react-icons/md";
 
-import { Button, buttonVariants } from "@/components/ui/button";
 
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
+import { buttonVariants } from "@/components/ui/button";
+
 import { useRouter } from "next/navigation";
-import { toast } from "@/hooks/use-toast";
-import { TiTick } from "react-icons/ti";
-import Link from "next/link";
 
 
 
@@ -75,22 +66,7 @@ const KanbanTable: React.FC<Props> = ({ data }) => {
     // Backend'e güncelleme isteği gönderme
     await updateStage(opportunityId, targetStage);
   };
-  const handleDelete = async (opportunityId: string) => {
-    try {
-      const url = `https://crm-backend-production-e80f.up.railway.app/api/opportunity/${opportunityId}`
-      const response = await fetch(url, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      const res = await response.json()
-      toast({ description: <div className="inline-flex items-center">{res?.message} <TiTick className='w-6 h-6 ml-2 text-green-500' /></div> })
-    } catch (error) {
-      toast({ description: <div className="inline-flex items-center">Delete Unsuccess <IoAlertOutline className='w-6 h-6 ml-2 text-red-500' /></div> })
-    }
-    router.refresh()
-  }
+
 
 
 
@@ -136,25 +112,11 @@ const KanbanTable: React.FC<Props> = ({ data }) => {
                         {opp.assignedTo?.name}
                       </p>
                     </div>
-                    <Popover>
-                      <PopoverTrigger asChild>
-                        <Button className="bg-transparent shadow-none " size={"icon"}>
-                          <HiOutlineDotsVertical className="w-6 h-6" />
-                        </Button>
-                      </PopoverTrigger>
-                      <PopoverContent className="w-55 p-3 bg-white">
-                        <div className="flex  items-start justify-start gap-2 w-full">
-                          <Button onClick={() => handleDelete(opp._id)} size={"icon"} className="border border-white shadow-md">
-
-                            <MdOutlineDelete className="w-4 h-4 " />
-                          </Button>
-                          <Button size={"icon"} className="border border-white shadow-md">
-                            <GrFormEdit className="w-5 h-5" />
-                          </Button>
-                        </div>
-                      </PopoverContent>
-                    </Popover>
-
+                    <Link href={`/opportunity/${opp._id}`} className={buttonVariants({
+                      size: "icon"
+                        })} >
+                      <MdOutlineSimCardAlert className="w-6 h-6" />
+                    </Link>
                   </motion.div>
                 ))}
             </div>
