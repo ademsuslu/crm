@@ -193,7 +193,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <Collapsible
             key={item.title}
             title={item.title}
-            defaultOpen
+            defaultOpen={false}
             className="group/collapsible"
           >
             <SidebarGroup>
