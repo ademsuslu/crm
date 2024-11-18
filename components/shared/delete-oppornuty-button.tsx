@@ -31,9 +31,9 @@ const DeleteOpportunityButton:React.FC<Props> = (id) => {
       }
     
   return (
-    <Button onClick={() => handleDelete()} size={"icon"} className="border border-white shadow-md">
+    <Button onClick={() => handleDelete()} size={"icon"} variant={"destructive"} className="border border-white shadow-md">
 
-    <MdOutlineDelete className="w-4 h-4 " />
+    <MdOutlineDelete  className="w-4 h-4 " />
     </Button>
   )
 }

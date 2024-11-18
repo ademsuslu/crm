@@ -6,7 +6,10 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import React, {  useState } from "react"
 import { opportunityformSchema } from "@/types/form/opportunitySchema"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+
 import { TiTick } from "react-icons/ti"
+import { FiSave } from "react-icons/fi";
+
 import { toast } from "@/hooks/use-toast"
 import { useRouter } from "next/navigation"
 import { User } from "@/types/User/model"
@@ -17,9 +20,10 @@ import { Opportunity } from "@/types/Opportunity/model"
 
 interface Props {
     data: Opportunity
+    users:User[]
 }
 
-export const OpportunityEdit: React.FC<Props> = ({ data }) => {
+export const OpportunityEdit: React.FC<Props> = ({ data,users }) => {
     console.log(data)
     const router = useRouter()
     const [loading, setLoading] = useState(false)
@@ -29,16 +33,16 @@ export const OpportunityEdit: React.FC<Props> = ({ data }) => {
             name:data?.name,
             stage: data?.stage as "İletişim" | "Teklif" | "Görüşme" | "Kapalı" | "Kazandı" | "Kaybetti",
             value: data?.value,
-            assignedTo: data?.assignedTo?.name,
+            assignedTo: data?.assignedTo?._id,
         }
     })
 
 
     const onSubmit = async (values: z.infer<typeof opportunityformSchema>) => {
         form.reset()
-        const url = `https://crm-backend-production-e80f.up.railway.app/api/opportunity`
+        const url = `https://crm-backend-production-e80f.up.railway.app/api/opportunity/${data._id}`
         const response = await fetch(url, {
-            method: 'POST',
+            method: 'PUT',
             cache: "no-cache",
             headers: {
                 'Content-Type': 'application/json'
@@ -46,7 +50,7 @@ export const OpportunityEdit: React.FC<Props> = ({ data }) => {
             body: JSON.stringify(values)
         })
         const res = await response.json()
-        router.push("/opportunity");
+        router.refresh();
         toast({ description: <div className="inline-flex items-center">{res?.message} <TiTick className='w-6 h-6 ml-2 text-green-500' /></div> })
     };
 
@@ -101,11 +105,11 @@ export const OpportunityEdit: React.FC<Props> = ({ data }) => {
                                     </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
-                                    {/* {
-                                        assignedTo?.?.map((item, index) => {
+                                     {
+                                        users?.map((item, index) => {
                                             return <SelectItem key={index} value={item?._id}>{item?.name}</SelectItem>
                                         })
-                                    } */}
+                                    }
                                 </SelectContent>
                             </Select>
 
@@ -128,8 +132,8 @@ export const OpportunityEdit: React.FC<Props> = ({ data }) => {
                 />
                 <div className="pt-6 space-x-2 flex items-center justify-start w-full">
                     <Button disabled={loading} type="submit">
-                        <MdOutlineAddBox className="w-4 h-4 mr-2" />
-                        Edit
+                        <FiSave className="w-4 h-4 mr-2" />
+                        Save
                     </Button>
                 </div>
             </form>
