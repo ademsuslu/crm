@@ -119,7 +119,7 @@ export function CustomerCreateForm() {
                         <TabsTrigger className="text-sm  p-0 w-full" value="relations">Relations</TabsTrigger>
                         <TabsTrigger className="text-sm  p-0 w-full" value="marketing">Marketing</TabsTrigger>
                     </TabsList>
-                    <TabsContent className="grid grid-cols-1 md:grid-cols-4   gap-2 " value="Personal">
+                    <TabsContent className="grid grid-cols-1 md:grid-cols-3   gap-2 " value="Personal">
                         <FormField
                             control={form.control}
                             name="ad"
@@ -152,7 +152,7 @@ export function CustomerCreateForm() {
                             control={form.control}
                             name="dogum_tarihi"
                             render={({ field }) => (
-                                <FormItem className="flex flex-col mt-2.5">
+                                <FormItem className="flex flex-col w-full mt-2.5">
                                 <FormLabel>Date of birth</FormLabel>
                                 <Popover>
                                   <PopoverTrigger asChild>
