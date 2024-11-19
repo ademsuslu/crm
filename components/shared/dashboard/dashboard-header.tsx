@@ -9,8 +9,15 @@ import {
   } from "@/components/ui/breadcrumb"
   import { Separator } from "@/components/ui/separator"
 import { SidebarTrigger } from "@/components/ui/sidebar"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { Fragment } from "react"
 
 const DashboardHeader = () => {
+const path = usePathname()
+const pathNames = path.split("/").filter(path => path)
+
+
   return (
     <div>
           <header className="flex  top-0 bg-background h-16 shrink-0 items-center gap-2 border-b px-4">
@@ -19,15 +26,26 @@ const DashboardHeader = () => {
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem className="hidden md:block">
-                <BreadcrumbLink href="#">
-                  Building Your Application
-                </BreadcrumbLink>
+               {
+                pathNames.map((link, index) =>{
+                    const hrefs=`/${pathNames.slice(0,index + 1).join('/')}`;
+                    const linkName = link[0].toLocaleUpperCase() + link.slice(1,link.length) 
+                    const isLastPath = pathNames.length === index + 1;
+                    return (
+                       <Fragment key={index}>
+
+                       </Fragment>
+                    )
+ 
+                })
+              
+            } 
               </BreadcrumbItem>
-              <BreadcrumbSeparator className="hidden md:block" />
+              {/* <BreadcrumbSeparator className="hidden md:block" />
               <BreadcrumbItem>
                 <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
+              </BreadcrumbItem>*/}
+            </BreadcrumbList> 
           </Breadcrumb>
         </header>
     </div>
