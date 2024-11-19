@@ -12,6 +12,7 @@ import {
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
+  
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
@@ -190,7 +191,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           defaultVersion={data.versions[0]}
         />
         <SearchForm /> */}
-        <Logo/>
+        <Link href={"/dashboard"}>
+          <Logo/>
+        </Link>
       </SidebarHeader>
       <SidebarContent className="gap-0">
         {/* We create a collapsible SidebarGroup for each parent. */}
