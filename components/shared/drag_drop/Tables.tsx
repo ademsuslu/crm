@@ -67,7 +67,7 @@ const KanbanTable: React.FC<Props> = ({ data }) => {
           size: 'sm',
           variant: 'outline',
         })}>
-          Add to cart  <MdOutlineAddBox className="w-4 h-4 ml-1" />
+          Create Opportunity  <MdOutlineAddBox className="w-4 h-4 ml-1" />
         </Link>
       </div>
       <div className="flex   gap-4 p-4 scrollbar overflow-x-scroll max-w-[1070px] app-scrollbar app-scrollbar--dark space-x-4  border rounded	">
