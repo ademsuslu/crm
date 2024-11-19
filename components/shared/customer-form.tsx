@@ -23,12 +23,14 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
-import {  Popover,
+import {
+    Popover,
     PopoverContent,
-    PopoverTrigger, } from "../ui/popover"
-    import { Calendar } from "@/components/ui/calendar"
-    import { Input } from "@/components/ui/input"
-    import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs"
+    PopoverTrigger,
+} from "../ui/popover"
+import { Calendar } from "@/components/ui/calendar"
+import { Input } from "@/components/ui/input"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs"
 
 import { formSchema } from "@/types/form/customerSchema"
 import { Switch } from "../ui/switch"
@@ -89,21 +91,21 @@ export function CustomerCreateForm() {
         },
     });
 
-  async  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
-    form.reset()
-     const url = `https://crm-backend-production-e80f.up.railway.app/api/customers`
-      const response = await fetch(url,{
-         method: 'POST',
-         cache:"no-cache",
-         headers: {
-             'Content-Type': 'application/json'
+    async function onSubmit(values: z.infer<typeof formSchema>) {
+        console.log(values)
+        form.reset()
+        const url = `https://crm-backend-production-e80f.up.railway.app/api/customers`
+        const response = await fetch(url, {
+            method: 'POST',
+            cache: "no-cache",
+            headers: {
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(values)
-      })  
-     const res = await response.json()
-     toast({description: <div className="inline-flex items-center">{res?.message} <TiTick className='w-6 h-6 ml-2 text-green-500'/></div>})
-     router.push("/customer")   
+        })
+        const res = await response.json()
+        toast({ description: <div className="inline-flex items-center">{res?.message} <TiTick className='w-6 h-6 ml-2 text-green-500' /></div> })
+        router.push("/customer")
     }
 
     return (
@@ -119,7 +121,7 @@ export function CustomerCreateForm() {
                         <TabsTrigger className="text-sm  p-0 w-full" value="relations">Relations</TabsTrigger>
                         <TabsTrigger className="text-sm  p-0 w-full" value="marketing">Marketing</TabsTrigger>
                     </TabsList>
-                    <TabsContent className="grid grid-cols-1 md:grid-cols-3   gap-2 " value="Personal">
+                    <TabsContent className="grid grid-cols-1 md:grid-cols-3 w-full  gap-2 " value="Personal">
                         <FormField
                             control={form.control}
                             name="ad"
@@ -149,45 +151,47 @@ export function CustomerCreateForm() {
                             )}
                         />
                         <FormField
+
                             control={form.control}
                             name="dogum_tarihi"
                             render={({ field }) => (
                                 <FormItem className="flex flex-col w-full mt-2.5">
-                                <FormLabel>Date of birth</FormLabel>
-                                <Popover>
-                                  <PopoverTrigger asChild>
-                                    <FormControl className="">
-                                      <Button
-                                        variant={"outline"}
-                                        className={cn(
-                                          "w-[240px] pl-3 text-left font-normal",
-                                          !field.value && "text-muted-foreground"
-                                        )}
-                                      >
-                                        {field.value ? (
-                                          format(field.value, "PPP")
-                                        ) : (
-                                          <span>Pick a date</span>
-                                        )}
-                                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                                      </Button>
-                                    </FormControl>
-                                  </PopoverTrigger>
-                                  <PopoverContent className="w-auto p-0" align="start">
-                                    <Calendar
-                                      mode="single"
-                                      selected={field.value}
-                                      onSelect={field.onChange}
-                                      disabled={(date) =>
-                                        date > new Date() || date < new Date("1900-01-01")
-                                      }
-                                      initialFocus
-                                    />
-                                  </PopoverContent>
-                                </Popover>
-                                
-                                <FormMessage />
-                              </FormItem>
+                                    <FormLabel>Date of birth</FormLabel>
+                                    <Popover >
+                                        <PopoverTrigger asChild>
+                                            <FormControl className="w-full">
+                                                <Button
+                                                    variant={"outline"}
+                                                    className={cn(
+                                                        "w-full pl-3 text-left font-normal",
+                                                        !field.value && "text-muted-foreground"
+                                                    )}
+                                                >
+                                                    {field.value ? (
+                                                        format(field.value, "PPP")
+                                                    ) : (
+                                                        <span>Pick a date</span>
+                                                    )}
+                                                    <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                                                </Button>
+                                            </FormControl>
+                                        </PopoverTrigger>
+                                        <PopoverContent className="w-full p-0" align="start">
+                                            <Calendar
+                                              className="w-full"
+                                                mode="single"
+                                                selected={field.value}
+                                                onSelect={field.onChange}
+                                                disabled={(date) =>
+                                                    date > new Date() || date < new Date("1900-01-01")
+                                                }
+                                                initialFocus
+                                            />
+                                        </PopoverContent>
+                                    </Popover>
+
+                                    <FormMessage />
+                                </FormItem>
                             )}
                         />
 
@@ -216,7 +220,7 @@ export function CustomerCreateForm() {
                             )}
                         />
                     </TabsContent>
-                    <TabsContent  className="grid grid-cols-1 md:grid-cols-3  gap-2 " value="Contact">
+                    <TabsContent className="grid grid-cols-1 md:grid-cols-3  gap-2 " value="Contact">
                         <FormField
                             control={form.control}
                             name="iletisim_bilgileri.telefon"
@@ -425,10 +429,10 @@ export function CustomerCreateForm() {
                                             <SelectItem value="Kurumsal">Corporate</SelectItem>
                                             <SelectItem value="VIP">Vip</SelectItem>
                                         </SelectContent>
-                                         <FormMessage />
+                                        <FormMessage />
                                     </Select>
-                                 </FormItem>
-                                )}
+                                </FormItem>
+                            )}
                         />
                         <FormField
                             control={form.control}
@@ -447,7 +451,7 @@ export function CustomerCreateForm() {
                             control={form.control}
                             name="segmentasyon.sadakat_durumu"
                             render={({ field }) => (
-                                    <FormItem>
+                                <FormItem>
                                     <FormLabel>Customer loyalty status</FormLabel>
                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
@@ -460,13 +464,13 @@ export function CustomerCreateForm() {
                                             <SelectItem value="Sadık Müşteri">Loyal customer</SelectItem>
                                             <SelectItem value="Potansiyel Müşteri">potential customer</SelectItem>
                                         </SelectContent>
-                                         <FormMessage />
+                                        <FormMessage />
                                     </Select>
-                                 </FormItem>
-                                )}
+                                </FormItem>
+                            )}
                         />
                     </TabsContent>
-                    
+
                     <TabsContent value="relations" className="grid grid-cols-1 md:grid-cols-3  gap-2 ">
                         <FormField
                             control={form.control}
@@ -485,10 +489,10 @@ export function CustomerCreateForm() {
                                             <SelectItem value="Mevcut Müşteri">Current Customer</SelectItem>
                                             <SelectItem value="Potansiyel Müşteri">Potential Customer</SelectItem>
                                         </SelectContent>
-                                         <FormMessage />
+                                        <FormMessage />
                                     </Select>
-                                 </FormItem>
-                                )}
+                                </FormItem>
+                            )}
                         />
                         <FormField
                             control={form.control}
@@ -503,7 +507,7 @@ export function CustomerCreateForm() {
                                 </FormItem>
                             )}
                         />
-                     
+
                     </TabsContent>
                     <TabsContent value="marketing" className="grid grid-cols-1 md:grid-cols-3 my-auto  gap-2 " >
                         <FormField
@@ -527,7 +531,7 @@ export function CustomerCreateForm() {
                             name="pazarlama_izinleri.sms_izni"
                             render={({ field }) => (
                                 <FormItem className="flex flex-col items-start  justify-start ">
-                            
+
                                     <FormLabel>Sms permissions</FormLabel>
                                     <FormControl>
                                         <Switch
@@ -556,18 +560,18 @@ export function CustomerCreateForm() {
                                             <SelectItem value="SMS">Sms</SelectItem>
                                             <SelectItem value="Telefon">Phone</SelectItem>
                                         </SelectContent>
-                                         <FormMessage />
+                                        <FormMessage />
                                     </Select>
-                                 </FormItem>
+                                </FormItem>
                             )}
                         />
-                        
-                    <Button type="submit">Create</Button>
+
+                        <Button type="submit">Create</Button>
                     </TabsContent>
                 </Tabs>
 
 
-               
+
 
             </form>
         </Form>
