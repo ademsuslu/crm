@@ -109,7 +109,7 @@ const data = {
       items: [
          {
            title: "Personal",
-           url: "/personal",
+           url: "/bussines/personal",
            isActive:false
          },
       //   {
