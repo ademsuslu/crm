@@ -68,4 +68,4 @@ Güvenlik ve Erişim Kontrolü
 clerak auth custom görev ve logın degılse sadece ana sayfa ogın oldukdan sonra /dashboard vb
 https://clerk.com/docs/references/nextjs/clerk-middleware#protect-routes-based-on-user-authentication-status  
 
-side barda personal ve employees var ıkısıde aynı 
+    - hydration error

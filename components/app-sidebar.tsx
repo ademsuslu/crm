@@ -106,11 +106,12 @@ const data = {
     {
       title: "Bussines",
       url: "/bussines",
-      // items: [
-      //   {
-      //     title: "Accessibility",
-      //     url: "#",
-      //   },
+      items: [
+         {
+           title: "Personal",
+           url: "/personal",
+           isActive:false
+         },
       //   {
       //     title: "Fast Refresh",
       //     url: "#",
@@ -127,7 +128,7 @@ const data = {
       //     title: "Turbopack",
       //     url: "#",
       //   },
-      // ],
+       ],
     },
     {
       title: "Opportunity",
@@ -165,20 +166,7 @@ const data = {
       //   },
       // ],
     },
-      {
-       title: "Personal",
-       url: "/personal",
-      //  items: [
-      //    {
-      //      title: "Installation",
-      //      url: "#",
-      //    },
-      //    {
-      //      title: "Project Structure",
-      //      url: "#",
-      //    },
-      //  ],
-     },
+      
       {
        title: "Settings",
        url: "/settings",
