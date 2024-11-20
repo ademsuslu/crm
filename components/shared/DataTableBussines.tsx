@@ -1,9 +1,5 @@
 "use client"
 
-import { FaTasks } from "react-icons/fa";
-
-import { IoIosTimer } from "react-icons/io";
-import { FaEdit, FaEye } from "react-icons/fa";
 import * as React from "react"
 import {
   ColumnDef,
@@ -211,15 +207,7 @@ const DataTableBussines: React.FC<DataTableBussinesProps> = ({ data }) => {
         />
         <DropdownMenu>
           <div className="flex space-x-2 w-full">
-          <Button
-              asChild
-              size="default"
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input  shadow-sm   ml-auto " data-state="closed">
-              <Link href="/bussines/create-task">
-                <FaTasks className="w-4 h-4"  />
-                Create 
-              </Link>
-            </Button>
+        
             <Button asChild
              className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input  shadow-sm   ml-auto "  data-state="closed">
               <Link href="/customer/create">

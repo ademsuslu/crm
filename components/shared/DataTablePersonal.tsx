@@ -1,7 +1,7 @@
 "use client"
 
-import { IoIosTimer  } from "react-icons/io";
-import { FaEdit, FaEye } from "react-icons/fa";
+import { FaTasks } from "react-icons/fa";
+import { FaPersonCirclePlus} from "react-icons/fa6";
 import * as React from "react"
 import {
   ColumnDef,
@@ -207,9 +207,19 @@ const DataTablePersonal: React.FC<DataTablePersonalProps> = ({ data }) => {
         />
         <DropdownMenu>
           <div className="flex space-x-2">
-          <Button asChild className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 w-9 ml-auto rounded-full" data-state="closed">
+          <Button
+              asChild
+              size="default"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input  shadow-sm   ml-auto " data-state="closed">
+              <Link href="/bussines/create-task">
+                <FaTasks className="w-4 h-4"  />
+                Create 
+              </Link>
+            </Button>
+          <Button asChild    className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input  shadow-sm   ml-auto " data-state="closed">
           <Link href="/customer/create">
-              <Plus className="w-4 h-4 text-white"/>
+              <FaPersonCirclePlus className="w-6 h-6 "/>
+          Create
           </Link>
           </Button>
           <DropdownMenuTrigger asChild>
