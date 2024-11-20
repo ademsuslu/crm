@@ -1,5 +1,5 @@
 import Navbar from "@/components/shared/navbar"
-import { Footer } from "react-day-picker"
+import  Footer  from "@/components/shared/footer"
 
 const RootLayout = ({children}:{children:React.ReactNode}) => {
   return (
