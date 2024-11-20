@@ -32,7 +32,7 @@ const Navbar = () => {
             <span className=" text-lg ">Analytics</span>
           </Link>
           <Link href="/blog" className="flex items-center gap-2">
-            <span className=" text-lg ">blog</span>
+            <span className=" text-lg ">Blog</span>
           </Link>
 
         </div>
