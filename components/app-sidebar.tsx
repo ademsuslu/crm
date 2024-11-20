@@ -179,6 +179,20 @@ const data = {
       //    },
       //  ],
      },
+      {
+       title: "Settings",
+       url: "/settings",
+      //  items: [
+      //    {
+      //      title: "Installation",
+      //      url: "#",
+      //    },
+      //    {
+      //      title: "Project Structure",
+      //      url: "#",
+      //    },
+      //  ],
+     },
   ],
 }
 
