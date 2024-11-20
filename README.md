@@ -65,3 +65,8 @@ Güvenlik ve Erişim Kontrolü
     Farklı departmanların ihtiyaçlarına göre yapılandırılabilir modüller
 
 
+
+
+
+clerak auth custom görev ve logın degılse sadece ana sayfa ogın oldukdan sonra /dashboard vb
+https://clerk.com/docs/references/nextjs/clerk-middleware#protect-routes-based-on-user-authentication-status
