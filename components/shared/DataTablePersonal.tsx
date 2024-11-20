@@ -217,7 +217,7 @@ const DataTablePersonal: React.FC<DataTablePersonalProps> = ({ data }) => {
               </Link>
             </Button>
           <Button asChild    className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input  shadow-sm   ml-auto " data-state="closed">
-          <Link href="/customer/create">
+          <Link href="/personal/create">
               <FaPersonCirclePlus className="w-6 h-6 "/>
           Create
           </Link>
