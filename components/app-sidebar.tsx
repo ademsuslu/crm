@@ -12,7 +12,7 @@ import {
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
-  
+
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
@@ -30,7 +30,7 @@ import Link from "next/link"
 const data = {
   versions: ["1.0.1", "1.1.0-alpha", "2.0.0-beta1"],
   navMain: [
-   
+
     {
       title: "Home",
       url: "/dashboard",
@@ -93,47 +93,32 @@ const data = {
         {
           title: "Reminders",
           url: "/customer/reminder",
-          isActive:false
+          isActive: false
         },
         {
           title: "Create",
           url: "/customer/create",
-          isActive:false
+          isActive: false
         },
-      
+
       ],
     },
     {
       title: "Bussines",
       url: "/bussines",
       items: [
-         {
-           title: "Personal",
-           url: "/bussines/personal",
-           isActive:false,
-         },
-         {
-           title: "Create tasks",
-           url: "/bussines/create-task",
-           isActive:false,
-         },
-      //   {
-      //     title: "Fast Refresh",
-      //     url: "#",
-      //   },
-      //   {
-      //     title: "Next.js Compiler",
-      //     url: "#",
-      //   },
-      //   {
-      //     title: "Supported Browsers",
-      //     url: "#",
-      //   },
-      //   {
-      //     title: "Turbopack",
-      //     url: "#",
-      //   },
-       ],
+        {
+          title: "Personal",
+          url: "/bussines/personal",
+          isActive: false,
+        },
+        {
+          title: "Create tasks",
+          url: "/bussines/create-task",
+          isActive: false,
+        },
+      
+      ],
     },
     {
       title: "Opportunity",
@@ -161,9 +146,9 @@ const data = {
       //   },
       // ],
     },
-      {
-       title: "Settings",
-       url: "/settings",
+    {
+      title: "Settings",
+      url: "/settings",
       //  items: [
       //    {
       //      title: "Installation",
@@ -174,7 +159,7 @@ const data = {
       //      url: "#",
       //    },
       //  ],
-     },
+    },
   ],
 }
 
@@ -188,7 +173,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         />
         <SearchForm /> */}
         <Link href={"/dashboard"}>
-          <Logo/>
+          <Logo />
         </Link>
       </SidebarHeader>
       <SidebarContent className="gap-0">
@@ -206,9 +191,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 className="group/label text-sm text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
               >
                 <CollapsibleTrigger>
-                 <Link href={item.url}>
-                  {item.title}
-                 </Link>
+                  <Link href={item.url}>
+                    {item.title}
+                  </Link>
                   <ChevronRightIcon className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90" />
                 </CollapsibleTrigger>
               </SidebarGroupLabel>
@@ -216,17 +201,17 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 <SidebarGroupContent>
                   <SidebarMenu>
                     {item?.items?.map((item) => {
-                  
-                      return   <SidebarMenuItem className="ms-3" key={item.title}>
-                      <SidebarMenuButton asChild isActive={item?.isActive}>
-                      <Link href={item.url} className="flex gap-2">
-                      <RxDotFilled />
-                      {item.title}</Link>
-                     
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
+
+                      return <SidebarMenuItem title={item.title} className="ms-3" key={item.title}>
+                        <SidebarMenuButton asChild isActive={item?.isActive}>
+                          <Link href={item.url} className="flex gap-2">
+                            <RxDotFilled />
+                            {item.title}</Link>
+
+                        </SidebarMenuButton>
+                      </SidebarMenuItem>
                     }
-                   )}
+                    )}
                   </SidebarMenu>
                 </SidebarGroupContent>
               </CollapsibleContent>
