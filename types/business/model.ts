@@ -1,5 +1,5 @@
 export type Personal = {
-    _id: string
+    _id: string;
     name: string;
     position: string;
     phone: string;
@@ -10,6 +10,7 @@ export type Personal = {
 }
 
 export type Business = {
+    _id: string;
     name: string;
     address: string;
     phone: string;
