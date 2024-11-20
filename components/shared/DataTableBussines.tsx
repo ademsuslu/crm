@@ -1,6 +1,8 @@
 "use client"
 
-import { IoIosTimer  } from "react-icons/io";
+import { FaTasks } from "react-icons/fa";
+
+import { IoIosTimer } from "react-icons/io";
 import { FaEdit, FaEye } from "react-icons/fa";
 import * as React from "react"
 import {
@@ -40,6 +42,7 @@ import {
 import Link from "next/link"
 import { sanitizeInput } from "@/utils/regex";
 import { Business } from "@/types/business/model";
+import { IoBusinessOutline } from "react-icons/io5";
 
 
 
@@ -78,11 +81,11 @@ export const columns: ColumnDef<Business>[] = [
     header: ({ column }) => (
       <Button
         variant="ghost"
-        className="text-md flex justify-start items-start px-0 font-extrabold" 
+        className="text-md flex justify-start items-start px-0 font-extrabold"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
         Address
-        <ArrowUpDown  className="w-4 h-4"/>
+        <ArrowUpDown className="w-4 h-4" />
       </Button>
     ),
     cell: ({ row }) => <div className="lowercase">{row.getValue("address")}</div>,
@@ -92,7 +95,7 @@ export const columns: ColumnDef<Business>[] = [
     header: "Phone",
     cell: ({ row }) => <div>{row.getValue("phone")}</div>,
   },
- 
+
   {
     id: "actions",
     enableHiding: false,
@@ -151,7 +154,7 @@ const DataTableBussines: React.FC<DataTableBussinesProps> = ({ data }) => {
             'Content-Type': 'application/json',
           },
         });
-    
+
         if (!response.ok) {
           throw new Error('Arama işlemi başarısız oldu.');
         }
@@ -207,17 +210,29 @@ const DataTableBussines: React.FC<DataTableBussinesProps> = ({ data }) => {
           className="max-w-sm"
         />
         <DropdownMenu>
-          <div className="flex space-x-2">
-          <Button asChild className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 w-9 ml-auto rounded-full" data-state="closed">
-          <Link href="/customer/create">
-              <Plus className="w-4 h-4 text-white"/>
-          </Link>
-          </Button>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto">
-              Columns <ChevronDown />
+          <div className="flex space-x-2 w-full">
+          <Button
+              asChild
+              size="default"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input  shadow-sm   ml-auto " data-state="closed">
+              <Link href="/bussines/create-task">
+                <FaTasks className="w-4 h-4"  />
+                Create 
+              </Link>
             </Button>
-          </DropdownMenuTrigger>
+            <Button asChild
+             className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input  shadow-sm   ml-auto "  data-state="closed">
+              <Link href="/customer/create">
+                <IoBusinessOutline  className="w-4 h-4 " />
+                Create 
+              </Link>
+            </Button>
+           
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" className="ml-auto">
+                Columns <ChevronDown />
+              </Button>
+            </DropdownMenuTrigger>
           </div>
           <DropdownMenuContent align="end">
             {table

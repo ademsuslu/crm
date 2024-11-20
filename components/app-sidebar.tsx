@@ -110,7 +110,12 @@ const data = {
          {
            title: "Personal",
            url: "/bussines/personal",
-           isActive:false
+           isActive:false,
+         },
+         {
+           title: "Create tasks",
+           url: "/bussines/create-task",
+           isActive:false,
          },
       //   {
       //     title: "Fast Refresh",
@@ -217,6 +222,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                       <Link href={item.url} className="flex gap-2">
                       <RxDotFilled />
                       {item.title}</Link>
+                     
                       </SidebarMenuButton>
                     </SidebarMenuItem>
                     }
