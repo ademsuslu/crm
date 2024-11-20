@@ -156,17 +156,6 @@ const data = {
       //   },
       // ],
     },
-    {
-      title: "Employees",
-      url: "/employee",
-      // items: [
-      //   {
-      //     title: "Contribution Guide",
-      //     url: "#",
-      //   },
-      // ],
-    },
-      
       {
        title: "Settings",
        url: "/settings",
