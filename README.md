@@ -70,3 +70,4 @@ https://clerk.com/docs/references/nextjs/clerk-middleware#protect-routes-based-o
 
     - hydration error
     - not founda nereden geldıse oraya yonlenmesı gerekıyor
+    - bussines page datatable for actions
