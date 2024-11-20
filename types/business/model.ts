@@ -1,6 +1,7 @@
 export type Personal = {
-    name: String;
-    position: String;
+    _id: string
+    name: string;
+    position: string;
     phone: string;
     businessId: string;
     createdAt: string;

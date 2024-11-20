@@ -22,10 +22,9 @@ import { CalendarIcon } from "lucide-react"
 import { Calendar } from "@/components/ui/calendar"
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { MultiSelect } from "@/components/ui/multi-select"
-import { Icons } from "@/components/icons"
 
 interface Props {
-    personal?: Personal[]
+    personal: Personal[]
 }
 
 export const TaskCreate: React.FC<Props> = ({ personal }) => {
@@ -37,10 +36,10 @@ export const TaskCreate: React.FC<Props> = ({ personal }) => {
         defaultValues: {
             title: "",
             description: "",
-            priority: "medium" as 'low' | 'medium' | 'high', //['low', 'medium', 'high']
+            priority: "Medium" as 'low' | 'medium' | 'high', //['low', 'medium', 'high']
             dueDate: new Date(),
-            status: "pending" as 'pending' | 'in_progress' | 'completed', //['pending', 'in_progress', 'completed']
-            assignedEmployees: [""],
+            status: "Pending" as 'pending' | 'in_progress' | 'completed', //['pending', 'in_progress', 'completed']
+            assignedEmployees: [],
         }
     })
 
@@ -71,9 +70,11 @@ export const TaskCreate: React.FC<Props> = ({ personal }) => {
         form.setValue("dueDate", newDate);
     }
     const onSubmit = async (values: z.infer<typeof taskformSchema>) => {
-        storeModal.onClose()
         form.reset()
-        const url = `https://crm-backend-production-e80f.up.railway.app/api/opportunity`
+        const url = `https://crm-backend-production-e80f.up.railway.app/api/tasks`
+      
+      console.log("values")
+      console.log(values)
         const response = await fetch(url, {
             method: 'POST',
             cache: "no-cache",
@@ -83,7 +84,7 @@ export const TaskCreate: React.FC<Props> = ({ personal }) => {
             body: JSON.stringify(values)
         })
         const res = await response.json()
-        router.push("/opportunity");
+        router.push("/bussines/personal");
         toast({ description: <div className="inline-flex items-center">{res?.message} <TiTick className='w-6 h-6 ml-2 text-green-500' /></div> })
     };
 
@@ -125,7 +126,7 @@ export const TaskCreate: React.FC<Props> = ({ personal }) => {
                                 <SelectContent>
                                     {
                                         ['low', 'medium', 'high'].map((item, index) => {
-                                            return <SelectItem key={index} value={item}>{item}</SelectItem>
+                                            return <SelectItem className="capitalize" key={index} value={item}>{item}</SelectItem>
                                         })
                                     }
                                 </SelectContent>
@@ -274,7 +275,7 @@ export const TaskCreate: React.FC<Props> = ({ personal }) => {
                                 <SelectContent>
                                     {
                                         ['pending', 'in_progress', 'completed'].map((item, index) => {
-                                            return <SelectItem key={index} value={item}>{item}</SelectItem>
+                                            return <SelectItem className="capitalize" key={index} value={item}>{item}</SelectItem>
                                         })
                                     }
                                 </SelectContent>
@@ -288,23 +289,15 @@ export const TaskCreate: React.FC<Props> = ({ personal }) => {
                     control={form.control}
                     name="assignedEmployees"
                     render={({ field }) => {
-                        const frameworksList = [
-                            {
-                                value: "next.js",
-                                label: "Next.js",
-                             
-                            },
-                            {
-                                value: "sveltekit",
-                                label: "SvelteKit",
-                            },
-                          
-                        ];
+                        let data = personal?.map(item => ({
+                            label: item.name,
+                            value: item?._id
+                        }));
                         return <FormItem>
-                            <FormLabel>Frameworks</FormLabel>
+                            <FormLabel>Personals</FormLabel>
                             <FormControl>
                                 <MultiSelect
-                                    options={frameworksList}
+                                    options={data}
                                     onValueChange={field.onChange}
                                     defaultValue={field.value}
                                     placeholder="Select personals"
