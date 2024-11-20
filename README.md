@@ -11,15 +11,15 @@ Müşteri Yönetimi
     + E-posta ve SMS entegrasyonu ile müşterilere doğrudan ulaşma
     + Müşteri ile yapılan tüm etkileşimleri (e-postalar, telefon görüşmeleri, toplantılar) kaydetme
 
-3. Preferences Satış Yönetimi (satıs yonetımı magza sahıplerıne gıdecek yanı userlere) 
+ Preferences Satış Yönetimi (satıs yonetımı magza sahıplerıne gıdecek yanı userlere) 
 
    + Satış fırsatlarını izleme ve yönetme (pipeline yönetimi)
    + Teklif, sözleşme ve satış süreci takibi
    + Satis Teklifi sunuldugunda  mail gonderilicek
-    Satış ekibi performans analizleri
+   - ** Satış ekibi performans analizleri **
 
-Görev ve İş Takibi
-    Görev oluşturma ve görevlere ekip üyeleri atama
+4. Görev ve İş Takibi
+    Görev(TASK) oluşturma ve görevlere ekip üyeleri atama
     Görevler için hatırlatıcılar ve son tarih belirleme
     Görev tamamlama oranlarını takip etme
 
@@ -65,8 +65,7 @@ Güvenlik ve Erişim Kontrolü
     Farklı departmanların ihtiyaçlarına göre yapılandırılabilir modüller
 
 
-
-
-
 clerak auth custom görev ve logın degılse sadece ana sayfa ogın oldukdan sonra /dashboard vb
-https://clerk.com/docs/references/nextjs/clerk-middleware#protect-routes-based-on-user-authentication-status
+https://clerk.com/docs/references/nextjs/clerk-middleware#protect-routes-based-on-user-authentication-status  
+
+side barda personal ve employees var ıkısıde aynı 
