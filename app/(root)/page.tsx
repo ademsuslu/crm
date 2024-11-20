@@ -31,9 +31,7 @@ export default function Home() {
       <AfterCrm/>
       <div className="mt-6"></div>
       <BetterGrow/>
-      <div className="mt-6"></div>
-     <Footer/>
-      <div className="mt-3"></div>
+  
      </div>
   )
 }

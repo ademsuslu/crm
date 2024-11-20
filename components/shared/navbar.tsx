@@ -58,8 +58,6 @@ const Navbar = () => {
               <Button variant={"ghost"} asChild className="rounded  mt-3">
                 <Link className="border px-4 py-1 rounded-md text-lg font-bold" href="/sign-up">Register</Link>
               </Button>
-
-
             </div>
           </SignedOut>
         </ClerkLoaded>
