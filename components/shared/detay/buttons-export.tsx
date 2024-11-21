@@ -12,10 +12,10 @@ import { TiTick } from "react-icons/ti";
 
 type ButtonsExportProps = {
   data?: Customer
-  type?: "reminder" | "customer" |"bussines",
+  type?: "reminder" | "customer" | "bussines" | "personal"
   id?: string
 };
-const ButtonsExport: React.FC<ButtonsExportProps> = ({ data,  type,id}) => {
+const ButtonsExport: React.FC<ButtonsExportProps> = ({ data, type, id }) => {
   const { toast } = useToast()
   const router = useRouter();
   const handleCvs = () => {
@@ -32,6 +32,9 @@ const ButtonsExport: React.FC<ButtonsExportProps> = ({ data,  type,id}) => {
     } else if (type === "bussines") {
       url = `https://crm-backend-production-e80f.up.railway.app/api/businesses/${ById}`;
     }
+    else if (type === "personal") {
+      url = `https://crm-backend-production-e80f.up.railway.app/api/employees/${ById}`;
+    }
 
     try {
       const response = await fetch(url, {
@@ -40,7 +43,7 @@ const ButtonsExport: React.FC<ButtonsExportProps> = ({ data,  type,id}) => {
           "Content-Type": "application/json",
         },
       });
-
+      const res = await response.json();
       if (!response.ok) {
         toast({
           description: "Silme işlemi başarısız.",
@@ -51,25 +54,16 @@ const ButtonsExport: React.FC<ButtonsExportProps> = ({ data,  type,id}) => {
       toast({
         description: (
           <div className="inline-flex items-center">
-            {type === "reminder"
-              ? "Reminder"
-              : type === "bussines"
-              ? "Business"
-              : "Customer"}{" "}
-            silindi{" "}
+            {/* create  type of title */}
+            {
+              res?.message ? res?.message : "Delete SUCCESS"
+            }
             <TiTick className="w-6 h-6 ml-2 text-green-500" />.
           </div>
         ),
       });
 
       router.refresh();
-      router.push(
-        type === "reminder"
-          ? "/customer/reminder"
-          : type === "bussines"
-          ? "/bussines"
-          : "/customer"
-      );
     } catch (error) {
       console.error("Silme işleminde hata:", error);
     }
@@ -77,10 +71,10 @@ const ButtonsExport: React.FC<ButtonsExportProps> = ({ data,  type,id}) => {
 
   return (
     <div className='flex  items-center gap-2 '>
-     { type === "customer" &&
-       <Button onClick={handleCvs} className='text-sm'>
-        <BiSolidFileExport className='w-4 h-4 ml-1' />
-      </Button>
+      {type === "customer" &&
+        <Button onClick={handleCvs} className='text-sm'>
+          <BiSolidFileExport className='w-4 h-4 ml-1' />
+        </Button>
       }
       <Button onClick={() => handleDelete()}>
         <AiFillDelete />
