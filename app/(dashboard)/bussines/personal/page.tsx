@@ -1,4 +1,4 @@
-import DataTablePersonal from "@/components/shared/DataTablePersonal"
+import DataTablePersonal from "@/components/shared/datatables/personal/DataTablePersonal"
 
 export default async function Employee() {
     const response = await fetch(`${'https://crm-backend-production-e80f.up.railway.app/api'}/employees`,{

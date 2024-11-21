@@ -1,5 +1,5 @@
 import { Suspense } from 'react'
-import DataTableDemo  from "@/components/shared/DataTable"
+import DataTableDemo  from "@/components/shared/datatables/customer/DataTable"
 import TableSkeleton from '@/components/shared/skeletons/table-skeleton';
 
 export default async function CustomerPage(){
