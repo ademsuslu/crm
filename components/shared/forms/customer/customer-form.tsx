@@ -6,7 +6,7 @@ import { z } from "zod"
 import { format } from "date-fns"
 
 
-import { Button, buttonVariants } from "@/components/ui/button"
+import { Button } from "@/components/ui/button"
 import {
     Form,
     FormControl,
@@ -14,6 +14,7 @@ import {
     FormItem,
     FormLabel,
     FormMessage,
+    FormDescription
 } from "@/components/ui/form"
 import {
     Select,
@@ -26,71 +27,66 @@ import {
     Popover,
     PopoverContent,
     PopoverTrigger,
-} from "../ui/popover"
+} from "../../../ui/popover"
 import { Calendar } from "@/components/ui/calendar"
 import { Input } from "@/components/ui/input"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../ui/tabs"
 
 import { formSchema } from "@/types/form/customerSchema"
-import { Switch } from "../ui/switch"
+import { Switch } from "../../../ui/switch"
 import { toast } from "@/hooks/use-toast"
 import { useRouter } from "next/navigation"
 import { TiTick } from "react-icons/ti"
 
 import { CalendarIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { Customer } from "@/types/customer/model"
-import Link from "next/link"
-import { FaArrowLeft } from "react-icons/fa"
 
-
-const CustomerEditForm: React.FC<{ data: Customer }> = ({ data }) => {
-
+export function CustomerCreateForm() {
     const router = useRouter()
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            ad: data.ad,
-            soyad: data.soyad || "",
-            cinsiyet: data.cinsiyet as "Erkek" | "Kadın" | "Diğer",
-            dogum_tarihi: data.dogum_tarihi ? new Date(data.dogum_tarihi) : new Date(),
+            ad: "",
+            soyad: "",
+            cinsiyet: "Erkek", // Varsayılan değerler, isteğe göre ayarlanabilir
+            dogum_tarihi: new Date(),
             iletisim_bilgileri: {
-                telefon: data.iletisim_bilgileri.telefon || "",
-                email: data.iletisim_bilgileri.email || "",
+                telefon: "",
+                email: "",
                 adres: {
-                    sokak: data.iletisim_bilgileri.adres.sokak || "",
-                    sehir: data.iletisim_bilgileri.adres.sehir || "",
-                    posta_kodu: data.iletisim_bilgileri.adres.posta_kodu || "",
-                    ulke: data.iletisim_bilgileri.adres.ulke || "",
+                    sokak: "",// okay,
+                    sehir: "",
+                    posta_kodu: "",
+                    ulke: "",
                 },
                 sosyal_medya: {
-                    twitter: data.iletisim_bilgileri.sosyal_medya.twitter || "",
-                    linkedin: data.iletisim_bilgileri.sosyal_medya.linkedin || "",
+                    twitter: "",
+                    linkedin: "",
                 },
             },
             sirket_bilgileri: {
-                sirket_adi: data.sirket_bilgileri.sirket_adi,
-                gorev: data.sirket_bilgileri.gorev,
+                sirket_adi: "",
+                gorev: "",
                 sirket_adresi: {
-                    sokak: data.sirket_bilgileri.sirket_adresi.sokak,
-                    sehir: data.sirket_bilgileri.sirket_adresi.sehir,
-                    posta_kodu: data.sirket_bilgileri.sirket_adresi.posta_kodu,
-                    ulke: data.sirket_bilgileri.sirket_adresi.ulke,
+                    sokak: "",
+                    sehir: "",
+                    posta_kodu: "",
+                    ulke: "",
                 },
             },
             segmentasyon: {
-                musteri_segmenti: data.segmentasyon.musteri_segmenti as "Bireysel" | "Kurumsal" | "VIP",
-                ilgi_alanlari: data.segmentasyon.ilgi_alanlari?.join(", ") || "",
-                sadakat_durumu: data.segmentasyon.sadakat_durumu as "Yeni Müşteri" | "Sadık Müşteri" | "Potansiyel Müşteri",
+                musteri_segmenti: "Bireysel",
+                ilgi_alanlari: "",
+                sadakat_durumu: "Yeni Müşteri",
             },
             iliskiler: {
-                asama: data.iliskiler.asama as "Potansiyel Müşteri" | "Yeni" | "Mevcut Müşteri",
-                notlar: data.iliskiler.notlar,
+                asama: "Yeni",
+                notlar: "",
             },
             pazarlama_izinleri: {
-                email_izni: data.pazarlama_izinleri.email_izni,
-                sms_izni: data.pazarlama_izinleri.sms_izni,
-                tercih_edilen_kanal: data.pazarlama_izinleri.tercih_edilen_kanal as "Email" | "SMS" | "Telefon",
+                email_izni: true,
+                sms_izni: true,
+                tercih_edilen_kanal: "Email",
             },
         },
     });
@@ -98,26 +94,18 @@ const CustomerEditForm: React.FC<{ data: Customer }> = ({ data }) => {
     async function onSubmit(values: z.infer<typeof formSchema>) {
         console.log(values)
         form.reset()
-        const url = `https://crm-backend-production-e80f.up.railway.app/api/customers/${data?._id}`
+        const url = `https://crm-backend-production-e80f.up.railway.app/api/customers`
         const response = await fetch(url, {
-            method: 'PUT',
+            method: 'POST',
+            cache: "no-cache",
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(values)
         })
         const res = await response.json()
-        toast({
-            description: <div className="inline-flex items-center">
-                {res?.message}
-                <TiTick className='w-6 h-6 ml-2 text-green-500' />
-                <Link href={"/customer"} className={buttonVariants({
-                    size: 'sm',
-                    variant: 'ghost',
-                })}>Come back <FaArrowLeft className="w-4 h-4 mr-2"/> </Link>
-            </div>
-        })
-        router.refresh()
+        toast({ description: <div className="inline-flex items-center">{res?.message} <TiTick className='w-6 h-6 ml-2 text-green-500' /></div> })
+        router.push("/customer")
     }
 
     return (
@@ -133,13 +121,13 @@ const CustomerEditForm: React.FC<{ data: Customer }> = ({ data }) => {
                         <TabsTrigger className="text-sm  p-0 w-full" value="relations">Relations</TabsTrigger>
                         <TabsTrigger className="text-sm  p-0 w-full" value="marketing">Marketing</TabsTrigger>
                     </TabsList>
-                    <TabsContent className="grid grid-cols-1 md:grid-cols-4   gap-2 " value="Personal">
+                    <TabsContent className="grid grid-cols-1 md:grid-cols-3 w-full  gap-2 " value="Personal">
                         <FormField
                             control={form.control}
                             name="ad"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Name</FormLabel>
+                                    <FormLabel>Ad</FormLabel>
                                     <FormControl>
                                         <Input placeholder="Enter Name" className="" {...field} />
                                     </FormControl>
@@ -154,7 +142,7 @@ const CustomerEditForm: React.FC<{ data: Customer }> = ({ data }) => {
                             name="soyad"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Surname</FormLabel>
+                                    <FormLabel>Soyad</FormLabel>
                                     <FormControl>
                                         <Input placeholder="Enter Surname" {...field} />
                                     </FormControl>
@@ -163,18 +151,19 @@ const CustomerEditForm: React.FC<{ data: Customer }> = ({ data }) => {
                             )}
                         />
                         <FormField
+
                             control={form.control}
                             name="dogum_tarihi"
                             render={({ field }) => (
-                                <FormItem className="flex flex-col mt-2.5">
+                                <FormItem className="flex flex-col w-full mt-2.5">
                                     <FormLabel>Date of birth</FormLabel>
-                                    <Popover>
+                                    <Popover >
                                         <PopoverTrigger asChild>
-                                            <FormControl className="">
+                                            <FormControl className="w-full">
                                                 <Button
                                                     variant={"outline"}
                                                     className={cn(
-                                                        "w-[240px] pl-3 text-left font-normal",
+                                                        "w-full pl-3 text-left font-normal",
                                                         !field.value && "text-muted-foreground"
                                                     )}
                                                 >
@@ -187,8 +176,9 @@ const CustomerEditForm: React.FC<{ data: Customer }> = ({ data }) => {
                                                 </Button>
                                             </FormControl>
                                         </PopoverTrigger>
-                                        <PopoverContent className="w-auto p-0" align="start">
+                                        <PopoverContent className="w-full p-0" align="start">
                                             <Calendar
+                                              className="w-full"
                                                 mode="single"
                                                 selected={field.value}
                                                 onSelect={field.onChange}
@@ -576,7 +566,7 @@ const CustomerEditForm: React.FC<{ data: Customer }> = ({ data }) => {
                             )}
                         />
 
-                        <Button type="submit">Save</Button>
+                        <Button type="submit">Create</Button>
                     </TabsContent>
                 </Tabs>
 
@@ -587,4 +577,3 @@ const CustomerEditForm: React.FC<{ data: Customer }> = ({ data }) => {
         </Form>
     );
 }
-export default CustomerEditForm

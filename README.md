@@ -69,3 +69,6 @@ clerak auth custom görev ve logın degılse sadece ana sayfa ogın oldukdan son
 https://clerk.com/docs/references/nextjs/clerk-middleware#protect-routes-based-on-user-authentication-status  
 
     - hydration error
+    - bussines edit
+    - personal edit
+    - tasks edit

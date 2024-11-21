@@ -1,4 +1,4 @@
-import { CustomerCreateForm } from '@/components/shared/customer-form'
+import { CustomerCreateForm } from '@/components/shared/forms/customer/customer-form'
 import React from 'react'
 
 const CustomerCreatePage = () => {
