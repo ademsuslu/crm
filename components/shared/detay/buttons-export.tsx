@@ -12,7 +12,7 @@ import { TiTick } from "react-icons/ti";
 
 type ButtonsExportProps = {
   data?: Customer
-  type?: "reminder" | "customer",
+  type?: "reminder" | "customer" |"bussines",
   id?: string
 };
 const ButtonsExport: React.FC<ButtonsExportProps> = ({ data,  type,id}) => {
@@ -22,29 +22,56 @@ const ButtonsExport: React.FC<ButtonsExportProps> = ({ data,  type,id}) => {
     ExportToExcel(data);
   };
   const handleDelete = async () => {
-    let ById = id || data?._id
-    const url = type !== 'reminder' ? ` ${"https://crm-backend-production-e80f.up.railway.app/api"}/customers/${ById} ` : ` ${"https://crm-backend-production-e80f.up.railway.app/api"}/reminder/${ById}`
+    let ById = id || data?._id;
+    let url = "";
+
+    if (type === "customer") {
+      url = `https://crm-backend-production-e80f.up.railway.app/api/customers/${ById}`;
+    } else if (type === "reminder") {
+      url = `https://crm-backend-production-e80f.up.railway.app/api/reminder/${ById}`;
+    } else if (type === "bussines") {
+      url = `https://crm-backend-production-e80f.up.railway.app/api/businesses/${ById}`;
+    }
+
     try {
-      const response = await fetch(`${url}`, {
-        method: 'DELETE',
+      const response = await fetch(url, {
+        method: "DELETE",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
       });
 
       if (!response.ok) {
         toast({
-          description: "Customer not deleted.",
-        })
-        throw new Error('Bir hata oluştu!');
+          description: "Silme işlemi başarısız.",
+        });
+        throw new Error("Bir hata oluştu!");
       }
+
       toast({
-        description: <div className='inline-flex items-center'>{type === "reminder" ? "Reminder " : "Customer"} deleted <TiTick className='w-6 h-6 ml-2 text-green-500' />.</div>,
-      })
+        description: (
+          <div className="inline-flex items-center">
+            {type === "reminder"
+              ? "Reminder"
+              : type === "bussines"
+              ? "Business"
+              : "Customer"}{" "}
+            silindi{" "}
+            <TiTick className="w-6 h-6 ml-2 text-green-500" />.
+          </div>
+        ),
+      });
+
       router.refresh();
-      router.push(type === "reminder" ? "/customer/reminder" : "/customer");
+      router.push(
+        type === "reminder"
+          ? "/customer/reminder"
+          : type === "bussines"
+          ? "/bussines"
+          : "/customer"
+      );
     } catch (error) {
-      console.error('Silme işleminde hata:', error);
+      console.error("Silme işleminde hata:", error);
     }
   };
 

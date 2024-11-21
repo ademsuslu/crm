@@ -7,7 +7,5 @@ export default async function Employee() {
     const data = await response.json()
     return <div>
         <DataTablePersonal data={data}/>
-
-
     </div>
 }

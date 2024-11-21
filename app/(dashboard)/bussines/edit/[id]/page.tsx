@@ -12,10 +12,10 @@ export default async function BussinesrDetails({
   const data = await response.json()
 
   return <div className="flex flex-col justify-between items-center  gap-2">
-    {/* <div className="flex w-full justify-between gap-2">
-      <Link href={"/customer"} className={buttonVariants({})}>Back</Link>
-      <ButtonsExport type="customer" data={data} />
-    </div> */}
+     <div className="flex w-full justify-between gap-2">
+      <Link href={"/bussines"} className={buttonVariants({})}>Back</Link>
+      <ButtonsExport type="bussines" id={id}/>
+    </div>
     <div className="w-full">
     Bussines
       {
