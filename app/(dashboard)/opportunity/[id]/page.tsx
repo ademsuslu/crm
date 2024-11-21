@@ -1,7 +1,6 @@
 import DeleteOpportunityButton from "@/components/shared/delete-oppornuty-button"
-import { OpportunityEdit } from "@/components/shared/forms/oppornuty-edit-form"
+import { OpportunityEdit } from "@/components/shared/forms/opportunity/oppornuty-edit-form"
 import { buttonVariants } from "@/components/ui/button"
-import { toast } from "@/hooks/use-toast"
 import Link from "next/link"
 
 export default async function OppornutyDetails({

@@ -1,4 +1,4 @@
-import { OpportunityCreate } from '@/components/shared/forms/oppornuty-form'
+import { OpportunityCreate } from '@/components/shared/forms/opportunity/oppornuty-form'
 import { buttonVariants } from '@/components/ui/button'
 import Link from 'next/link'
 import React from 'react'
