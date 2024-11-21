@@ -69,5 +69,3 @@ clerak auth custom görev ve logın degılse sadece ana sayfa ogın oldukdan son
 https://clerk.com/docs/references/nextjs/clerk-middleware#protect-routes-based-on-user-authentication-status  
 
     - hydration error
-    - not founda nereden geldıse oraya yonlenmesı gerekıyor
-    - bussines page datatable for actions

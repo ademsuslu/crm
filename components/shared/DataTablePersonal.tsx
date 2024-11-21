@@ -107,12 +107,12 @@ export const columns: ColumnDef<Personal>[] = [
           <DropdownMenuLabel>Actions</DropdownMenuLabel>
           <DropdownMenuSeparator />
            <DropdownMenuItem >
-            <Link className="inline-flex items-center" href={`/personal/${row.original._id}`}>
+            <Link className="inline-flex items-center" href={`/bussines/personal/${row.original._id}`}>
               <FaEye className="w-4 h-4 mr-2" /> Show  Details
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem >
-            <Link className="inline-flex items-center" href={`/personal/edit/${row.original._id}`}>
+            <Link className="inline-flex items-center" href={`/bussines/personal/edit/${row.original._id}`}>
               <FaEdit className="w-4 h-4 mr-2" /> Edit
             </Link>
           </DropdownMenuItem>
