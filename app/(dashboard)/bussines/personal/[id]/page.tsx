@@ -13,16 +13,14 @@ export default async function PersonalDetails({
     const id = (await params).id
     const response = await fetch(`${process.env.NEXT_API_URL}/employees/${id}`,{ cache: 'no-store' })
     const data = await response.json()
-console.log("dddddddddddd")
-console.log(data)
-//@ts-ignore
-let Id = String(data?.businessId._id)
+
+    //@ts-ignore
+    let Id = String(data?.businessId._id)
+
     const bus = await fetch(`${process.env.NEXT_API_URL}/businesses/${Id}`,{ cache: 'no-store' })
     const bussinesforpersonal = await bus.json()
 
-  console.log("bussinesforpersonal")
-  console.log(bussinesforpersonal)
-    return <div className="flex flex-col justify-between items-center  gap-2">
+return <div className="flex flex-col justify-between items-center  gap-2">
      <div className="flex w-full justify-between gap-2">
         <Link href={"/bussines/personal"} className={buttonVariants({})}>Back</Link>
         <ButtonsExport type="personal" data={data} />
