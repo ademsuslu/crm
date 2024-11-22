@@ -126,7 +126,7 @@ export const columns: ColumnDef<Business>[] = [
 
 
 type DataTableBussinesProps = {
-  data: Business[];
+  data: Business[] ;
 };
 
 const DataTableBussines: React.FC<DataTableBussinesProps> = ({ data }) => {
