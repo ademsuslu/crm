@@ -14,7 +14,7 @@ export type Business = {
     name: string;
     address: string;
     phone: string;
-    // satin_alma_gecmisi: Personal[];
+    employees: Personal[];
     createdAt: string;
     updatedAt: string;
     __v: number;
