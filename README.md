@@ -71,4 +71,4 @@ https://clerk.com/docs/references/nextjs/clerk-middleware#protect-routes-based-o
     - hydration error
     - bussines edit
     - personal edit
-    - tasks edit
+    - tasks edit  + task delete

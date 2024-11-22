@@ -1,7 +1,7 @@
 import ButtonsExport from "@/components/shared/detay/buttons-export"
 import { buttonVariants } from "@/components/ui/button"
 import Link from "next/link"
-import  CustomerEditForm  from "@/components/shared/forms/customer/customer-edit-form"
+import { BussinesEdit } from "@/components/shared/forms/bussines/bussines-edit-form"
 export default async function BussinesrDetails({
   params,
 }: {
@@ -17,11 +17,7 @@ export default async function BussinesrDetails({
       <ButtonsExport type="bussines" id={id}/>
     </div>
     <div className="w-full">
-    Bussines
-      {
-        data.name
-      }
-      {/* <CustomerEditForm data={data}/> */}
+       <BussinesEdit data={data}/>
     </div>
 
   </div>
