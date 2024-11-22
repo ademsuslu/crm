@@ -2,10 +2,12 @@
 import * as  z from "zod"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { useStoreModal } from "@/hooks/use-store-modal"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 
 import React, { useState } from "react"
-import { BussinesformSchema } from "@/types/form/bussinesSchema"
+import { PersonalFormSchema } from "@/types/form/personalSchema"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { TiTick } from "react-icons/ti"
 import { toast } from "@/hooks/use-toast"
 import { useRouter } from "next/navigation"
@@ -15,35 +17,38 @@ import { MdOutlineAddBox } from "react-icons/md"
 import { Business } from "@/types/business/model"
 
 interface Props {
-    data:Business
+    data: Business[]
 }
 
-export const BussinesEdit: React.FC<Props> = ({data}) => {
+export const PersonalCreate: React.FC<Props> = ({ data }) => {
     const router = useRouter()
+    const storeModal = useStoreModal()
     const [loading, setLoading] = useState(false)
-    const form = useForm<z.infer<typeof BussinesformSchema>>({
-        resolver: zodResolver(BussinesformSchema),
+    const form = useForm<z.infer<typeof PersonalFormSchema>>({
+        resolver: zodResolver(PersonalFormSchema),
         defaultValues: {
-            name: data.name,
-            address: data.address,
-            phone: Number(data.phone),
+            name: "",
+            position: "",
+            phone: 0,
+            businessId: "",
         }
     })
 
 
-    const onSubmit = async (values: z.infer<typeof BussinesformSchema>) => {
+    const onSubmit = async (values: z.infer<typeof PersonalFormSchema>) => {
+        storeModal.onClose()
         form.reset()
-        const url = `https://crm-backend-production-e80f.up.railway.app/api/businesses/${data._id}`
+        const url = `https://crm-backend-production-e80f.up.railway.app/api/employees`
         const response = await fetch(url, {
-            method: 'PUT',
-            cache: "no-store",
+            method: 'POST',
+            cache: "no-cache",
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(values)
         })
         const res = await response.json()
-        router.refresh();
+        router.push("/bussines/personal");
         toast({ description: <div className="inline-flex items-center">{res?.message} <TiTick className='w-6 h-6 ml-2 text-green-500' /></div> })
     };
 
@@ -60,17 +65,17 @@ export const BussinesEdit: React.FC<Props> = ({data}) => {
                         <FormMessage />
                     </FormItem>
                 }} />
-                <FormField control={form.control} name="address" render={({ field }) => {
+                <FormField control={form.control} name="position" render={({ field }) => {
                     return <FormItem>
-                        <FormLabel>Address</FormLabel>
+                        <FormLabel>Position</FormLabel>
                         <FormControl>
-                            <Input disabled={loading} placeholder="Enter Address" {...field} />
+                            <Input disabled={loading} placeholder="Enter Position" {...field} />
                         </FormControl>
                         <FormMessage />
                     </FormItem>
                 }} />
 
-            
+
                 <FormField
                     control={form.control}
                     name="phone"
@@ -84,10 +89,38 @@ export const BussinesEdit: React.FC<Props> = ({data}) => {
                         </FormItem>
                     )}
                 />
+
+                <FormField
+                    control={form.control}
+                    name="businessId"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Business</FormLabel>
+                            <Select onValueChange={field.onChange} >
+                                <FormControl>
+                                    <SelectTrigger>
+                                        <SelectValue placeholder="Select a business" />
+                                    </SelectTrigger>
+                                </FormControl>
+                                <SelectContent>
+                                    {
+                                        data.map((business: Business) => (
+                                            <SelectItem key={business._id} value={business._id}>{business.name}</SelectItem>
+                                        ))
+                                    }
+                                  
+                                </SelectContent>
+                            </Select>
+
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+
                 <div className="pt-6 space-x-2 flex items-center justify-start w-full">
                     <Button disabled={loading} type="submit">
                         <MdOutlineAddBox className="w-4 h-4 mr-2" />
-                        Save
+                        Create
                     </Button>
                 </div>
             </form>
