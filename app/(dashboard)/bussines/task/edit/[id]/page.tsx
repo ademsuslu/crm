@@ -3,7 +3,7 @@ import { buttonVariants } from "@/components/ui/button"
 import Link from "next/link"
 
 
-export default async function TasksDetails({
+export default async function TaskEdit({
   params,
 }: {
   params: Promise<{ id: string }>
@@ -14,10 +14,11 @@ export default async function TasksDetails({
   console.log(data)
   return (<div className="flex flex-col justify-between items-center  gap-2">
     <div className="flex w-full justify-between gap-2">
-       <Link href={"/bussines/task"} className={buttonVariants({})}>Back</Link>
+      <Link href={"/bussines/task"} className={buttonVariants({})}>Back</Link>
       <ButtonsExport type="bussines" id={id} />
     </div>
     <div className="w-full">
+      Task Details
       {
         data.map((item: any) => item.title)
       }

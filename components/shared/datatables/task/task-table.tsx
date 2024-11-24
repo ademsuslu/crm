@@ -122,20 +122,16 @@ export const columns: ColumnDef<Task>[] = [
           <DropdownMenuLabel>Actions</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuItem >
-            <Link className="inline-flex items-center" href={`/customer/${row.original._id}`}>
+            <Link className="inline-flex items-center" href={`/bussines/${row.original._id}`}>
               <FaEye className="w-4 h-4 mr-2" /> Show  Details
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem >
-            <Link className="inline-flex items-center" href={`/customer/edit/${row.original._id}`}>
+            <Link className="inline-flex items-center" href={`/bussines/edit/${row.original._id}`}>
               <FaEdit className="w-4 h-4 mr-2" /> Edit
             </Link>
           </DropdownMenuItem>
-          <DropdownMenuItem >
-            <Link className="inline-flex items-center" href={`/customer/${row.original._id}/create`}>
-              <IoIosTimer  className="w-5 h-5 mr-2" /> Add Reminder
-            </Link>
-          </DropdownMenuItem>
+        
         </DropdownMenuContent>
       </DropdownMenu>
     }
