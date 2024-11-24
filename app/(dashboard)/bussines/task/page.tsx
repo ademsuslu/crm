@@ -6,7 +6,7 @@ export default async function TaskPage() {
     const data = await response.json()
   return (
     <div>
-      <TaskTable data={data} />
+      <TaskTable data={data.data} />
     </div>
   )
 }

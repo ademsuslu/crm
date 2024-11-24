@@ -74,23 +74,23 @@ export const columns: ColumnDef<Task>[] = [
     ),
   },
   {
-    accessorKey: "description",
+    accessorKey: "priority",
     header: ({ column }) => (
       <Button
         variant="ghost"
         className="text-md flex justify-start items-start px-0 font-extrabold" 
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
-        Desc
+        Priority
         <ArrowUpDown  className="w-4 h-4"/>
       </Button>
     ),
-    cell: ({ row }) => <div className="lowercase">{row.getValue("description")}</div>,
+    cell: ({ row }) => <div className="lowercase">{row.getValue("priority")}</div>,
   },
   {
-    accessorKey: "priority",
-    header: "Priority",
-    cell: ({ row }) => <div>{row.getValue("priority")}</div>,
+    accessorKey: "description",
+    header: "Description",
+    cell: ({ row }) => <div>{row.getValue("description")}</div>,
   },
   {
     accessorKey: "dueDate",
