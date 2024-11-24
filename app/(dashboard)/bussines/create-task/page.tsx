@@ -8,7 +8,7 @@ export default  async function CreateTaskPage() {
 const data = await response.json()
   return (
     <div>
-              <TaskCreate personal={data} />
+      <TaskCreate personal={data} />
     </div>
   )
 }

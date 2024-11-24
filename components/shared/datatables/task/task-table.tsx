@@ -40,7 +40,7 @@ import {
 import Link from "next/link"
 import { Task } from "@/types/task/model"
 import { sanitizeInput } from "@/utils/regex";
-import { formatToTurkeyTime } from "@/lib/utils";
+import { cn, formatToTurkeyTime } from "@/lib/utils";
 
 
 
@@ -105,8 +105,20 @@ export const columns: ColumnDef<Task>[] = [
   {
     accessorKey: "status",
     header: "Status",
-    cell: ({ row }) => <div>{row.getValue("status")}</div>,
+    cell: ({ row }) => {
+      const value = row.getValue("status");
+      let color;
+      if (value === "pending") {
+        color = "text-yellow-500";
+      } else if (value === "in_progress") {
+        color = "text-orange-500";
+      } else if (value === "completed") {
+        color = "text-green-500";
+      }
+      return <div className={`${color}`}>{String(value)}</div>;
+    },
   },
+  
   {
     id: "actions",
     enableHiding: false,

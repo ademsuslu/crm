@@ -19,10 +19,8 @@ export default async function TaskEdit({
     </div>
     <div className="w-full">
       Task Details
-      {
-        data.map((item: any) => item.title)
-      }
-      {id}
+              
+  { data.title}
     </div>
 
 

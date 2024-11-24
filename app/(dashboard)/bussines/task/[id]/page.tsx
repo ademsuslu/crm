@@ -12,8 +12,6 @@ export default async function TasksDetails({
   console.log(id)
   const response = await fetch(`https://crm-backend-production-e80f.up.railway.app/api/tasks/${id}`, { cache: 'no-store' })
   const data = await response.json()
-  console.log("data")
-  console.log(data)
   return (<div className="flex flex-col justify-between items-center  gap-2">
     <div className="flex w-full justify-between gap-2">
        <Link href={"/bussines/task"} className={buttonVariants({})}>Back</Link>
