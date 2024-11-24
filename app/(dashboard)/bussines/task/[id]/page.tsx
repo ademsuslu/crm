@@ -9,8 +9,10 @@ export default async function TasksDetails({
   params: Promise<{ id: string }>
 }) {
   const id = (await params).id
+  console.log(id)
   const response = await fetch(`https://crm-backend-production-e80f.up.railway.app/api/tasks/${id}`, { cache: 'no-store' })
   const data = await response.json()
+  console.log("data")
   console.log(data)
   return (<div className="flex flex-col justify-between items-center  gap-2">
     <div className="flex w-full justify-between gap-2">
@@ -18,10 +20,8 @@ export default async function TasksDetails({
       <ButtonsExport type="bussines" id={id} />
     </div>
     <div className="w-full">
-      {
-        data.map((item: any) => item.title)
-      }
-      {id}
+      
+{ data.title}
     </div>
 
 
