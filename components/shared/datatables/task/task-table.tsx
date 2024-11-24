@@ -40,6 +40,7 @@ import {
 import Link from "next/link"
 import { Task } from "@/types/task/model"
 import { sanitizeInput } from "@/utils/regex";
+import { formatToTurkeyTime } from "@/lib/utils";
 
 
 
@@ -90,12 +91,16 @@ export const columns: ColumnDef<Task>[] = [
   {
     accessorKey: "description",
     header: "Description",
-    cell: ({ row }) => <div>{row.getValue("description")}</div>,
+    cell: ({ row }) => {
+      const description = row.getValue("description");
+      return <div>{typeof description === "string" ? description.slice(0, 12)+'..' : ""}</div>;
+    },
   },
+  
   {
     accessorKey: "dueDate",
     header: "Due Date",
-    cell: ({ row }) => <div>{row.getValue("dueDate")}</div>,
+    cell: ({ row }) => <div>{formatToTurkeyTime(row.getValue("dueDate"))}</div>,
   },
   {
     accessorKey: "status",
@@ -217,7 +222,7 @@ const TaskTable: React.FC<TaskTableProps> = ({ data }) => {
         <DropdownMenu>
           <div className="flex space-x-2">
           <Button asChild className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 w-9 ml-auto rounded-full" data-state="closed">
-          <Link href="/customer/create">
+          <Link href="/bussines/create-task">
               <Plus className="w-4 h-4 text-white"/>
           </Link>
           </Button>
