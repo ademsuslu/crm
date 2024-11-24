@@ -1,3 +1,4 @@
+import TaskTable from '@/components/shared/datatables/task/task-table'
 import React from 'react'
 
 export default async function TaskPage() {
@@ -5,6 +6,8 @@ export default async function TaskPage() {
     const data = await response.json()
     console.log(data)
   return (
-    <div>TaskPage</div>
+    <div>
+      <TaskTable data={data} />
+    </div>
   )
 }
