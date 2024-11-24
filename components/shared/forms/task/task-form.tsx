@@ -72,9 +72,9 @@ export const TaskCreate: React.FC<Props> = ({ personal }) => {
     const onSubmit = async (values: z.infer<typeof taskformSchema>) => {
         form.reset()
         const url = `https://crm-backend-production-e80f.up.railway.app/api/tasks`
-      
-      console.log("values")
-      console.log(values)
+
+        console.log("values")
+        console.log(values)
         const response = await fetch(url, {
             method: 'POST',
             cache: "no-cache",
@@ -120,9 +120,10 @@ export const TaskCreate: React.FC<Props> = ({ personal }) => {
                             <Select onValueChange={field.onChange} defaultValue={field.value}>
                                 <FormControl>
                                     <SelectTrigger>
-                                        <SelectValue placeholder="Select a stage" />
+                                        <span>Select a Stage</span>
                                     </SelectTrigger>
                                 </FormControl>
+
                                 <SelectContent>
                                     {
                                         ['low', 'medium', 'high'].map((item, index) => {
@@ -136,6 +137,7 @@ export const TaskCreate: React.FC<Props> = ({ personal }) => {
                         </FormItem>
                     )}
                 />
+
                 <FormField
                     control={form.control}
                     name="dueDate"
@@ -269,7 +271,7 @@ export const TaskCreate: React.FC<Props> = ({ personal }) => {
                             <Select onValueChange={field.onChange} defaultValue={field.value}>
                                 <FormControl>
                                     <SelectTrigger>
-                                        <SelectValue placeholder="Select a status" />
+                                        <span>Select a status</span>
                                     </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
