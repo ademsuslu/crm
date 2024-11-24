@@ -1,8 +1,7 @@
 import ButtonsExport from "@/components/shared/detay/buttons-export"
 import { buttonVariants } from "@/components/ui/button"
 import Link from "next/link"
-
-
+import TaskEditForm from "@/components/shared/forms/task/task-form-edit"
 export default async function TaskEdit({
   params,
 }: {
@@ -24,7 +23,7 @@ console.log(personal)
       <ButtonsExport type="bussines" id={id} />
     </div>
     <div className="w-full">
-      <TaskEdit personal={personal} task={data}/>
+      <TaskEditForm personal={personal} task={data}/>
     </div>
 
 

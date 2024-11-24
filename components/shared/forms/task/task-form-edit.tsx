@@ -14,7 +14,7 @@ import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { MdOutlineAddBox } from "react-icons/md"
-import { Personal } from "@/types/business/model"
+import { Personal } from "@/types/personal/model"
 import { Textarea } from "@/components/ui/textarea"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { cn } from "@/lib/utils"
@@ -29,7 +29,7 @@ interface Props {
     task:Task
 }
 
-export const TaskEdit: React.FC<Props> = ({ personal ,task}) => {
+ const TaskEditForm: React.FC<Props> = ({ personal ,task}) => {
     const router = useRouter()
   console.log(personal)
     const [loading, setLoading] = useState(false)
@@ -327,3 +327,5 @@ export const TaskEdit: React.FC<Props> = ({ personal ,task}) => {
     </div>
 
 }
+
+export default TaskEditForm
