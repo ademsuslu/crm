@@ -8,19 +8,23 @@ export default async function TaskEdit({
 }: {
   params: Promise<{ id: string }>
 }) {
-  const id = (await params).id
+  const id = (await params)?.id
   const response = await fetch(`https://crm-backend-production-e80f.up.railway.app/api/tasks/${id}`, { cache: 'no-store' })
   const data = await response.json()
-  console.log(data)
+
+  const employees = await fetch("https://crm-backend-production-e80f.up.railway.app/api/employees",{
+    cache:"no-store"
+})
+const personal = await employees.json()
+console.log("personal")
+console.log(personal)
   return (<div className="flex flex-col justify-between items-center  gap-2">
     <div className="flex w-full justify-between gap-2">
       <Link href={"/bussines/task"} className={buttonVariants({})}>Back</Link>
       <ButtonsExport type="bussines" id={id} />
     </div>
     <div className="w-full">
-      Task Details
-              
-  { data.title}
+      <TaskEdit personal={personal} task={data}/>
     </div>
 
 
