@@ -68,10 +68,11 @@ Güvenlik ve Erişim Kontrolü
 clerak auth custom görev ve logın degılse sadece ana sayfa ogın oldukdan sonra /dashboard vb
 https://clerk.com/docs/references/nextjs/clerk-middleware#protect-routes-based-on-user-authentication-status  
 
+# anlık olarak değişimlerine kontrol edilicek
     + bussines delete
     + bussines edit 
     + personal delete
-    - personal edit
+    + personal edit
 
     - tasks edit  + task delete
     - hydration error
