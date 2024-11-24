@@ -22,8 +22,7 @@ interface Props {
 }
 
 export const PersonalEdit: React.FC<Props> = ({ data, bussines }) => {
-    console.log("data")
-    console.log(data)
+
     const router = useRouter()
     const [loading, setLoading] = useState(false)
     const form = useForm<z.infer<typeof PersonalFormSchema>>({
@@ -33,13 +32,12 @@ export const PersonalEdit: React.FC<Props> = ({ data, bussines }) => {
             position: data.position,
             phone: Number(data.phone),
             //@ts-ignore
-            businessId:data.businessId?._id as string || "",
+            businessId:data?.businessId?._id as string || "",
         }
     })
 
 
     const onSubmit = async (values: z.infer<typeof PersonalFormSchema>) => {
-        console.log(values)
         form.reset()
         const url = `https://crm-backend-production-e80f.up.railway.app/api/employees/${data._id}`
         const response = await fetch(url, {
@@ -51,7 +49,7 @@ export const PersonalEdit: React.FC<Props> = ({ data, bussines }) => {
             body: JSON.stringify(values)
         })
         const res = await response.json()
-        router.refresh();
+        router.back();
         toast({ description: <div className="inline-flex items-center">{res?.message} <TiTick className='w-6 h-6 ml-2 text-green-500' /></div> })
     };
 

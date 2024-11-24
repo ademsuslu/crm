@@ -3,7 +3,6 @@ import { buttonVariants } from "@/components/ui/button"
 import Link from "next/link"
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import DataTableBussines from "@/components/shared/datatables/bussines/DataTableBussines"
 
 export default async function PersonalDetails({
     params,
@@ -15,7 +14,7 @@ export default async function PersonalDetails({
     const data = await response.json()
 
     //@ts-ignore
-    let Id = String(data?.businessId._id)
+    let Id = String(data?.businessId?._id)
 
     const bus = await fetch(`${process.env.NEXT_API_URL}/businesses/${Id}`,{ cache: 'no-store' })
     const bussinesforpersonal = await bus.json()
