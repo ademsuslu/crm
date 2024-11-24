@@ -67,30 +67,40 @@ export const columns: ColumnDef<Task>[] = [
     enableHiding: false,
   },
   {
-    accessorKey: "ad",
-    header: "Name",
+    accessorKey: "title",
+    header: "Title",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("ad")}</div>
+      <div className="capitalize">{row.getValue("title")}</div>
     ),
   },
   {
-    accessorKey: "soyad",
+    accessorKey: "description",
     header: ({ column }) => (
       <Button
         variant="ghost"
         className="text-md flex justify-start items-start px-0 font-extrabold" 
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
-        Surname
+        Desc
         <ArrowUpDown  className="w-4 h-4"/>
       </Button>
     ),
-    cell: ({ row }) => <div className="lowercase">{row.getValue("soyad")}</div>,
+    cell: ({ row }) => <div className="lowercase">{row.getValue("description")}</div>,
   },
   {
-    accessorKey: "cinsiyet",
-    header: "Gender",
-    cell: ({ row }) => <div>{row.getValue("cinsiyet")}</div>,
+    accessorKey: "priority",
+    header: "Priority",
+    cell: ({ row }) => <div>{row.getValue("priority")}</div>,
+  },
+  {
+    accessorKey: "dueDate",
+    header: "Due Date",
+    cell: ({ row }) => <div>{row.getValue("dueDate")}</div>,
+  },
+  {
+    accessorKey: "status",
+    header: "Status",
+    cell: ({ row }) => <div>{row.getValue("status")}</div>,
   },
   {
     id: "actions",
