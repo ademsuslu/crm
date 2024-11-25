@@ -41,7 +41,7 @@ interface Props {
             priority: task.priority as 'low' | 'medium' | 'high', //['low', 'medium', 'high']
             dueDate: new Date(task.dueDate),
             status: task.status as 'pending' | 'in_progress' | 'completed', //['pending', 'in_progress', 'completed']
-            assignedEmployees: [],
+            assignedEmployees:[ String(task.assignedEmployees.map((item)=>item._id))],
         }
     })
 
@@ -73,12 +73,10 @@ interface Props {
     }
     const onSubmit = async (values: z.infer<typeof taskformSchema>) => {
         form.reset()
-        const url = `https://crm-backend-production-e80f.up.railway.app/api/tasks`
+        const url = `https://crm-backend-production-e80f.up.railway.app/api/tasks/${task._id}`
 
-        console.log("values")
-        console.log(values)
         const response = await fetch(url, {
-            method: 'POST',
+            method: 'PUT',
             cache: "no-cache",
             headers: {
                 'Content-Type': 'application/json'
@@ -319,7 +317,7 @@ interface Props {
                 <div className="pt-6 space-x-2 flex items-center justify-start w-full">
                     <Button disabled={loading} type="submit">
                         <MdOutlineAddBox className="w-4 h-4 mr-2" />
-                        Create
+                        Save
                     </Button>
                 </div>
             </form>
