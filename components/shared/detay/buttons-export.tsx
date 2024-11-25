@@ -67,8 +67,12 @@ const ButtonsExport: React.FC<ButtonsExportProps> = ({ data, type, id }) => {
           </div>
         ),
       });
+      if(type === "task"){
+        router.back();
+      }else{
 
-      router.refresh();
+        router.refresh();
+      }
     } catch (error) {
       console.error("Silme işleminde hata:", error);
     }
