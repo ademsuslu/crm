@@ -4,6 +4,7 @@ import Link from "next/link"
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { formatToTurkeyTime } from "@/lib/utils"
+import DataTableTaskPersonal from "@/components/shared/datatables/task/personal/DataTableTaskPersonal"
 
 export default async function TasksDetails({
   params,
@@ -72,7 +73,7 @@ export default async function TasksDetails({
           </div>
         </TabsContent>
         <TabsContent className="flex gap-2 " value="taskPersonal">
-          {/* <DataTableBusPersonal data={data?.employees} /> */}
+         <DataTableTaskPersonal data={data.assignedEmployees}/>
         </TabsContent>
       </Tabs>
 
