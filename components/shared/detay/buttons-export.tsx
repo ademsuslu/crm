@@ -12,7 +12,7 @@ import { TiTick } from "react-icons/ti";
 
 type ButtonsExportProps = {
   data?: Customer
-  type?: "reminder" | "customer" | "bussines" | "personal"
+  type?: "reminder" | "customer" | "bussines" | "personal" | "task"
   id?: string
 };
 const ButtonsExport: React.FC<ButtonsExportProps> = ({ data, type, id }) => {
@@ -24,7 +24,6 @@ const ButtonsExport: React.FC<ButtonsExportProps> = ({ data, type, id }) => {
   const handleDelete = async () => {
     let ById = id || data?._id;
     let url = "";
-
     if (type === "customer") {
       url = `https://crm-backend-production-e80f.up.railway.app/api/customers/${ById}`;
     } else if (type === "reminder") {
@@ -34,6 +33,9 @@ const ButtonsExport: React.FC<ButtonsExportProps> = ({ data, type, id }) => {
     }
     else if (type === "personal") {
       url = `https://crm-backend-production-e80f.up.railway.app/api/employees/${ById}`;
+    }
+    else if (type === "task") {
+      url = `https://crm-backend-production-e80f.up.railway.app/api/tasks/${ById}`;
     }
 
     try {

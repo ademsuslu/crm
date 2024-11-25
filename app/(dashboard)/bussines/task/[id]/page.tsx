@@ -15,7 +15,7 @@ export default async function TasksDetails({
   return (<div className="flex flex-col justify-between items-center  gap-2">
     <div className="flex w-full justify-between gap-2">
        <Link href={"/bussines/task"} className={buttonVariants({})}>Back</Link>
-      <ButtonsExport type="bussines" id={id} />
+      <ButtonsExport type="task" id={id} />
     </div>
     <div className="w-full">
       
