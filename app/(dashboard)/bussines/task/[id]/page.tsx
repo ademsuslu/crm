@@ -20,26 +20,7 @@ export default async function TasksDetails({
       <ButtonsExport type="task" id={id} />
     </div>
     <div className="w-full">
-      {/*   {
-      "_id": "6743346f60f76ddf5ed14830",
-      "title": "Tempore nisi voluptatem In voluptas mo",
-      "description": "Qui ut eum ullam cupiditate asperiores u",
-      "priority": "medium",
-      "dueDate": "2024-11-24T14:12:52.762Z",
-      "status": "pending",
-      "assignedEmployees": [
-        {
-          "_id": "6743343a60f76ddf5ed14826",
-          "name": "Isadora Shields",
-          "position": "Labore architecto omnis maiores non cons",
-          "phone": "995454564564"
-        }
-      ],
-      "createdAt": "2024-11-24T14:13:03.041Z",
-      "updatedAt": "2024-11-24T14:13:03.041Z",
-      "__v": 0
-    }, */}
-<Tabs defaultValue="priority" className="">
+    <Tabs defaultValue="priority" className="">
         <TabsList
           className="items-start justify-start rounded-md bg-muted p-1 gap-3 text-muted-foreground grid h-auto min-h-5 w-full grid-cols-1 sm:grid-cols-2">
           <TabsTrigger className="text-sm  p-0 w-full" value="Tasks">Tasks</TabsTrigger>
@@ -78,7 +59,5 @@ export default async function TasksDetails({
       </Tabs>
 
     </div>
-
-
   </div>)
 }
