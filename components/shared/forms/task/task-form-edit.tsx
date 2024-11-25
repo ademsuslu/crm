@@ -31,7 +31,6 @@ interface Props {
 
  const TaskEditForm: React.FC<Props> = ({ personal ,task}) => {
     const router = useRouter()
-  console.log(personal)
     const [loading, setLoading] = useState(false)
     const form = useForm<z.infer<typeof taskformSchema>>({
         resolver: zodResolver(taskformSchema),
@@ -41,7 +40,7 @@ interface Props {
             priority: task.priority as 'low' | 'medium' | 'high', //['low', 'medium', 'high']
             dueDate: new Date(task.dueDate),
             status: task.status as 'pending' | 'in_progress' | 'completed', //['pending', 'in_progress', 'completed']
-            assignedEmployees:[ String(task.assignedEmployees.map((item)=>item._id))],
+            assignedEmployees:[String(task.assignedEmployees.map((item)=>item._id))],
         }
     })
 
@@ -72,6 +71,7 @@ interface Props {
         form.setValue("dueDate", newDate);
     }
     const onSubmit = async (values: z.infer<typeof taskformSchema>) => {
+        console.log(task._id)
         form.reset()
         const url = `https://crm-backend-production-e80f.up.railway.app/api/tasks/${task._id}`
 

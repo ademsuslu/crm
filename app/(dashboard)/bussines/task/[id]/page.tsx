@@ -20,7 +20,7 @@ export default async function TasksDetails({
       <ButtonsExport type="task" id={id} />
     </div>
     <div className="w-full">
-    <Tabs defaultValue="priority" className="">
+    <Tabs defaultValue="Tasks" className="">
         <TabsList
           className="items-start justify-start rounded-md bg-muted p-1 gap-3 text-muted-foreground grid h-auto min-h-5 w-full grid-cols-1 sm:grid-cols-2">
           <TabsTrigger className="text-sm  p-0 w-full" value="Tasks">Tasks</TabsTrigger>
