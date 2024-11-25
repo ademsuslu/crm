@@ -23,6 +23,9 @@ const ButtonsExport: React.FC<ButtonsExportProps> = ({ data, type, id }) => {
   };
   const handleDelete = async () => {
     let ById = id || data?._id;
+
+    console.log("ById")
+    console.log(ById)
     let url = "";
     if (type === "customer") {
       url = `https://crm-backend-production-e80f.up.railway.app/api/customers/${ById}`;
