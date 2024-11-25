@@ -115,7 +115,7 @@ export const columns: ColumnDef<Task>[] = [
       } else if (value === "completed") {
         color = "text-green-500";
       }
-      return <div className={`${color}`}>{String(value)}</div>;
+      return <div className={`${color} capitalize`}>{ String(value) === "in_progress"  ? "In Progress" :String(value)  }</div>;
     },
   },
   

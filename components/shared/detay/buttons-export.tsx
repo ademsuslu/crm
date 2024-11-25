@@ -68,6 +68,7 @@ const ButtonsExport: React.FC<ButtonsExportProps> = ({ data, type, id }) => {
         ),
       });
       if(type === "task"){
+        router.refresh();
         router.back();
       }else{
 
