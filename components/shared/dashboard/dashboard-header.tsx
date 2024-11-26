@@ -32,7 +32,7 @@ const DashboardHeader = () => {
                                 const isLastPath = pathNames.length === index + 1;
                                 return (
                                     <Fragment key={index}>
-                                        <BreadcrumbItem className="hidden md:block">
+                                        <BreadcrumbItem className=" md:block">
                                             {
                                                 isLastPath ?
                                                     <BreadcrumbLink asChild>
