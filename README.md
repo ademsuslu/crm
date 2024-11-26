@@ -88,7 +88,8 @@ router.refresh();
 + customer in reminder complated 
 + bussines 
 
++ /bussines/personal create => backendden create ıcın message donmuyor
 + /bussines/personal/detail 
 + /bussines/personal/detail => delete 
-+ /bussines/persona create
++ /bussines/personal/edit  
 
