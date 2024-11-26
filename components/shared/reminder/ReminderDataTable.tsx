@@ -40,6 +40,7 @@ import {
 import Link from "next/link"
 import { sanitizeInput } from "@/utils/regex";
 import { Reminder } from "@/types/reminder/model";
+import { formatToTurkeyTime } from "@/lib/utils";
 
 
 
@@ -96,7 +97,7 @@ export const columns: ColumnDef<Reminder>[] = [
   {
     accessorKey: "sendTime",
     header: "Send time",
-    cell: ({ row }) => <div>{row.getValue("sendTime")}</div>,
+    cell: ({ row }) => <div>{formatToTurkeyTime(row.getValue("sendTime"))}</div>,
   },
   {
     id: "actions",

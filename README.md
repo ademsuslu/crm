@@ -79,7 +79,12 @@ https://clerk.com/docs/references/nextjs/clerk-middleware#protect-routes-based-o
 
 # Gereken yerde 
 ```javascript
-     router.push("/bussines/task");
-        router.refresh();
+router.push("/bussines/task");
+router.refresh();
 ```
+
+#All check app
++ customer complated 
+
+
 

@@ -117,7 +117,8 @@ const CustomerEditForm: React.FC<{ data: Customer }> = ({ data }) => {
                 })}>Come back <FaArrowLeft className="w-4 h-4 mr-2"/> </Link>
             </div>
         })
-        router.refresh()
+        router.refresh();
+        router.back();
     }
 
     return (
@@ -133,7 +134,7 @@ const CustomerEditForm: React.FC<{ data: Customer }> = ({ data }) => {
                         <TabsTrigger className="text-sm  p-0 w-full" value="relations">Relations</TabsTrigger>
                         <TabsTrigger className="text-sm  p-0 w-full" value="marketing">Marketing</TabsTrigger>
                     </TabsList>
-                    <TabsContent className="grid grid-cols-1 md:grid-cols-4   gap-2 " value="Personal">
+                    <TabsContent className="grid grid-cols-1 md:grid-cols-3   gap-2 " value="Personal">
                         <FormField
                             control={form.control}
                             name="ad"
