@@ -36,18 +36,18 @@ const Footer = () => {
                             </Link>
                         </li>
                         <li className='p-0 m-0'>
-                            <Link href="/" className="underline w-full m-0 p-0" data-ga_nav_type="footer_nav" data-ga_nav_tree_text="Legal Stuff">
+                            <Link href="/privacypolicy" className="underline w-full m-0 p-0" data-ga_nav_type="footer_nav" data-ga_nav_tree_text="Legal Stuff">
                                 Privacy Policy
                             </Link>
                         </li>
                         <li className='p-0 m-0'>
-                            <Link href="/" className="underline w-full m-0 p-0" data-ga_nav_type="footer_nav" data-ga_nav_tree_text="Legal Stuff">
+                            <Link href="/securty" className="underline w-full m-0 p-0" data-ga_nav_type="footer_nav" data-ga_nav_tree_text="Legal Stuff">
                                 Security
 
                             </Link>
                         </li>
                         <li className='p-0 m-0'>
-                            <Link href="/" className="underline w-full m-0 p-0" data-ga_nav_type="footer_nav" data-ga_nav_tree_text="Legal Stuff">
+                            <Link href="/managecookie" className="underline w-full m-0 p-0" data-ga_nav_type="footer_nav" data-ga_nav_tree_text="Legal Stuff">
                                 Manage Cookies
 
                             </Link>
