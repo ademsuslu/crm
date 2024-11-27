@@ -28,6 +28,7 @@ const DeleteOpportunityButton: React.FC<Props> = (id) => {
       toast({ description: <div className="inline-flex items-center">Delete Unsuccess <IoAlertOutline className='w-6 h-6 ml-2 text-red-500' /></div> })
     }
     router.refresh()
+    router.back()
   }
 
   return (

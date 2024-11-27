@@ -50,6 +50,7 @@ export const OpportunityEdit: React.FC<Props> = ({ data,users }) => {
         })
         const res = await response.json()
         router.refresh();
+        router.back();
         toast({ description: <div className="inline-flex items-center">{res?.message} <TiTick className='w-6 h-6 ml-2 text-green-500' /></div> })
     };
 
