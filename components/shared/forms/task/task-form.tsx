@@ -84,7 +84,8 @@ export const TaskCreate: React.FC<Props> = ({ personal }) => {
             body: JSON.stringify(values)
         })
         const res = await response.json()
-        router.push("/bussines/task");
+        router.refresh();
+        router.back();
         toast({ description: <div className="inline-flex items-center">{res?.message} <TiTick className='w-6 h-6 ml-2 text-green-500' /></div> })
     };
 
