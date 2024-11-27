@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import { Stars } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 const MissionPage = () => {
@@ -22,7 +23,12 @@ const MissionPage = () => {
         </ul>
       </div>
       <div className='space-y-3 bg-slate-600 p-6 rounded mx-auto text-center flex flex-col'>
-        <span className='text-md'>Our client, a fashion store, increased their sales by 40% with our CRM platform. <br /> By analyzing customer behavior, they created better campaigns and strengthened customer loyalty</span>
+          <span className='text-md inline-flex '>
+            <Stars className='w-6 h-6 text-yellow-500'/>
+            Our client, a fashion store, increased their sales by 40% with our CRM platform. <br /> By analyzing customer behavior, they created better campaigns and strengthened customer loyalty
+            <Stars className='w-6 h-6 text-yellow-500'/>
+    
+            </span>
       </div>
       <div className='space-y-3 flex flex-col'>
         <h1 className='text-xl'>Why Choose Us?</h1>
