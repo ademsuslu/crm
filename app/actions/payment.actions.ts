@@ -78,8 +78,8 @@ export const createPaytrToken = async () => {
         formData.append('user_address', order.address)
         formData.append('user_phone', order.phone)
         // ok ve fail url tamamen kullanıcıyı bilgilendirme amaçlı. herhangi bir backend işlemi yapılmaz
-        formData.append('merchant_ok_url', "http://localhost:3000/payment/basarili")
-        formData.append('merchant_fail_url', "http://localhost:3000/payment/basarisiz")
+        formData.append('merchant_ok_url', "http://localhost:3000/payment/success")
+        formData.append('merchant_fail_url', "http://localhost:3000/payment/unsuccess")
         // basket ürünlerini stringify edip base64 olarak encode ediyoruz
         const basketFormatted = order.basket.map(basket => ([basket.title, basket.price, basket.quantity]))
         const userBasket = Buffer.from(JSON.stringify(basketFormatted)).toString('base64')
