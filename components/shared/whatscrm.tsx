@@ -14,8 +14,8 @@ const Whatscrm = () => {
  
             </span>
             <div className='flex items-center justify-start space-x-3'>
-                <Button asChild variant={"outline"} size={"default"} className="rounded  mt-3">
-                    <Link href="/sign-in" className='text-lg'>Get Started free</Link>
+            <Button asChild size="lg" className="text-lg rounded mt-3">
+                    <Link href="/sign-in">👉 Start Now</Link>
                 </Button>
                 <Button asChild size={"default"}  variant={"secondary"} className="rounded  border border-slate-400 px-10  mt-3">
                     <Link href="/sign-in" className='text-lg'>Get a demo</Link>
