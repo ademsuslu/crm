@@ -1,8 +1,9 @@
-import { PaymentComp } from "@/components/payment/payment-comp";
+import { PaymentComp } from "@/components/shared/payment/payment-comp";
+
 export default function PaymentPage() {
     return (
         <div className='mt-2'>
-           <PaymentComp/>
+           <PaymentComp />
         </div>
     )
 }
