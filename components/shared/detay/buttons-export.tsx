@@ -50,7 +50,7 @@ const ButtonsExport: React.FC<ButtonsExportProps> = ({ data, type, id }) => {
       const res = await response.json();
       if (!response.ok) {
         toast({
-          description: "Silme işlemi başarısız.",
+          description:    <div className="inline-flex items-center">{res?.message}</div>,
         });
         throw new Error("Bir hata oluştu!");
       }
