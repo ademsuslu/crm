@@ -14,7 +14,7 @@ const Prices = () => {
                     Start with free tools and pay as you grow, or hit the ground running with one of our premium editions.
                 </span>
             </div>
-     
+
             <div className='flex flex-col md:flex-row   mt-4 gap-3'>
                 <div className='flex  border flex-col w-full rounded-lg md:w-1/4 hover:scale-105 transition-all'>
                     <div className='flex flex-col items-start justify-start p-4'>
@@ -37,9 +37,9 @@ const Prices = () => {
                                 <li className='flex items-center '> <TiTick className='mr-2 text-xl' /><span>Mobile Optimization</span></li>
                             </ul>
                         </div>
-                        <Button asChild size="lg" className="text-lg rounded mt-3">
-                    <Link href="/sign-in">👉 Start Now</Link>
-                </Button>
+                        <Button asChild size="lg" className="text-lg rounded mt-3 w-full">
+                            <Link href="/sign-in">👉 Start Now</Link>
+                        </Button>
                     </div>
                 </div>
 
@@ -52,7 +52,7 @@ const Prices = () => {
                         <span className='text-center '>
                             $20/month
                         </span>
-                        
+
                         <div className="border w-full mt-4 border-slate-600 "></div>
                         <div className='flex flex-col mt-6'>
                             <h1 className=' text-xl my-2'>Popular features</h1>
@@ -64,12 +64,12 @@ const Prices = () => {
                                 <li className='flex items-center '> <TiTick className='mr-2 text-xl' /><span>No Crm branding </span></li>
                             </ul>
                         </div>
-                        <Button asChild size="lg" className="text-lg rounded mt-3">
-                    <Link href="/sign-in">👉 Start Now</Link>
-                </Button>
+                        <Button asChild size="lg" className="text-lg rounded mt-3 w-full">
+                            <Link href="/sign-in">👉 Start Now</Link>
+                        </Button>
                     </div>
                 </div>
-             
+
                 <div className='flex  border flex-col w-full rounded-lg md:w-1/4 hover:scale-105 transition-all'>
                     <div className='flex flex-col items-start justify-start p-4'>
                         <h2 className='text-2xl '>
@@ -77,9 +77,9 @@ const Prices = () => {
                         </h2>
                         <p className=' text-foreground my-2 text-gray-300'>Starts at</p>
                         <span className='text-center '>
-                        $890/month
+                            $890/month
                         </span>
-                        
+
                         <div className="border w-full mt-4 border-slate-600 "></div>
                         <div className='flex flex-col mt-6'>
                             <h1 className=' text-xl my-2'>Popular features</h1>
@@ -91,22 +91,22 @@ const Prices = () => {
                                 <li className='flex items-center '> <TiTick className='mr-2 text-xl' /><span>Custom reporting</span></li>
                             </ul>
                         </div>
-                        <Button asChild size="lg" className="text-lg rounded mt-3">
-                    <Link href="/sign-in">👉 Start Now</Link>
-                </Button>
+                        <Button asChild size="lg" className="text-lg rounded mt-3 w-full">
+                            <Link href="/sign-in">👉 Start Now</Link>
+                        </Button>
                     </div>
                 </div>
-             
+
                 <div className='flex  border flex-col w-full rounded-lg md:w-1/4 hover:scale-105 transition-all'>
                     <div className='flex flex-col items-start justify-start p-4'>
                         <h2 className='text-2xl '>
-                        Enterprise
+                            Enterprise
                         </h2>
                         <p className=' text-foreground my-2 text-gray-300'>Starts at</p>
                         <span className='text-center '>
-                        $3,600/month
+                            $3,600/month
                         </span>
-                        
+
                         <div className="border w-full mt-4 border-slate-600 "></div>
                         <div className='flex flex-col mt-6'>
                             <h1 className=' text-xl my-2'>Popular features</h1>
@@ -117,8 +117,8 @@ const Prices = () => {
                                 <li className='flex items-center '> <TiTick className='mr-2 text-xl' /> <span>Customer journey analytics</span></li>
                             </ul>
                         </div>
-                        <Button   asChild className='rounded w-full  mt-4'>
-                            <Link href='/sign-in' className='text-lg font-bold'>Start</Link>
+                        <Button asChild size="lg" className="text-lg rounded mt-3 w-full">
+                            <Link href="/sign-in">👉 Start Now</Link>
                         </Button>
                     </div>
                 </div>
@@ -126,13 +126,13 @@ const Prices = () => {
             <div className='mt-8  text-center  flex flex-col'>
                 <h1>It’s already easy to use. But we’re still here for you.</h1>
                 <div className='flex items-center justify-center space-x-3'>
-                <Button asChild size="lg" className="text-lg rounded mt-3">
-                    <Link href="/sign-in">👉 Start Now</Link>
-                </Button>
-                <Button asChild size={"default"}  variant={"secondary"} className="rounded  border border-slate-400 px-10  mt-3">
-                    <Link href="/sign-in" className='text-lg'>Get a demo</Link>
-                </Button>
-            </div>
+                    <Button asChild size="lg" className="text-lg rounded mt-3">
+                        <Link href="/sign-in">👉 Start Now</Link>
+                    </Button>
+                    <Button asChild size={"default"} variant={"secondary"} className="rounded  border border-slate-400 px-10  mt-3">
+                        <Link href="/sign-in" className='text-lg'>Get a demo</Link>
+                    </Button>
+                </div>
             </div>
         </div>
     )
