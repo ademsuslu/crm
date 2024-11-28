@@ -9,6 +9,7 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
+
 			animation: {
 				scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite'
 			},
@@ -23,8 +24,23 @@ const config: Config = {
 				shadow: '0 35px 60px -15px rgba(255,255,255, 0.9);'
 			},
 			backgroundImage: {
-				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
+				'login_register': "url('/assets/login_register.webp')",
+				// repeat no repeat
+
+			},
+			backgroundSize: {
+				'auto': 'auto',
+				'cover': 'cover',
+				'contain': 'contain',
+				'full': '100%',
+				'16': '4rem',
+			},
+			backgroundRepeat: {
+				"no": 'no-repeat',
+				"repeat": 'repeat',
+				'round': 'round',
+				'cover': 'cover',
+				'contain': 'contain'
 			},
 			borderRadius: {
 				none: '0',
