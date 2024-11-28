@@ -111,10 +111,6 @@ const CustomerEditForm: React.FC<{ data: Customer }> = ({ data }) => {
             description: <div className="inline-flex items-center">
                 {res?.message}
                 <TiTick className='w-6 h-6 ml-2 text-green-500' />
-                <Link href={"/customer"} className={buttonVariants({
-                    size: 'sm',
-                    variant: 'ghost',
-                })}>Come back <FaArrowLeft className="w-4 h-4 mr-2"/> </Link>
             </div>
         })
         router.refresh();
