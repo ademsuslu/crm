@@ -25,7 +25,6 @@ const config: Config = {
 			},
 			backgroundImage: {
 				'login_register': "url('/assets/login_register.webp')",
-				// repeat no repeat
 
 			},
 			backgroundSize: {

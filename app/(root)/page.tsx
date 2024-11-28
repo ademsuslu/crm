@@ -2,7 +2,6 @@
 import AfterCrm from "@/components/shared/afterCrm"
 import BetterGrow from "@/components/shared/BetterGrow"
 import Charts from "@/components/shared/Charts"
-import Footer from "@/components/shared/footer"
 import Hero from "@/components/shared/hero"
 import Prices from "@/components/shared/prices"
 import Products from "@/components/shared/products"

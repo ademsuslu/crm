@@ -60,7 +60,7 @@ const Hero = () => {
                     Discover growth opportunities with meaningful charts and reports.
                 </span>
                 <Button asChild size="lg" className="text-lg rounded mt-3">
-                    <Link href="/sign-in">Get Started</Link>
+                    <Link href="/sign-in">👉 Start Now</Link>
                 </Button>
             </div>
             <div className="flex items-center justify-between w-full md:w-96 z-30 my-3 md:my-0">
