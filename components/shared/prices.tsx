@@ -37,9 +37,9 @@ const Prices = () => {
                                 <li className='flex items-center '> <TiTick className='mr-2 text-xl' /><span>Mobile Optimization</span></li>
                             </ul>
                         </div>
-                        <Button  asChild className='rounded w-full  mt-3'>
-                            <Link href='/sign-in' className='text-lg font-bold'>Start</Link>
-                        </Button>
+                        <Button asChild size="lg" className="text-lg rounded mt-3">
+                    <Link href="/sign-in">👉 Start Now</Link>
+                </Button>
                     </div>
                 </div>
 
@@ -64,9 +64,9 @@ const Prices = () => {
                                 <li className='flex items-center '> <TiTick className='mr-2 text-xl' /><span>No Crm branding </span></li>
                             </ul>
                         </div>
-                        <Button  asChild className='rounded w-full  mt-3'>
-                            <Link href='/sign-in' className='text-lg font-bold'>Start</Link>
-                        </Button>
+                        <Button asChild size="lg" className="text-lg rounded mt-3">
+                    <Link href="/sign-in">👉 Start Now</Link>
+                </Button>
                     </div>
                 </div>
              
@@ -91,9 +91,9 @@ const Prices = () => {
                                 <li className='flex items-center '> <TiTick className='mr-2 text-xl' /><span>Custom reporting</span></li>
                             </ul>
                         </div>
-                        <Button  asChild className='rounded w-full  mt-3'>
-                            <Link href='/sign-in' className='text-lg font-bold'>Start</Link>
-                        </Button>
+                        <Button asChild size="lg" className="text-lg rounded mt-3">
+                    <Link href="/sign-in">👉 Start Now</Link>
+                </Button>
                     </div>
                 </div>
              
@@ -126,8 +126,8 @@ const Prices = () => {
             <div className='mt-8  text-center  flex flex-col'>
                 <h1>It’s already easy to use. But we’re still here for you.</h1>
                 <div className='flex items-center justify-center space-x-3'>
-                <Button asChild variant={"outline"} size={"default"} className="rounded  mt-3">
-                    <Link href="/sign-in" className='text-lg'>Get Started free</Link>
+                <Button asChild size="lg" className="text-lg rounded mt-3">
+                    <Link href="/sign-in">👉 Start Now</Link>
                 </Button>
                 <Button asChild size={"default"}  variant={"secondary"} className="rounded  border border-slate-400 px-10  mt-3">
                     <Link href="/sign-in" className='text-lg'>Get a demo</Link>
