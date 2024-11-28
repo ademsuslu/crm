@@ -15,7 +15,6 @@ import { useRouter } from "next/navigation"
 import { User } from "@/types/User/model"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { MdOutlineAddBox } from "react-icons/md"
 import { Opportunity } from "@/types/Opportunity/model"
 
 interface Props {
