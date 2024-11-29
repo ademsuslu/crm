@@ -98,3 +98,15 @@ router.refresh();
 + /bussines/task/edit
 
 + Opportunity + delete + create + edit
+
+
+
+<!-- todo: Payment -->
+
+
+Sepet: http://localhost:3000/magazam/cart
+Kargo Bilgileri: http://localhost:3000/magazam/shipping 
+Ödeme Bilgileri: http://localhost:3000/magazam/payment 
+Sipariş Özeti ve Onayı: http://localhost:3000/magazam/review 
+Sipariş Tamamlandı: http://localhost:3000/magazam/confirmation
+Fatura: paraşüt
