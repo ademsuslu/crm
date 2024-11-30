@@ -38,7 +38,7 @@ const Prices = () => {
                             </ul>
                         </div>
                         <Button asChild size="lg" className="text-lg rounded mt-3 w-full">
-                            <Link href="/sign-in">👉 Start Now</Link>
+                            <Link href={`/checkout/${"Free"}`}>👉 Start Now</Link>
                         </Button>
                     </div>
                 </div>
@@ -65,7 +65,7 @@ const Prices = () => {
                             </ul>
                         </div>
                         <Button asChild size="lg" className="text-lg rounded mt-3 w-full">
-                            <Link href="/sign-in">👉 Start Now</Link>
+                            <Link href={`/checkout/${"Starter"}`}>👉 Start Now</Link>
                         </Button>
                     </div>
                 </div>
@@ -92,7 +92,7 @@ const Prices = () => {
                             </ul>
                         </div>
                         <Button asChild size="lg" className="text-lg rounded mt-3 w-full">
-                            <Link href="/sign-in">👉 Start Now</Link>
+                            <Link href={`/checkout/${"Professional"}`}>👉 Start Now</Link>
                         </Button>
                     </div>
                 </div>
@@ -118,7 +118,7 @@ const Prices = () => {
                             </ul>
                         </div>
                         <Button asChild size="lg" className="text-lg rounded mt-3 w-full">
-                            <Link href="/sign-in">👉 Start Now</Link>
+                            <Link href={`/checkout/${"Enterprise"}`}>👉 Start Now</Link>
                         </Button>
                     </div>
                 </div>
@@ -127,7 +127,7 @@ const Prices = () => {
                 <h1>It’s already easy to use. But we’re still here for you.</h1>
                 <div className='flex items-center justify-center space-x-3'>
                     <Button asChild size="lg" className="text-lg rounded mt-3">
-                        <Link href="/sign-in">👉 Start Now</Link>
+                        <Link href={`/checkout/${"Free"}`}>👉 Start Now</Link>
                     </Button>
                     <Button asChild size={"default"} variant={"secondary"} className="rounded  border border-slate-400 px-10  mt-3">
                         <Link href="/sign-in" className='text-lg'>Get a demo</Link>
