@@ -1,8 +1,15 @@
+import { plans } from "@/data/projects"
+
 export default async function BussinesDetails({
     params,
   }: {
     params: Promise<{ selectedPlan: string }>
   }) {
     const selectedPlan = (await params).selectedPlan
-return <div>{selectedPlan}</div> 
+const planData= plans.find(pland => pland.plan === selectedPlan)
+
+    
+return <div>
+{planData?.price}
+</div> 
 }
