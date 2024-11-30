@@ -17,18 +17,8 @@ export default async function BussinesDetails({
     const selectedPlan = (await params).selectedPlan
 const planData= plans.find(pland => pland.plan === selectedPlan)
 
-   /*
-     {
-        id: 1, startDate: "2024-12-01",
-        endDate: "2025-12-01",
-        userId: 12345,
-        plan: "Free",
-        price: 0,
-        features: ["Email marketing", "Forms", "Live chat", "Ad management", "Mobile Optimization"]
-    },
-   */ 
-return <div>
- <Card className="max-w-md mx-auto border border-gray-300 shadow-lg rounded-lg bg-gray-900 text-white">
+return  <div className="  bg-gray-800 flex items-center justify-center p-6">
+ <Card className="min-w-xl mx-auto border border-gray-300 shadow-lg rounded-lg bg-gray-900 text-white">
       <CardHeader className="p-6">
         <CardTitle className="text-2xl font-bold flex items-center">
           {planData?.plan} <FaCheckCircle className="ml-2 text-green-400" />
