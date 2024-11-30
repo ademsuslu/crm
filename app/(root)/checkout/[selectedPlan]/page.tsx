@@ -17,6 +17,11 @@ export default async function BussinesDetails({
     const selectedPlan = (await params).selectedPlan
 const planData= plans.find(pland => pland.plan === selectedPlan)
 
+const dateObj = new Date()
+const newDate = dateObj.toLocaleDateString('pt-PT')
+  // how to get newDate to 30day after
+  const newDateEnd = new Date(new Date().getTime() + 30 * 24 * 60 * 60 * 1000).toLocaleDateString('pt-PT')
+    
 return  <div className="  bg-gray-800 flex items-center justify-center p-6">
  <Card className="min-w-xl mx-auto border border-gray-300 shadow-lg rounded-lg bg-gray-900 text-white">
       <CardHeader className="p-6">
@@ -38,13 +43,13 @@ return  <div className="  bg-gray-800 flex items-center justify-center p-6">
         <div className="flex items-center mb-2">
           <FaCalendarAlt className="mr-2 text-blue-500" />
           <p>
-            Start Date: <span className="text-gray-400">{planData?.startDate}</span>
+            Start Date: <span className="text-gray-400">{newDate}</span>
           </p>
         </div>
         <div className="flex items-center">
           <FaCalendarAlt className="mr-2 text-red-500" />
           <p>
-            End Date: <span className="text-gray-400">{planData?.endDate}</span>
+            End Date: <span className="text-gray-400">{newDateEnd}</span>
           </p>
         </div>
       </CardContent>
