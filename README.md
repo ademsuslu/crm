@@ -19,7 +19,7 @@ Müşteri Yönetimi
    - ** Satış ekibi performans analizleri **
 
 4. Görev ve İş Takibi
-    Görev(TASK) oluşturma ve görevlere ekip üyeleri atama
+   + Görev(TASK) oluşturma ve görevlere ekip üyeleri atama
     Görevler için hatırlatıcılar ve son tarih belirleme
     Görev tamamlama oranlarını takip etme
 
@@ -79,8 +79,8 @@ https://clerk.com/docs/references/nextjs/clerk-middleware#protect-routes-based-o
 
 # Gereken yerde 
 ```javascript
-router.push("/bussines/task");
 router.refresh();
+router.back();
 ```
 
 #All check app
