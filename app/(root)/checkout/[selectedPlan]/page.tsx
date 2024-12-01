@@ -10,20 +10,20 @@ import { plans } from "@/data/projects"
 import { FaCheckCircle, FaCalendarAlt, FaDollarSign } from "react-icons/fa";
 
 export default async function BussinesDetails({
-    params,
-  }: {
-    params: Promise<{ selectedPlan: string }>
-  }) {
-    const selectedPlan = (await params).selectedPlan
-const planData= plans.find(pland => pland.plan === selectedPlan)
+  params,
+}: {
+  params: Promise<{ selectedPlan: string }>
+}) {
+  const selectedPlan = (await params).selectedPlan
+  const planData = plans.find(pland => pland.plan === selectedPlan)
 
-const dateObj = new Date()
-const newDate = dateObj.toLocaleDateString('pt-PT')
+  const dateObj = new Date()
+  const newDate = dateObj.toLocaleDateString('pt-PT')
   // how to get newDate to 30day after
   const newDateEnd = new Date(new Date().getTime() + 30 * 24 * 60 * 60 * 1000).toLocaleDateString('pt-PT')
-    
-return  <div className=" w-full flex items-start justify-start p-6">
- <Card className=" border border-gray-300 shadow-lg rounded-lg bg-gray-900 text-white">
+
+  return <div className=" w-full flex items-start justify-start p-6">
+    <Card className=" border border-gray-300 shadow-lg rounded-lg bg-gray-900 text-white">
       <CardHeader className="p-6">
         <CardTitle className="text-2xl font-bold flex items-center">
           {planData?.plan} <FaCheckCircle className="ml-2 text-green-400" />
@@ -60,5 +60,6 @@ return  <div className=" w-full flex items-start justify-start p-6">
         </p>
       </CardFooter>
     </Card>
-</div> 
+    <BillingFormComponent/>
+  </div>
 }
