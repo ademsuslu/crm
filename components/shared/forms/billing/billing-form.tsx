@@ -35,7 +35,6 @@ export const BillingFormComponent: React.FC<Props> = () => {
 
 
     const onSubmit = async (values: z.infer<typeof BillingformSchema>) => {
-        
         form.reset()
         const url = `https://crm-backend-production-e80f.up.railway.app/api/billing`
         const response = await fetch(url, {
@@ -109,7 +108,7 @@ export const BillingFormComponent: React.FC<Props> = () => {
                     name="phone"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>phone</FormLabel>
+                            <FormLabel>Phone</FormLabel>
                             <FormControl>
                                 <Input type="number" placeholder="Enter Phone" {...field} />
                             </FormControl>
