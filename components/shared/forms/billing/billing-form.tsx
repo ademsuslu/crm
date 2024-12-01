@@ -94,7 +94,7 @@ export const BillingFormComponent: React.FC<Props> = () => {
                 }} />
                 <FormField control={form.control} name="address.zip_code" render={({ field }) => {
                     return <FormItem>
-                        <FormLabel>Districk</FormLabel>
+                        <FormLabel>Zip Code</FormLabel>
                         <FormControl>
                             <Input disabled={loading} placeholder="Enter zipcode" {...field} />
                         </FormControl>
