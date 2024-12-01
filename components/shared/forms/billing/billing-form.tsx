@@ -2,41 +2,42 @@
 import * as  z from "zod"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useStoreModal } from "@/hooks/use-store-modal"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 
 import React, {  useState } from "react"
-import { BussinesformSchema } from "@/types/form/bussinesSchema"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { TiTick } from "react-icons/ti"
 import { toast } from "@/hooks/use-toast"
 import { useRouter } from "next/navigation"
-import { User } from "@/types/User/model"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { MdOutlineAddBox } from "react-icons/md"
+import { BillingformSchema } from "@/types/form/billingSchema"
 
-interface Props {
-}
+interface Props{}
 
 export const BillingFormComponent: React.FC<Props> = () => {
     const router = useRouter()
-    const storeModal = useStoreModal()
     const [loading, setLoading] = useState(false)
-    const form = useForm<z.infer<typeof BussinesformSchema>>({
-        resolver: zodResolver(BussinesformSchema),
+    const form = useForm<z.infer<typeof BillingformSchema>>({
+        resolver: zodResolver(BillingformSchema),
         defaultValues: {
             name: "",
-            address: "",
+            email: "",
             phone: 0,
+            address: {
+                districk: "",
+                city: "",
+                zip_code: "",
+                country: "",
+            },
         }
     })
 
 
-    const onSubmit = async (values: z.infer<typeof BussinesformSchema>) => {
-        storeModal.onClose()
+    const onSubmit = async (values: z.infer<typeof BillingformSchema>) => {
+        
         form.reset()
-        const url = `https://crm-backend-production-e80f.up.railway.app/api/businesses`
+        const url = `https://crm-backend-production-e80f.up.railway.app/api/billing`
         const response = await fetch(url, {
             method: 'POST',
             cache: "no-cache",
@@ -64,11 +65,38 @@ export const BillingFormComponent: React.FC<Props> = () => {
                         <FormMessage />
                     </FormItem>
                 }} />
-                <FormField control={form.control} name="address" render={({ field }) => {
+                <FormField control={form.control} name="address.country" render={({ field }) => {
                     return <FormItem>
-                        <FormLabel>Address</FormLabel>
+                        <FormLabel>Country</FormLabel>
                         <FormControl>
-                            <Input disabled={loading} placeholder="Enter Address" {...field} />
+                            <Input disabled={loading} placeholder="Enter Country" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                }} />
+                <FormField control={form.control} name="address.city" render={({ field }) => {
+                    return <FormItem>
+                        <FormLabel>City</FormLabel>
+                        <FormControl>
+                            <Input disabled={loading} placeholder="Enter City" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                }} />
+                <FormField control={form.control} name="address.districk" render={({ field }) => {
+                    return <FormItem>
+                        <FormLabel>Districk</FormLabel>
+                        <FormControl>
+                            <Input disabled={loading} placeholder="Enter districk" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                }} />
+                <FormField control={form.control} name="address.zip_code" render={({ field }) => {
+                    return <FormItem>
+                        <FormLabel>Districk</FormLabel>
+                        <FormControl>
+                            <Input disabled={loading} placeholder="Enter zipcode" {...field} />
                         </FormControl>
                         <FormMessage />
                     </FormItem>
