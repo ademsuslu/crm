@@ -22,7 +22,8 @@ export default async function BussinesDetails({
   // how to get newDate to 30day after
   const newDateEnd = new Date(new Date().getTime() + 30 * 24 * 60 * 60 * 1000).toLocaleDateString('pt-PT')
 
-  return <div className=" w-full flex items-start justify-between p-6">
+  return <div className=" w-full  gap-4 flex flex-col justify-between p-6">
+       <BillingFormComponent/>
     <Card className=" border border-gray-300 shadow-lg rounded-lg bg-gray-900 text-white">
       <CardHeader className="p-6">
         <CardTitle className="text-2xl font-bold flex items-center">
@@ -60,6 +61,6 @@ export default async function BussinesDetails({
         </p>
       </CardFooter>
     </Card>
-    <BillingFormComponent/>
+
   </div>
 }
