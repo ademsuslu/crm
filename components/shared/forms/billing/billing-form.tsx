@@ -23,32 +23,34 @@ export const BillingFormComponent: React.FC<Props> = () => {
         defaultValues: {
             name: "",
             email: "",
-            phone: 0,
             address: {
-                districk: "",
-                city: "",
-                zip_code: "",
                 country: "",
+                city: "",
+                districk: "",
+                zip_code: "",
             },
+            phone: 0,
         }
     })
 
 
     const onSubmit = async (values: z.infer<typeof BillingformSchema>) => {
+        console.log("nasılsın")
+        console.log(values)
         form.reset()
-        const url = `https://crm-backend-production-e80f.up.railway.app/api/billing`
-        const response = await fetch(url, {
-            method: 'POST',
-            cache: "no-cache",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(values)
-        })
-        const res = await response.json()
-        router.refresh();
-        router.back();
-        toast({ description: <div className="inline-flex items-center">{res?.message} <TiTick className='w-6 h-6 ml-2 text-green-500' /></div> })
+        // const url = `https://crm-backend-production-e80f.up.railway.app/api/billing`
+        // const response = await fetch(url, {
+        //     method: 'POST',
+        //     cache: "no-cache",
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(values)
+        // })
+        // const res = await response.json()
+        // router.refresh();
+        // router.back();
+        toast({ description: <div className="inline-flex items-center">Hello<TiTick className='w-6 h-6 ml-2 text-green-500' /></div> })
     };
 
 
@@ -61,6 +63,15 @@ export const BillingFormComponent: React.FC<Props> = () => {
                         <FormLabel>Name</FormLabel>
                         <FormControl>
                             <Input disabled={loading} placeholder="Enter Name" {...field} />
+                        </FormControl>  
+                        <FormMessage />
+                    </FormItem>
+                }} />
+                <FormField control={form.control} name="email" render={({ field }) => {
+                    return <FormItem>
+                        <FormLabel>Email</FormLabel>
+                        <FormControl>
+                            <Input type="email" disabled={loading} placeholder="Enter Email" {...field} />
                         </FormControl>  
                         <FormMessage />
                     </FormItem>
@@ -102,7 +113,6 @@ export const BillingFormComponent: React.FC<Props> = () => {
                     </FormItem>
                 }} />
 
-            
                 <FormField
                     control={form.control}
                     name="phone"
