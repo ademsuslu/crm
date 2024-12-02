@@ -3,12 +3,14 @@ import React from 'react'
 import { TiTick } from "react-icons/ti";
 import { Button } from '../ui/button';
 
-import {Plans } from "@/types/plans/model"
+import { Plans } from "@/types/plans/model"
 
-interface Props  {
-    data:Plans[]
+interface Props {
+    data: Plans[]
 }
-const Prices:React.FC<Props> = ({data}) => {
+const Prices: React.FC<Props> = ({ data }) => {
+
+
     return (
         <div className='flex flex-col w-full'>
             <div className='flex flex-col'>
@@ -21,112 +23,46 @@ const Prices:React.FC<Props> = ({data}) => {
             </div>
 
             <div className='flex flex-col md:flex-row   mt-4 gap-3'>
-                <div className='flex  border flex-col w-full rounded-lg md:w-1/4 hover:scale-105 transition-all'>
-                    <div className='flex flex-col items-start justify-start p-4'>
-                        <h2 className='text-2xl '>
-                            Free
-                        </h2>
-                        <p className=' text-foreground my-2 text-gray-300'>No credit card required</p>
-                        <span className='text-center '>
-                            $0/month
-                        </span>
-                        <div className="border w-full mt-4 border-slate-600 "></div>
-                        <div className='flex flex-col  mt-6'>
 
-                            <h1 className=' text-xl my-2'>Popular features</h1>
-                            <ul className=' space-y-1'>
-                                <li className='flex items-center '> <TiTick className='mr-2 text-xl' /> <span> Email marketing </span></li>
-                                <li className='flex items-center '> <TiTick className='mr-2 text-xl' /> <span>Forms</span></li>
-                                <li className='flex items-center '> <TiTick className='mr-2 text-xl' /> <span>Live chat</span></li>
-                                <li className='flex items-center '> <TiTick className='mr-2 text-xl' /> <span>Ad management </span>                       </li>
-                                <li className='flex items-center '> <TiTick className='mr-2 text-xl' /><span>Mobile Optimization</span></li>
-                            </ul>
+                {
+                    data?.map((item, index: number) => {
+                        return <div key={index} className='flex  border flex-col w-full rounded-lg md:w-1/4 hover:scale-105 transition-all'>
+                            <div className='flex flex-col items-start justify-between h-full p-4'>
+                                <h2 className='text-2xl '>
+                                    {item.plan}
+                                </h2>
+                                <p className=' text-foreground my-2 text-gray-300'> {
+                                    item.plan === "Free" ? "No credit card required" :
+                                        "Credit card required"
+                                }
+                                </p>
+                                <span className='text-center '>
+                                    ${item.price}/month
+                                </span>
+                                <div className="border w-full mt-4 border-slate-600 "></div>
+                                <div className='flex flex-col  mt-6'>
+
+                                    <h1 className=' text-xl my-2'>Popular features</h1>
+                                    <ul className=' space-y-1'>
+                                        {
+                                            item.features.map((feature, index: number) => {
+                                                return <li key={index} className='flex items-center '> <TiTick className='mr-2 text-xl' /> <span>{feature}</span></li>
+                                            })
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className='p-1'>
+
+                                <Button asChild size="lg" className="text-lg rounded mt-3   w-full">
+                                    <Link href={`/checkout/${item.plan}`}>👉 Start Now</Link>
+                                </Button>
+                            </div>
                         </div>
-                        <Button asChild size="lg" className="text-lg rounded mt-3 w-full">
-                            <Link href={`/checkout/${"Free"}`}>👉 Start Now</Link>
-                        </Button>
-                    </div>
-                </div>
 
-                <div className='flex  border flex-col w-full rounded-lg md:w-1/4 hover:scale-105 transition-all'>
-                    <div className='flex flex-col items-start justify-start p-4'>
-                        <h2 className='text-2xl '>
-                            Starter
-                        </h2>
-                        <p className=' text-foreground my-2 text-gray-300'>Starts at</p>
-                        <span className='text-center '>
-                            $20/month
-                        </span>
+                    })
+                }
 
-                        <div className="border w-full mt-4 border-slate-600 "></div>
-                        <div className='flex flex-col mt-6'>
-                            <h1 className=' text-xl my-2'>Popular features</h1>
-                            <ul className=' space-y-1'>
-                                <li className='flex items-center '> <TiTick className='mr-2 text-xl' /> <span> Everything in Free</span></li>
-                                <li className='flex items-center '> <TiTick className='mr-2 text-xl' /> <span>Multiple currencies</span></li>
-                                <li className='flex items-center '> <TiTick className='mr-2 text-xl' /> <span>Email health insights</span></li>
-                                <li className='flex items-center '> <TiTick className='mr-2 text-xl' /> <span>Calls-to-action</span></li>
-                                <li className='flex items-center '> <TiTick className='mr-2 text-xl' /><span>No Crm branding </span></li>
-                            </ul>
-                        </div>
-                        <Button asChild size="lg" className="text-lg rounded mt-3 w-full">
-                            <Link href={`/checkout/${"Starter"}`}>👉 Start Now</Link>
-                        </Button>
-                    </div>
-                </div>
-
-                <div className='flex  border flex-col w-full rounded-lg md:w-1/4 hover:scale-105 transition-all'>
-                    <div className='flex flex-col items-start justify-start p-4'>
-                        <h2 className='text-2xl '>
-                            Professional
-                        </h2>
-                        <p className=' text-foreground my-2 text-gray-300'>Starts at</p>
-                        <span className='text-center '>
-                            $890/month
-                        </span>
-
-                        <div className="border w-full mt-4 border-slate-600 "></div>
-                        <div className='flex flex-col mt-6'>
-                            <h1 className=' text-xl my-2'>Popular features</h1>
-                            <ul className=' space-y-1'>
-                                <li className='flex items-center '> <TiTick className='mr-2 text-xl' /> <span> Everything in Starter</span></li>
-                                <li className='flex items-center '> <TiTick className='mr-2 text-xl' /> <span>Campaign management</span></li>
-                                <li className='flex items-center '> <TiTick className='mr-2 text-xl' /> <span>SEO</span></li>
-                                <li className='flex items-center '> <TiTick className='mr-2 text-xl' /> <span>Predictive lead scoring</span></li>
-                                <li className='flex items-center '> <TiTick className='mr-2 text-xl' /><span>Custom reporting</span></li>
-                            </ul>
-                        </div>
-                        <Button asChild size="lg" className="text-lg rounded mt-3 w-full">
-                            <Link href={`/checkout/${"Professional"}`}>👉 Start Now</Link>
-                        </Button>
-                    </div>
-                </div>
-
-                <div className='flex  border flex-col w-full rounded-lg md:w-1/4 hover:scale-105 transition-all'>
-                    <div className='flex flex-col items-start justify-start p-4'>
-                        <h2 className='text-2xl '>
-                            Enterprise
-                        </h2>
-                        <p className=' text-foreground my-2 text-gray-300'>Starts at</p>
-                        <span className='text-center '>
-                            $3,600/month
-                        </span>
-
-                        <div className="border w-full mt-4 border-slate-600 "></div>
-                        <div className='flex flex-col mt-6'>
-                            <h1 className=' text-xl my-2'>Popular features</h1>
-                            <ul className=' space-y-1'>
-                                <li className='flex items-center '> <TiTick className='mr-2 text-xl' /> <span>Everything in Professional</span></li>
-                                <li className='flex items-center '> <TiTick className='mr-2 text-xl' /> <span>Adaptive testing</span></li>
-                                <li className='flex items-center '> <TiTick className='mr-2 text-xl' /> <span>Multuple revenue attribution</span></li>
-                                <li className='flex items-center '> <TiTick className='mr-2 text-xl' /> <span>Customer journey analytics</span></li>
-                            </ul>
-                        </div>
-                        <Button asChild size="lg" className="text-lg rounded mt-3 w-full">
-                            <Link href={`/checkout/${"Enterprise"}`}>👉 Start Now</Link>
-                        </Button>
-                    </div>
-                </div>
             </div>
             <div className='mt-8  text-center  flex flex-col'>
                 <h1>It’s already easy to use. But we’re still here for you.</h1>
