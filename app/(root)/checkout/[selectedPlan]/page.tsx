@@ -14,10 +14,9 @@ export default async function BussinesDetails({
  
 
   return <div className=" w-full  gap-4 grid grid-cols-1 md:grid-cols-2 justify-between p-6">
-        <div className="border p-6 border-gray-300 shadow-lg rounded-lg bg-gray-900">
-            <BillingFormComponent/>
+          <div className="border p-6 border-gray-300 shadow-lg rounded-lg bg-gray-900">
+              <BillingFormComponent />
+          </div>
+          <BillingDetay  planData={planData}/>
         </div>
-        <BillingDetay  planData={planData}/>
-
-  </div>
 }
