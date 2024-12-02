@@ -55,7 +55,7 @@ const Prices: React.FC<Props> = ({ data }) => {
                             <div className='p-1'>
 
                                 <Button asChild size="lg" className="text-lg rounded mt-3   w-full">
-                                    <Link href={`/checkout/${item.plan}`}>👉 Start Now</Link>
+                                    <Link href={`/checkout/${item._id}`}>👉 Start Now</Link>
                                 </Button>
                             </div>
                         </div>
