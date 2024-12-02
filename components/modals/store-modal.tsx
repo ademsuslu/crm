@@ -23,13 +23,13 @@ const [user,setUser] = useState<User[]>()
 
 useEffect(() => {
    const handleFetch = async() =>{
-       const url = `https://crm-backend-production-e80f.up.railway.app/api/users`
-       const response = await fetch(url,{
-          method: 'GET',
-          cache:"no-cache",
-       })  
-       const res = await response.json()
-       setUser(res)
+    //    const url = `https://crm-backend-production-e80f.up.railway.app/api/users`
+    //    const response = await fetch(url,{
+    //       method: 'GET',
+    //       cache:"no-cache",
+    //    })  
+    //    const res = await response.json()
+    //    setUser(res)
    }
     handleFetch();
 }, [])
