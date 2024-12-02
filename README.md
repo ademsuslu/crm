@@ -114,4 +114,3 @@ Fatura: paraşüt
 
 backendde olusturulacaklar
 billing
-plans
