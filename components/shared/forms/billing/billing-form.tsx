@@ -35,8 +35,7 @@ export const BillingFormComponent: React.FC<Props> = () => {
 
 
     const onSubmit = async (values: z.infer<typeof BillingformSchema>) => {
-        console.log("nasılsın")
-        console.log(values)
+
         form.reset()
         // const url = `https://crm-backend-production-e80f.up.railway.app/api/billing`
         // const response = await fetch(url, {
@@ -49,7 +48,6 @@ export const BillingFormComponent: React.FC<Props> = () => {
         // })
         // const res = await response.json()
         // router.refresh();
-        // router.back();
         toast({ description: <div className="inline-flex items-center">Hello<TiTick className='w-6 h-6 ml-2 text-green-500' /></div> })
     };
 
