@@ -125,7 +125,7 @@ export const BillingFormComponent: React.FC<Props> = () => {
                     )}
                 />
                 <div className="pt-6 space-x-2 flex items-center justify-start w-full">
-                    <Button disabled={loading} type="submit">
+                    <Button disabled={loading} className="w-full" type="submit">
                         <MdOutlineAddBox className="w-4 h-4 mr-2" />
                         Create
                     </Button>
