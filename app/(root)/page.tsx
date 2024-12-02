@@ -9,7 +9,11 @@ import Solitions from "@/components/shared/solitions"
 import Suponsores from "@/components/shared/sponsores"
 import Whatscrm from "@/components/shared/whatscrm"
 
-export default function Home() {
+export default async function Home() {
+//  create a fetch for get
+  const response = await fetch(`${process.env.NEXT_API_URL}/plans`,{cache:"no-store"})
+  const data = await response.json()
+  // render the home page with fetched data
   return (
     <div className="flex flex-col space-y-6">
       <div className="mt-6"></div>
@@ -23,7 +27,7 @@ export default function Home() {
       <div className="mt-6"></div>
       <Charts/>
       <div className="mt-6"></div>
-      <Prices />
+      <Prices data={data} />
       <div className="mt-6"></div>
       <Products/>
       <div className="mt-6"></div>

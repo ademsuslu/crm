@@ -3,7 +3,12 @@ import React from 'react'
 import { TiTick } from "react-icons/ti";
 import { Button } from '../ui/button';
 
-const Prices = () => {
+import {Plans } from "@/types/plans/model"
+
+interface Props  {
+    data:Plans[]
+}
+const Prices:React.FC<Props> = ({data}) => {
     return (
         <div className='flex flex-col w-full'>
             <div className='flex flex-col'>
