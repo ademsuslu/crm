@@ -20,8 +20,8 @@ Müşteri Yönetimi
 
 4. Görev ve İş Takibi
    + Görev(TASK) oluşturma ve görevlere ekip üyeleri atama
-    Görevler için hatırlatıcılar ve son tarih belirleme
-    Görev tamamlama oranlarını takip etme
+   + Görevler için hatırlatıcılar ve son tarih belirleme
+   - Görev tamamlama oranlarını takip etme
 
 Pazarlama Otomasyonu
     E-posta kampanyaları planlama ve yönetme

@@ -22,8 +22,8 @@ export default async function BussinesDetails({
   // how to get newDate to 30day after
   const newDateEnd = new Date(new Date().getTime() + 30 * 24 * 60 * 60 * 1000).toLocaleDateString('pt-PT')
 
-  return <div className=" w-full  gap-4 flex justify-between p-6">
-        <div className="bg-orange-500">
+  return <div className=" w-full  gap-4 grid grid-cols-1 md:grid-cols-2 justify-between p-6">
+        <div className="border p-6 border-gray-300 shadow-lg rounded-lg bg-gray-900">
             <BillingFormComponent/>
         </div>
        <Card>

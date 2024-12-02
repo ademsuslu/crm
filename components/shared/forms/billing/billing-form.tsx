@@ -55,7 +55,7 @@ export const BillingFormComponent: React.FC<Props> = () => {
     return <div className="space-y-4 ">
         <h1 className="text-xl font-bold">Billing Address</h1>
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="grid grid-cols-1 md:grid-cols-3 gap-2">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 <FormField control={form.control} name="name" render={({ field }) => {
                     return <FormItem>
                         <FormLabel>Name</FormLabel>
