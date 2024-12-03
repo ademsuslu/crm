@@ -111,6 +111,3 @@ Sipariş Özeti ve Onayı: http://localhost:3000/magazam/review
 Sipariş Tamamlandı: http://localhost:3000/magazam/confirmation
 Fatura: paraşüt
 
-
-backendde olusturulacaklar
-billing
