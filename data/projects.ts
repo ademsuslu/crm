@@ -59,5 +59,25 @@ export const blogs = [
         createdAt: "2017.12.2",
         updatedAt: "2017.12.2"
     },
+    {
+        _id: 3,
+        title: "Microsoft Crm",
+        desc: "lorem5",
+        img: "https://picsum.photos/id/237/300/200",
+        tags: ["microsoft", "crm"],
+        link: "https://www.techinsights.com/microsoft-crm-explained",
+        createdAt: "2017.12.2",
+        updatedAt: "2017.12.2"
+    },
+    {
+        _id: 22,
+        title: "Microsoft Crm",
+        desc: "lorem5",
+        img: "https://picsum.photos/id/237/300/200",
+        tags: ["microsoft", "crm"],
+        link: "https://www.techinsights.com/microsoft-crm-explained",
+        createdAt: "2017.12.2",
+        updatedAt: "2017.12.2"
+    },
 
 ]

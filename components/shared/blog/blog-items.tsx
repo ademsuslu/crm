@@ -14,7 +14,7 @@ interface Props {
 
 const BlogItems:React.FC<Props> = ({data}) => {
   return (
-    <div>{data.title}</div>
+    <div className='bg-red-500 rounded'>{data.title}</div>
   )
 }
 

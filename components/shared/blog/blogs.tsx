@@ -17,8 +17,8 @@ interface Props {
 }
 const Blogs: React.FC<Props> = ({ data }) => {
     return (
-        <div>
-            {data.map((blogItem, index: number) => {
+        <div className='grid grid-cols-1 md:grid-cols-4 gap-4'>
+              {data.map((blogItem, index: number) => {
                 return <BlogItems key={index} data={blogItem} />
             }
             )}
