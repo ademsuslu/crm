@@ -1,12 +1,14 @@
 import React from 'react'
 import BlogItems from './blog-items'
+import { blogs } from '@/data/projects'
 
 const Blogs = () => {
   return (
     <div>
-        {[1,2].map((blogItem,index) =>(
-                    <BlogItems key={index} data={blogItem} />
-        ))}
+        {blogs.map((blogItem,index:number) => {
+                return    <BlogItems key={index} data={blogItem} />
+        }
+        )}
     </div>
   )
 }

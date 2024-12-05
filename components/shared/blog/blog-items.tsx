@@ -1,11 +1,20 @@
 import React from 'react'
 interface Props {
-    data:number
+      data: {
+        id: number;
+        title: string;
+        desc: string;
+        img: string;
+        tags: string[];
+        link: string;
+        createdAt: string;
+        updatedAt: string;
+    }
 }
 
-const BlogItems:React.FC<Props> = (data) => {
+const BlogItems:React.FC<Props> = ({data}) => {
   return (
-    <div>BlogItems</div>
+    <div>{data.title}</div>
   )
 }
 
