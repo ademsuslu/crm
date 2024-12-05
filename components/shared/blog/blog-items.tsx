@@ -1,7 +1,7 @@
 import React from 'react'
 interface Props {
       data: {
-        id: number;
+        _id: number;
         title: string;
         desc: string;
         img: string;

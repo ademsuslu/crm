@@ -40,7 +40,7 @@ export const projects = [
 
 export const blogs = [
     {
-        id: 1,
+        _id: 1,
         title: "Microsoft Crm",
         desc: "lorem5",
         img: "https://picsum.photos/id/237/300/200",
@@ -50,7 +50,7 @@ export const blogs = [
         updatedAt: "2017.12.2"
     },
     {
-        id: 12,
+        _id: 12,
         title: "Microsoft Crm",
         desc: "lorem5",
         img: "https://picsum.photos/id/237/300/200",
