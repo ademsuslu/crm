@@ -17,7 +17,7 @@ interface Props {
 
 const BlogItems: React.FC<Props> = ({ data }) => {
     return (
-        <Link className='border border-white shadow-sm rounded-md p-1' href="/blog/neden-michelin-lastiklerini-tercih-etmelisiniz">
+        <Link className='border border-white shadow-sm rounded-md p-1' href={data.title}>
             <div className="aspect-[800/600] overflow-hidden rounded-md ">
                 <img src={data.img} alt={data.title} loading="lazy" width="800" height="600" decoding="async" data-nimg="1" />
             </div>
