@@ -5,6 +5,7 @@ import Logo from './logo'
 const Footer = () => {
     return (
         <footer>
+            <div className='mt-4'/>
             <hr />
             <section className="my-4 flex flex-col justify-center items-center w-full">
                 <div className="flex flex-col md:flex-row justify-around items-center w-full space-y-3">
