@@ -41,7 +41,7 @@ export const projects = [
 export const blogs = [
     {
         _id: 1,
-        title: "Microsoft Crm",
+        title: "Microsoft-Crm",
         desc: "lorem5",
         img: "https://images.pexels.com/photos/39559/ipad-mockup-apple-business-39559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         tags: ["microsoft", "crm"],
@@ -51,7 +51,7 @@ export const blogs = [
     },
     {
         _id: 12,
-        title: "Microsoft Crm",
+        title: "Microsoft-Crm",
         desc: "lorem5",
         img: "https://images.pexels.com/photos/39559/ipad-mockup-apple-business-39559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         tags: ["microsoft", "crm"],
@@ -61,7 +61,7 @@ export const blogs = [
     },
     {
         _id: 3,
-        title: "Microsoft Crm",
+        title: "Microsoft-Crm",
         desc: "lorem5",
         img: "https://images.pexels.com/photos/39559/ipad-mockup-apple-business-39559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         tags: ["microsoft", "crm"],
@@ -71,7 +71,7 @@ export const blogs = [
     },
     {
         _id: 22,
-        title: "Microsoft Crm",
+        title: "Microsoft-Crm",
         desc: "lorem5",
         img: "https://images.pexels.com/photos/39559/ipad-mockup-apple-business-39559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         tags: ["microsoft", "crm"],
