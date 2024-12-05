@@ -1,7 +1,7 @@
 "use client"
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import Image from 'next/image';
+
 import Link from 'next/link';
 import React from 'react'
 import { BsCalendarPlus } from "react-icons/bs";
@@ -39,8 +39,8 @@ const BlogItems: React.FC<Props> = ({ data }) => {
                     <h1 className="font-bold text-xl md:text-2xl text-gray-50 relative z-10">
                         {data.title}
                     </h1>
-                    <p className="font-normal text-sm text-gray-50 relative z-10 my-4">
-                        {data.createdAt}
+                    <p className="font-normal inline-flex text-sm text-gray-50 relative z-10 my-4">
+                    <BsCalendarPlus className='w-4 h-4 mr-4' />   {data.createdAt}
                     </p>
                 </div>
                 <Link className={buttonVariants({
