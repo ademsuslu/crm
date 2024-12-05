@@ -15,11 +15,13 @@ export default async function BlogDetails({
     <div className=" mx-auto  gap-2">
       <div className="mt-6"></div>
       <div className="bg-red-200 w-full">
-
         <div className=" p-0 m-0">
           <Link className={buttonVariants({ className: "inline-flex items-start justify-start" })} href="/blog"> <FaChevronLeft className="w-4 h-4 ml-2" />Blog</Link>
         </div>
-        deneme
+        <span >
+
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed laudantium dolorem id, a voluptas illo.
+        </span>
       </div>
     </div>
 
