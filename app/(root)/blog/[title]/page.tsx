@@ -21,9 +21,9 @@ export default async function BlogDetails({
         </div>
       <div className="mt-10"></div>
         <h1>{title}</h1>
-      <div className="max-w-[768px]">
+      <div className=" relative max-w-[768px]">
 
-       <Image fill style={{objectFit:"cover"}} src="https://images.pexels.com/photos/39559/ipad-mockup-apple-business-39559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+       <Image fill style={{objectFit:"contain"}} src="https://images.pexels.com/photos/39559/ipad-mockup-apple-business-39559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
       </div>
         <span >
 
