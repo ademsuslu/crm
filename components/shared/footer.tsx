@@ -25,6 +25,12 @@ const Footer = () => {
                 <div className="hsg-footer__copyright">
                     <ul className='flex flex-col md:flex-row  md:space-x-6'>
                         <li className='p-0 m-0'>
+                            <Link href="/blog" className="underline w-full m-0 p-0" data-ga_nav_type="footer_nav" data-ga_nav_tree_text="Legal Stuff">
+                               Blog
+
+                            </Link>
+                        </li>
+                        <li className='p-0 m-0'>
                             <Link href="/webaccess" className="underline w-full m-0 p-0" data-ga_nav_type="footer_nav" data-ga_nav_tree_text="Legal Stuff">
                                 Website Accessibility
 
