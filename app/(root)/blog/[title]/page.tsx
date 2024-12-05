@@ -21,10 +21,11 @@ export default async function BlogDetails({
         </div>
       <div className="mt-10"></div>
         <h1>{title}</h1>
-      <div className=" relative max-w-[768px]">
 
-       <Image fill style={{objectFit:"contain"}} src="https://images.pexels.com/photos/39559/ipad-mockup-apple-business-39559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-      </div>
+        <div className="aspect-[800/600] overflow-hidden rounded-md ">
+                    <Image alt="" width={800} height={600} src="https://images.pexels.com/photos/39559/ipad-mockup-apple-business-39559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"  loading="lazy"   />
+            </div>
+     
         <span >
 
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed laudantium dolorem id, a voluptas illo.
