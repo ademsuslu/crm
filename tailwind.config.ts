@@ -11,14 +11,19 @@ const config: Config = {
 		extend: {
 
 			animation: {
-				scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite'
+				scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
+				move: "move 5s linear infinite",
 			},
 			keyframes: {
 				scroll: {
 					to: {
 						transform: 'translate(calc(-50% - 0.5rem))'
 					}
-				}
+				},
+				move: {
+					"0%": { transform: "translateX(-200px)" },
+					"100%": { transform: "translateX(200px)" },
+				},
 			},
 			boxShadow: {
 				shadow: '0 35px 60px -15px rgba(255,255,255, 0.9);'

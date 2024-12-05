@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <footer>
             <hr />
-            <section className="mt-4 flex flex-col justify-center items-center w-full">
+            <section className="my-4 flex flex-col justify-center items-center w-full">
                 <div className="flex flex-col md:flex-row justify-around items-center w-full space-y-3">
                     <Link className="ga_nav_link hsg-footer__app" href="/" data-ga_nav_type="footer_nav" data-ga_nav_tree_text="Download on the App Store">
                         <img className="homepage-mobile-footer-apple" src="https://53.fs1.hubspotusercontent-na1.net/hub/53/hubfs/app%20store%20high%20res.png?width=136&amp;height=45&amp;name=app%20store%20high%20res.png" alt="Download on the App Store" width="136" height="45" loading="lazy" sizes="(max-width: 136px) 100vw, 136px" />
@@ -62,8 +62,6 @@ const Footer = () => {
                     </ul>
                 </div>
             </section>
-
-
         </footer>
     )
 }
