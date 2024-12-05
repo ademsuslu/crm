@@ -1,4 +1,5 @@
 import { buttonVariants } from "@/components/ui/button";
+import Image from "next/image";
 import Link from "next/link";
 import { FaChevronLeft } from "react-icons/fa";
 
@@ -14,10 +15,16 @@ export default async function BlogDetails({
   return (
     <div className=" mx-auto  gap-2">
       <div className="mt-6"></div>
-      <div className="bg-red-200 w-full">
+      <div className=" w-full">
         <div className=" p-0 m-0">
           <Link className={buttonVariants({ className: "inline-flex items-start justify-start" })} href="/blog"> <FaChevronLeft className="w-4 h-4 ml-2" />Blog</Link>
         </div>
+      <div className="mt-10"></div>
+        <h1>{title}</h1>
+      <div className="max-w-[768px]">
+
+       <Image fill style={{objectFit:"cover"}} src="https://images.pexels.com/photos/39559/ipad-mockup-apple-business-39559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+      </div>
         <span >
 
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed laudantium dolorem id, a voluptas illo.
