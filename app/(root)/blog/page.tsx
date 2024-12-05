@@ -13,7 +13,6 @@ export default async function BlogPage() {
   return (
     <div className='space-y-4 h-full'>
         <h1 className='mt-4 text-xl font-bold'>Blogs For SusluCrm</h1>
-        
       <Blogs data={blogs}/>
     </div>
   )

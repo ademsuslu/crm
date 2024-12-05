@@ -1,5 +1,5 @@
-import { buttonVariants } from "@/components/ui/button"
-import Link from "next/link"
+import { buttonVariants } from "@/components/ui/button";
+import Link from "next/link";
 import { FaChevronLeft } from "react-icons/fa";
 
 export default async function BlogDetails({
@@ -8,14 +8,20 @@ export default async function BlogDetails({
   params: Promise<{ title: string }>
 }) {
   const title = (await params).title
-//   const response = await fetch(`${process.env.NEXT_API_URL}/blogs/${title}`, { cache: 'no-store' })
-//   const data = await response.json()
-//   console.log(data)
-  return (<div className="flex flex-col items-center justify-center  gap-2">
-    <div>
-      <Link className={buttonVariants({className:"inline-flex"})} href="/blog"> <FaChevronLeft className="w-4 h-4 ml-2" />Blog</Link>
-    </div>
-   {title}
+  //   const response = await fetch(`${process.env.NEXT_API_URL}/blogs/${title}`, { cache: 'no-store' })
+  //   const data = await response.json()
+  //   console.log(data)
+  return (
+    <div className=" mx-auto  gap-2">
+      <div className="mt-6"></div>
+      <div className="bg-red-200 w-full">
 
-  </div>)
-}
+        <div className=" p-0 m-0">
+          <Link className={buttonVariants({ className: "inline-flex items-start justify-start" })} href="/blog"> <FaChevronLeft className="w-4 h-4 ml-2" />Blog</Link>
+        </div>
+        deneme
+      </div>
+    </div>
+
+  )
+} 

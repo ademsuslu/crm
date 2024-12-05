@@ -42,7 +42,7 @@ export const blogs = [
     {
         _id: 1,
         title: "Microsoft-Crm",
-        desc: "lorem5",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa adipisci fuga omnis. Maxime assumenda aliquid, labore est adipisci officiis blanditiis quis ut ratione, odit rerum.",
         img: "https://images.pexels.com/photos/39559/ipad-mockup-apple-business-39559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         tags: ["microsoft", "crm"],
         link: "https://www.techinsights.com/microsoft-crm-explained",
@@ -52,7 +52,7 @@ export const blogs = [
     {
         _id: 12,
         title: "Microsoft-Crm",
-        desc: "lorem5",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa adipisci fuga omnis. Maxime assumenda aliquid, labore est adipisci officiis blanditiis quis ut ratione, odit rerum.",
         img: "https://images.pexels.com/photos/39559/ipad-mockup-apple-business-39559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         tags: ["microsoft", "crm"],
         link: "https://www.techinsights.com/microsoft-crm-explained",
@@ -62,7 +62,7 @@ export const blogs = [
     {
         _id: 3,
         title: "Microsoft-Crm",
-        desc: "lorem5",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa adipisci fuga omnis. Maxime assumenda aliquid, labore est adipisci officiis blanditiis quis ut ratione, odit rerum.",
         img: "https://images.pexels.com/photos/39559/ipad-mockup-apple-business-39559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         tags: ["microsoft", "crm"],
         link: "https://www.techinsights.com/microsoft-crm-explained",
@@ -72,7 +72,7 @@ export const blogs = [
     {
         _id: 22,
         title: "Microsoft-Crm",
-        desc: "lorem5",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa adipisci fuga omnis. Maxime assumenda aliquid, labore est adipisci officiis blanditiis quis ut ratione, odit rerum.",
         img: "https://images.pexels.com/photos/39559/ipad-mockup-apple-business-39559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         tags: ["microsoft", "crm"],
         link: "https://www.techinsights.com/microsoft-crm-explained",
