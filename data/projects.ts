@@ -38,29 +38,14 @@ export const projects = [
 ];
 
 
-export const plans = [
+export const blogs = [
     {
         id: 1,
-        plan: "Free",
-        price: 0,
-        features: ["Email marketing", "Forms", "Live chat", "Ad management", "Mobile Optimization"]
+        title: "Microsoft Crm",
+        desc: "lorem5",
+        img: "https://picsum.photos/id/237/300/200",
+        link: "https://www.techinsights.com/microsoft-crm-explained",
+        createdAt: "2017.12.2"
     },
-    {
-        id: 2,
-        plan: "Starter",
-        price: 20,
-        features: ["Everything in Free", "Multiple currencies", "Email health insights", "Calls-to-action", "No Crm branding"]
-    },
-    {
-        id: 3,
-        plan: "Professional",
-        price: 890,
-        features: ["Everything in Starter", "Campaign management", "SEO", "Predictive lead scoring", "Custom reporting"]
-    },
-    {
-        id: 4,
-        plan: "Enterprise",
-        price: 3600,
-        features: ["Everything in Professional", "Adaptive testing", "Multuple revenue attribution", "Customer journey analytics"]
-    },
+
 ]
