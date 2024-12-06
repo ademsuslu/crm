@@ -35,7 +35,7 @@ const BlogItems: React.FC<Props> = ({ data }) => {
             >
                 <div className="absolute w-full h-full top-0 left-0 transition duration-300 group-hover/card:bg-black opacity-60"></div>
 
-                <div className="text content">
+                <div className="text content rounded-md bg-gradient-to-b from-sky-800  p-1 ">
                     <h1 className="font-bold text-xl md:text-2xl text-gray-50 relative z-10">
                         {data.title}
                     </h1>
