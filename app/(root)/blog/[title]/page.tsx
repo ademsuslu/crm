@@ -9,9 +9,8 @@ export default async function BlogDetails({
   params: Promise<{ title: string }>
 }) {
   const title = (await params).title
-  //   const response = await fetch(`${process.env.NEXT_API_URL}/blogs/${title}`, { cache: 'no-store' })
-  //   const data = await response.json()
-  //   console.log(data)
+   const response = await fetch(`${process.env.NEXT_API_URL}/blogs/${title}`, { cache: 'no-store' })
+   const data = await response.json()
   return (
     <div className=" mx-auto  gap-2">
       <div className="mt-6"></div>
