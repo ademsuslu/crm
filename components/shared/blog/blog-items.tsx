@@ -45,7 +45,7 @@ const BlogItems: React.FC<Props> = ({ data }) => {
                 </div>
                 <Link className={buttonVariants({
                     variant:"outline",
-                    className:"underline z-20 font-bold  bg-sky-800 hover:bg-sky-800",
+                    className:"underline z-20 font-bold border-white bg-sky-800 hover:bg-sky-800",
                 })} href={`/blog/${data.title}`}>
                     Read More
                 </Link>
